@@ -7,7 +7,13 @@ public class BulletController : MonoBehaviour
 {
     public int bounceAble = 1;
     private bool hit = false;
+    private ScoreManager sm;
+    private EnemyStatus es;
 
+    private void Start()
+    {
+        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+    }
     private void OnCollisionEnter(Collision col)
     {
         if(hit == false)
@@ -23,6 +29,7 @@ public class BulletController : MonoBehaviour
             }
             if (col.gameObject.CompareTag("Enemy"))
             {
+                sm.AddScore(GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>());
                 Destroy(col.gameObject);
                 Destroy(this.gameObject);
             }

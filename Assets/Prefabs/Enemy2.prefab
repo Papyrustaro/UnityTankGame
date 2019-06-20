@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1545019315281517805}
   - component: {fileID: 340311493075622203}
   - component: {fileID: 340311493075622202}
+  - component: {fileID: 8029708432426403087}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Enemy
@@ -119,6 +120,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8029708432426403087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545019315281517806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630ae7532214dd445899019e7446bffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 20
 --- !u!1 &1545019315365361492
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +273,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1034549752577939294, guid: e4e28790f9dedb94da91b1610c492a10,
     type: 3}
   shotSpeed: 300
+  shotIntarval: 60
 --- !u!114 &1545019315873190144
 MonoBehaviour:
   m_ObjectHideFlags: 0
