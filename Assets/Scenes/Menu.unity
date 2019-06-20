@@ -314,6 +314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5895f1a5eb6c79e48a55a4828850f34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnePlayButton: {fileID: 262924593}
+  EveryonePlayButton: {fileID: 203247567}
+  UserDataButton: {fileID: 1403671531}
+  OptionButton: {fileID: 1065427460}
 --- !u!1 &203247565
 GameObject:
   m_ObjectHideFlags: 0
