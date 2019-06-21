@@ -36,6 +36,11 @@ public class BulletController : MonoBehaviour
                     Destroy(this.gameObject);
                 }
             }
+            if(col.gameObject.CompareTag("Bullet") || col.gameObject.CompareTag("EnemyBullet"))
+            {
+                Destroy(col.gameObject);
+                Destroy(this.gameObject);
+            }
             if (col.gameObject.CompareTag("Enemy"))
             {
                 sm.AddScore(GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>());
