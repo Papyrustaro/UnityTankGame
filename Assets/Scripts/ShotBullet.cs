@@ -19,7 +19,6 @@ public class ShotBullet : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && bulletNum < ableBeBulletNum)
         {
             bulletNum++;
-            Debug.Log(transform.rotation);
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             bulletRb.AddForce(transform.forward * shotSpeed);

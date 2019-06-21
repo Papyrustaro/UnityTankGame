@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LookAtMouseCursor : MonoBehaviour
 {
+    private Vector3 pos;
+    private 
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +15,7 @@ public class LookAtMouseCursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var pos = Camera.main.WorldToScreenPoint(transform.localPosition);
+        var pos = Camera.main.WorldToScreenPoint(transform.position);
         var direction = Input.mousePosition - pos;
         var angle = GetAim(Vector3.zero, direction);
         transform.SetLocalEulerAnglesY(-angle + 90);

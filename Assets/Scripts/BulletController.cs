@@ -38,6 +38,10 @@ public class BulletController : MonoBehaviour
             }
             if(col.gameObject.CompareTag("Bullet") || col.gameObject.CompareTag("EnemyBullet"))
             {
+                if (this.gameObject.CompareTag("Bullet")) //プレイヤーの弾だったら
+                {
+                    sb.DestroyBullet();
+                }
                 Destroy(col.gameObject);
                 Destroy(this.gameObject);
             }
