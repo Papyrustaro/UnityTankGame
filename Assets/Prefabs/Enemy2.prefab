@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890ff7717e1b5554689ebbafee33989d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1034549752577939294, guid: e4e28790f9dedb94da91b1610c492a10,
+  bulletPrefab: {fileID: 4540304694690131576, guid: 4d74be05ba638ce409cb920525b97287,
     type: 3}
   shotSpeed: 300
   shotIntarval: 60

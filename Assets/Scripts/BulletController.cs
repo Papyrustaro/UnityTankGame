@@ -9,10 +9,15 @@ public class BulletController : MonoBehaviour
     private bool hit = false;
     private ScoreManager sm;
     private EnemyStatus es;
+    private ShotBullet sb;
 
     private void Start()
     {
         sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+
+        //1人プレイのときのみ有効
+        sb = GameObject.Find("ShotBullet").GetComponent<ShotBullet>();
+
     }
     private void OnCollisionEnter(Collision col)
     {
@@ -24,6 +29,10 @@ public class BulletController : MonoBehaviour
                 bounceAble--;
                 if (bounceAble < 0)
                 {
+                    if (this.gameObject.CompareTag("Bullet")) //プレイヤーの弾だったら
+                    {
+                        sb.DestroyBullet();
+                    }
                     Destroy(this.gameObject);
                 }
             }
@@ -31,6 +40,10 @@ public class BulletController : MonoBehaviour
             {
                 sm.AddScore(GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>());
                 Destroy(col.gameObject);
+                if (this.gameObject.CompareTag("Bullet")) //プレイヤーの弾だったら
+                {
+                    sb.DestroyBullet();
+                }
                 Destroy(this.gameObject);
             }
             if (col.gameObject.CompareTag("Player"))

@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 7224687072219657390}
   - component: {fileID: 7224687072219657385}
   m_Layer: 0
-  m_Name: Enemy3 1
+  m_Name: Enemy3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890ff7717e1b5554689ebbafee33989d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8995141988321080169, guid: 58714508992df3f47936cdab371982cd,
+  bulletPrefab: {fileID: 2870335993345986624, guid: 3904b2c24e7ddc84b9be533f87a7c8ee,
     type: 3}
   shotSpeed: 900
   shotIntarval: 300
