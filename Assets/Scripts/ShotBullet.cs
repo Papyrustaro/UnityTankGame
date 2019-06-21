@@ -16,7 +16,7 @@ public class ShotBullet : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && bulletNum < ableBeBulletNum)
+        if (Input.GetButtonDown("Fire1") && bulletNum < ableBeBulletNum)
         {
             bulletNum++;
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
