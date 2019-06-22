@@ -14,6 +14,10 @@ public class BulletRotationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         Vector3 diff = transform.position - bulletPos;
         if(diff.magnitude > 0.01f)
         {

@@ -14,10 +14,4 @@ public class ResultManager : MonoBehaviour
         scoreLabel = GameObject.Find("ScoreLabel").GetComponent<Text>();
         scoreLabel.text = "Score: " + resultScore;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

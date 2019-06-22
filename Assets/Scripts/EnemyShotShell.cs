@@ -9,7 +9,7 @@ public class EnemyShotShell : MonoBehaviour
     public float shotIntarval = 60;
     private float IntarvalCount = 0;
 
-    void Update()
+    void FixedUpdate()
     {
         IntarvalCount++;
         if(IntarvalCount % shotIntarval == 0)

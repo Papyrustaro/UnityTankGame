@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+using System;
 
 public class PauseManager : MonoBehaviour
 {
@@ -29,7 +31,10 @@ public class PauseManager : MonoBehaviour
     public void OnResumeButtonClicked()
     {
         pauseUI.SetActive(false);
-        Time.timeScale = 1f;
+        StartCoroutine(DelayMethod(5, () =>
+        {
+            Time.timeScale = 1f;
+        }));
     }
     public void OnRestartButtonClicked()
     {
@@ -40,5 +45,14 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+    }
+
+    private IEnumerator DelayMethod(int delayFrameCount, Action action)
+    {
+        for(int i = 0; i < delayFrameCount; i++)
+        {
+            yield return null;
+        }
+        action();
     }
 }

@@ -14,7 +14,7 @@ public class Chase : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //targetの位置を目的地に設定
         agent.destination = target.transform.position;

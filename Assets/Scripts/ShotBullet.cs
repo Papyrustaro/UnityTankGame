@@ -16,6 +16,10 @@ public class ShotBullet : MonoBehaviour
 
     void Update()
     {
+        if(Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         if (Input.GetButtonDown("Fire1") && bulletNum < ableBeBulletNum)
         {
             bulletNum++;

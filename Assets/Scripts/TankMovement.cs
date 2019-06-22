@@ -16,14 +16,6 @@ public class TankMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //x = Input.GetAxis("Horizontal") * moveSpeed;
-        //z = Input.GetAxis("Vertical") * moveSpeed;
-        //movement = transform.forward * z * moveSpeed * Time.deltaTime + transform.right * x * moveSpeed * Time.deltaTime;
-    }
-
     void FixedUpdate()
     {
         x = Input.GetAxis("Horizontal") * moveSpeed;
