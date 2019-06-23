@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 573398700663338515}
   - component: {fileID: 573398700663338514}
   m_Layer: 0
-  m_Name: HeadandTurret
+  m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,9 +331,10 @@ GameObject:
   - component: {fileID: 573398702535845209}
   - component: {fileID: 573398702535845215}
   - component: {fileID: 573398702535845208}
+  - component: {fileID: 437908813}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,6 +384,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!65 &437908813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573398702535845210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &573398701958907226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -460,6 +474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: shotSpeed
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327608762561236353, guid: 9b4ca3531e98fd94c85ebdde47f8cab5,
+        type: 3}
+      propertyPath: ableBeBulletNum
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b4ca3531e98fd94c85ebdde47f8cab5, type: 3}

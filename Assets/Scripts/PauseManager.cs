@@ -8,6 +8,7 @@ using System;
 
 public class PauseManager : MonoBehaviour
 {
+    //[SerializeField]
     public GameObject pauseUI;
     public Button resumeButton;
 
@@ -21,8 +22,7 @@ public class PauseManager : MonoBehaviour
             {
                 resumeButton.Select();
                 Time.timeScale = 0f;
-            }
-            else
+            }else
             {
                 Time.timeScale = 1f;
             }

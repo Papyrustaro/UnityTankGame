@@ -47,6 +47,7 @@ public class BulletController : MonoBehaviour
             }
             if (col.gameObject.CompareTag("Enemy"))
             {
+                Debug.Log(GameObject.Find(col.gameObject.transform.root.gameObject.name));
                 sm.AddScore(GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>());
                 Destroy(col.gameObject);
                 if (this.gameObject.CompareTag("Bullet")) //プレイヤーの弾だったら
