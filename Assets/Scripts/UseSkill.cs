@@ -5,17 +5,24 @@ using System;
 
 public class UseSkill : MonoBehaviour
 {
-    public float speedUpMagni = 2f; //何倍のスピードになるか
-    public float speedUpTime = 3f; //スキル適用時間
-    public float speedUpInterval = 10f; //スキルを使用してから次使えるまで
-    private float countTime;
-    private bool isSpeedUp = false;
+    public float moveSpeedUpMagni = 1.5f; //何倍のスピードになるか
+    public float moveSpeedUpTime = 2f; //スキル適用時間
+    public float moveSpeedUpInterval = 10f; //スキルを使用してから次使えるまで
+    //private bool isSpeedUp = false; //インターバル長いためいらない
 
+    public float shotSpeedUpMagni = 1.5f;
+    public float shotSpeedUpTime = 2f;
+    public float shotSpeedUpInterval = 10f;
+
+    private float countTime;
     private TankMovement tm;
+    private ShotBullet sb;
+
     // Start is called before the first frame update
     void Start()
     {
         tm = GetComponent<TankMovement>();
+        sb = GameObject.Find("Player/Cannon/ShotBullet").GetComponent<ShotBullet>();
         countTime = 0f;
     }
 
@@ -23,27 +30,39 @@ public class UseSkill : MonoBehaviour
     void Update()
     {
         countTime += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.F) && countTime >= speedUpInterval)
+        if (Input.GetButtonDown("Skill1") && countTime >= moveSpeedUpInterval)
         {
             countTime = 0f;
-            useSkillSpeedUp();
+            useSkillMoveSpeedUp();
         }
+        if(Input.GetButtonDown("Skill2") && countTime >= shotSpeedUpInterval)
+        {
+            countTime = 0f;
+            useSkillShotSpeedUp();
+        }
+    }
+
+    public void useSkillMoveSpeedUp()
+    {
+        tm.setMoveSpeed(moveSpeedUpMagni);
+        StartCoroutine(DelayMethod(moveSpeedUpTime, () =>
+        {
+            tm.setMoveSpeed(1 / moveSpeedUpMagni);
+        }));
+    }
+
+    public void useSkillShotSpeedUp()
+    {
+        sb.setShotSpeed(shotSpeedUpMagni);
+        StartCoroutine(DelayMethod(shotSpeedUpTime, () =>
+        {
+            sb.setShotSpeed(1 / shotSpeedUpMagni);
+        }));
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)
     {
         yield return new WaitForSeconds(waitTime);
         action();
-    }
-
-    public void useSkillSpeedUp()
-    {
-        isSpeedUp = true;
-        tm.setMoveSpeed(speedUpMagni);
-        StartCoroutine(DelayMethod(speedUpTime, () =>
-        {
-            tm.setMoveSpeed(1 / speedUpMagni);
-            isSpeedUp = false;
-        }));
     }
 }

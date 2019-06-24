@@ -33,4 +33,9 @@ public class ShotBullet : MonoBehaviour
     {
         bulletNum--;
     }
+
+    public void setShotSpeed(float magnification)
+    {
+        this.shotSpeed *= magnification;
+    }
 }
