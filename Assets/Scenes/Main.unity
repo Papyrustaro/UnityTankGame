@@ -630,6 +630,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8386972547589785819, guid: eef65ddd5ebbbc64ca071e7d068ca6c6,
+        type: 3}
+      propertyPath: normalBulletPrefab
+      value: 
+      objectReference: {fileID: 1034549752577939294, guid: e4e28790f9dedb94da91b1610c492a10,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
 --- !u!1001 &737359735
@@ -752,10 +758,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeedUpMagni: 1.5
   moveSpeedUpTime: 2
-  moveSpeedUpInterval: 10
+  moveSpeedUpInterval: 5
   shotSpeedUpMagni: 1.5
   shotSpeedUpTime: 2
-  shotSpeedUpInterval: 10
+  shotSpeedUpInterval: 5
+  specialBulletPrefab: {fileID: 8995141988321080169, guid: 58714508992df3f47936cdab371982cd,
+    type: 3}
+  shotSpecialBulletInterval: 10
 --- !u!1 &857017267
 GameObject:
   m_ObjectHideFlags: 0

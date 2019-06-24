@@ -14,6 +14,9 @@ public class UseSkill : MonoBehaviour
     public float shotSpeedUpTime = 2f;
     public float shotSpeedUpInterval = 10f;
 
+    public GameObject specialBulletPrefab;
+    public float shotSpecialBulletInterval = 20f;
+
     private float countTime;
     private TankMovement tm;
     private ShotBullet sb;
@@ -39,6 +42,11 @@ public class UseSkill : MonoBehaviour
         {
             countTime = 0f;
             useSkillShotSpeedUp();
+        }
+        if (Input.GetButtonDown("Fire2") && countTime >= shotSpecialBulletInterval)
+        {
+            countTime = 0f;
+            sb.Shot(specialBulletPrefab);
         }
     }
 

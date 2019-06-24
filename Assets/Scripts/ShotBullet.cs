@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ShotBullet : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public float shotSpeed;
+    public GameObject normalBulletPrefab;
+    private float shotSpeedMagni = 1f; //発射速度何倍か
     public int ableBeBulletNum;
     private int bulletNum = 0;
 
@@ -23,9 +23,7 @@ public class ShotBullet : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && bulletNum < ableBeBulletNum)
         {
             bulletNum++;
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
-            Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-            bulletRb.AddForce(transform.forward * shotSpeed);
+            Shot(normalBulletPrefab);
         }
     }
 
@@ -36,6 +34,13 @@ public class ShotBullet : MonoBehaviour
 
     public void setShotSpeed(float magnification)
     {
-        this.shotSpeed *= magnification;
+        this.shotSpeedMagni *= magnification;
+    }
+    public void Shot(GameObject bulletPrefab)
+    {
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
+        Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+        BulletController bc = bullet.GetComponent<BulletController>();
+        bulletRb.AddForce(transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
     }
 }

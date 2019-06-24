@@ -7,6 +7,7 @@ using System;
 public class BulletController : MonoBehaviour
 {
     public int bounceAble = 1;
+    public float bulletSpeed;
     private bool hit = false;
     private ScoreManager sm;
     private EnemyStatus es;
@@ -82,5 +83,10 @@ public class BulletController : MonoBehaviour
     void GameOver()
     {
         SceneManager.LoadScene("GameOver");
+    }
+
+    public float getBulletSpeed()
+    {
+        return bulletSpeed;
     }
 }
