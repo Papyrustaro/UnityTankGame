@@ -24,4 +24,13 @@ public class TankMovement : MonoBehaviour
             + transform.right * x * moveSpeed * Time.deltaTime;
         rb.MovePosition(rb.position + movement);
     }
+
+    public float getMoveSpeed()
+    {
+        return moveSpeed;
+    }
+    public void setMoveSpeed(float magnification)
+    {
+        this.moveSpeed *= magnification;
+    }
 }
