@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class BulletController : MonoBehaviour
 {
@@ -13,15 +14,20 @@ public class BulletController : MonoBehaviour
 
     private void Start()
     {
-        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        //sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
 
         //1人プレイのときのみ有効
-        sb = GameObject.Find("ShotBullet").GetComponent<ShotBullet>();
+        //sb = GameObject.Find("Player/Cannon/ShotBullet").GetComponent<ShotBullet>();
 
     }
     private void OnCollisionEnter(Collision col)
     {
-        if(hit == false)
+        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+
+        //1人プレイのときのみ有効
+        sb = GameObject.Find("Player/Cannon/ShotBullet").GetComponent<ShotBullet>();
+
+        if (hit == false)
         {
             hit = true;
             if (col.gameObject.CompareTag("Stage"))
@@ -47,8 +53,8 @@ public class BulletController : MonoBehaviour
             }
             if (col.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log(GameObject.Find(col.gameObject.transform.root.gameObject.name));
-                sm.AddScore(GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>());
+                es = GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>();
+                sm.AddScore(es);
                 Destroy(col.gameObject);
                 if (this.gameObject.CompareTag("Bullet")) //プレイヤーの弾だったら
                 {
@@ -58,6 +64,7 @@ public class BulletController : MonoBehaviour
             }
             if (col.gameObject.CompareTag("Player"))
             {
+                Destroy(sb);
                 col.gameObject.SetActive(false);
                 this.gameObject.SetActive(false);
 

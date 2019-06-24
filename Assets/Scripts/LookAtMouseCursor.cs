@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class LookAtMouseCursor : MonoBehaviour
 {
@@ -9,9 +10,16 @@ public class LookAtMouseCursor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Input.GetJoystickNames()[0] != "") //ゲームパッドが接続されているか
+        try
         {
-            useController = true;
+            if (Input.GetJoystickNames()[0] != "") //ゲームパッドが接続されているか
+            {
+                useController = true;
+            }
+        }
+        catch (IndexOutOfRangeException)
+        {
+            useController = false;
         }
     }
 
