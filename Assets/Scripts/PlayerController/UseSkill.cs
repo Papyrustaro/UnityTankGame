@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class UseSkill : MonoBehaviour
 {
@@ -9,13 +10,16 @@ public class UseSkill : MonoBehaviour
     public float moveSpeedUpTime = 2f; //スキル適用時間
     public float moveSpeedUpInterval = 10f; //スキルを使用してから次使えるまで
     //private bool isSpeedUp = false; //インターバル長いためいらない
+    public Image moveSpeedUpIcon;
 
     public float shotSpeedUpMagni = 1.5f;
     public float shotSpeedUpTime = 2f;
     public float shotSpeedUpInterval = 10f;
+    public Image shotSpeedUpIcon;
 
     public GameObject specialBulletPrefab;
     public float shotSpecialBulletInterval = 20f;
+    public Image shotSpecialBulletIcon;
 
     private float countTime;
     private TankMovement tm;
@@ -27,6 +31,9 @@ public class UseSkill : MonoBehaviour
         tm = GetComponent<TankMovement>();
         sb = GameObject.Find("Player/Cannon/ShotBullet").GetComponent<ShotBullet>();
         countTime = 0f;
+        moveSpeedUpIcon.fillAmount = 0f;
+        shotSpeedUpIcon.fillAmount = 0f;
+        shotSpecialBulletIcon.fillAmount = 0f;
     }
 
     // Update is called once per frame
@@ -48,6 +55,7 @@ public class UseSkill : MonoBehaviour
             countTime = 0f;
             sb.Shot(specialBulletPrefab);
         }
+        SetFillAmount();
     }
 
     public void useSkillMoveSpeedUp()
@@ -72,5 +80,23 @@ public class UseSkill : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         action();
+    }
+
+    private float SetFillAmount(float value)
+    {
+        if(value >= 1f)
+        {
+            return 1f;
+        }
+        else
+        {
+            return value;
+        }
+    }
+    private void SetFillAmount()
+    {
+        moveSpeedUpIcon.fillAmount = SetFillAmount(countTime / moveSpeedUpInterval);
+        shotSpeedUpIcon.fillAmount = SetFillAmount(countTime / shotSpeedUpInterval);
+        shotSpecialBulletIcon.fillAmount = SetFillAmount(countTime / shotSpecialBulletInterval);
     }
 }
