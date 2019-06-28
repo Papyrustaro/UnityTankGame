@@ -62,4 +62,15 @@ public class LookAtMouseCursor : MonoBehaviour
         var magnitude = vector.magnitude;
         return new Vector2(Mathf.Cos(snappedAngle) * magnitude, Mathf.Sin(snappedAngle) * magnitude);
     }
+    public bool UseController()
+    {
+        return this.useController;
+    }
+    public float GetMouseAim()
+    {
+        pos = Camera.main.WorldToScreenPoint(transform.position);
+        var direction = Input.mousePosition - pos;
+        var angle = GetAim(Vector3.zero, direction);
+        return -angle + 90;
+    }
 }

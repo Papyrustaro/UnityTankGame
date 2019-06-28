@@ -410,18 +410,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae51d0c99773d144981175881cf75b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeedUpMagni: 1.5
-  moveSpeedUpTime: 2
   moveSpeedUpInterval: 5
   moveSpeedUpIcon: {fileID: 0}
-  shotSpeedUpMagni: 1.5
-  shotSpeedUpTime: 2
   shotSpeedUpInterval: 5
   shotSpeedUpIcon: {fileID: 0}
   specialBulletPrefab: {fileID: 8995141988321080169, guid: 58714508992df3f47936cdab371982cd,
     type: 3}
   shotSpecialBulletInterval: 10
   shotSpecialBulletIcon: {fileID: 0}
+  putableBatteryPrefab: {fileID: 8967038384967113193, guid: 5122a2239bc57d1408075eb8ead84dd8,
+    type: 3}
+  putBatteryInterval: 30
 --- !u!1001 &573398701958907226
 PrefabInstance:
   m_ObjectHideFlags: 0

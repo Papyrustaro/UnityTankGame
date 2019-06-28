@@ -43,7 +43,17 @@ public class BulletController : MonoBehaviour
                     Destroy(this.gameObject);
                 }
             }
-            if(col.gameObject.CompareTag("Bullet") || col.gameObject.CompareTag("EnemyBullet"))
+            if (col.gameObject.CompareTag("DestroyableObject"))
+            {
+                if (this.gameObject.CompareTag("Bullet"))
+                {
+                    sb.DestroyBullet();
+                }
+                DestroyObjectStatus dos = col.gameObject.GetComponent<DestroyObjectStatus>();
+                dos.hitBullet();
+                Destroy(this.gameObject);
+            }
+            if(col.gameObject.CompareTag("Bullet") || col.gameObject.CompareTag("EnemyBullet") || col.gameObject.CompareTag("SpecialBullet"))
             {
                 if (this.gameObject.CompareTag("Bullet")) //プレイヤーの弾だったら
                 {

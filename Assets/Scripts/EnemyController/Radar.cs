@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Radar : MonoBehaviour
 {
-    public Transform target;
+    public GameObject target;
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            transform.parent.LookAt(target);
+            transform.parent.LookAt(target.transform);
         }
     }
 }

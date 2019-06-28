@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class UseSkill : MonoBehaviour
 {
-    public float moveSpeedUpMagni = 1.5f; //何倍のスピードになるか
-    public float moveSpeedUpTime = 2f; //スキル適用時間
+    private float moveSpeedUpMagni = 1.5f; //何倍のスピードになるか
+    private float moveSpeedUpTime = 2f; //スキル適用時間
     public float moveSpeedUpInterval = 10f; //スキルを使用してから次使えるまで
     //private bool isSpeedUp = false; //インターバル長いためいらない
     public Image moveSpeedUpIcon;
 
-    public float shotSpeedUpMagni = 1.5f;
-    public float shotSpeedUpTime = 2f;
+    private float shotSpeedUpMagni = 1.5f;
+    private float shotSpeedUpTime = 2f;
     public float shotSpeedUpInterval = 10f;
     public Image shotSpeedUpIcon;
 
@@ -21,15 +21,19 @@ public class UseSkill : MonoBehaviour
     public float shotSpecialBulletInterval = 20f;
     public Image shotSpecialBulletIcon;
 
+    public float putBatteryInterval = 30f;
+
     private float countTime;
     private TankMovement tm;
     private ShotBullet sb;
+    private PutObject po;
 
     // Start is called before the first frame update
     void Start()
     {
         tm = GetComponent<TankMovement>();
         sb = GameObject.Find("Player/Cannon/ShotBullet").GetComponent<ShotBullet>();
+        po = GameObject.Find("Player/Cannon").GetComponent<PutObject>();
         countTime = 0f;
         moveSpeedUpIcon.fillAmount = 0f;
         shotSpeedUpIcon.fillAmount = 0f;
@@ -40,11 +44,11 @@ public class UseSkill : MonoBehaviour
     void Update()
     {
         countTime += Time.deltaTime;
-        if (Input.GetButtonDown("Skill1") && countTime >= moveSpeedUpInterval)
+        /*if (Input.GetButtonDown("Skill1") && countTime >= moveSpeedUpInterval)
         {
             countTime = 0f;
             useSkillMoveSpeedUp();
-        }
+        }*/
         if(Input.GetButtonDown("Skill2") && countTime >= shotSpeedUpInterval)
         {
             countTime = 0f;
@@ -54,6 +58,11 @@ public class UseSkill : MonoBehaviour
         {
             countTime = 0f;
             sb.Shot(specialBulletPrefab);
+        }
+        if(Input.GetButtonDown("Skill1") && countTime >= putBatteryInterval)
+        {
+            countTime = 0f;
+            useSkillPutBattery();
         }
         SetFillAmount();
     }
@@ -74,6 +83,12 @@ public class UseSkill : MonoBehaviour
         {
             sb.setShotSpeed(1 / shotSpeedUpMagni);
         }));
+    }
+
+    //砲台を設置するスキル
+    public void useSkillPutBattery()
+    {
+        po.PutBatteryPrefab();
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)
