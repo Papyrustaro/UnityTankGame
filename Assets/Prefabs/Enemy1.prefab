@@ -87,7 +87,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 256277812387347766}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 256277812437685902}
   - component: {fileID: 256277812437685903}
   - component: {fileID: 3182822460744458262}
+  - component: {fileID: 2122196641}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -155,6 +156,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 10
+--- !u!65 &2122196641
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256277812437685900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &256277813203598315
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +289,7 @@ BoxCollider:
   m_GameObject: {fileID: 256277813824860995}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -366,7 +380,7 @@ BoxCollider:
   m_GameObject: {fileID: 256277813933879478}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         score = 0;
-        scoreLabel = GameObject.Find("ScoreLabel").GetComponent<Text>();
+        scoreLabel = GameObject.Find("ScoreLabel/ScoreLabel").GetComponent<Text>();
         scoreLabel.text = "Score: " + score;
     }
 

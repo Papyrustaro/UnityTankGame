@@ -23,6 +23,7 @@ public class UseSkill : MonoBehaviour
 
     public float putBatteryInterval = 1f; //本当は30fくらい
     public float putProtectDomeInterval = 1f; //本当は30fくらい
+    public float putRemoteBombInterval = 1f;
 
     private float countTime;
     private TankMovement tm;
@@ -65,10 +66,15 @@ public class UseSkill : MonoBehaviour
             countTime = 0f;
             useSkillPutBattery();
         }*/
-        if(Input.GetButtonDown("Skill1") && countTime >= putProtectDomeInterval)
+        /*if(Input.GetButtonDown("Skill1") && countTime >= putProtectDomeInterval)
         {
             countTime = 0f;
             useSkillPutProtectDome();
+        }*/
+        if (Input.GetButtonDown("Skill1") && countTime >= putRemoteBombInterval)
+        {
+            countTime = 0f;
+            useSkillPutRemoteBomb();
         }
         SetFillAmount();
     }
@@ -99,6 +105,10 @@ public class UseSkill : MonoBehaviour
     public void useSkillPutProtectDome()
     {
         po.PutProtectDomePrefab();
+    }
+    public void useSkillPutRemoteBomb()
+    {
+        po.PutRemoteBombPrefab();
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)
