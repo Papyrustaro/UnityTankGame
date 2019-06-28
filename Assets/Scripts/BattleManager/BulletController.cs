@@ -12,15 +12,6 @@ public class BulletController : MonoBehaviour
     private ScoreManager sm;
     private EnemyStatus es;
     private ShotBullet sb;
-
-    private void Start()
-    {
-        //sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-
-        //1人プレイのときのみ有効
-        //sb = GameObject.Find("Player/Cannon/ShotBullet").GetComponent<ShotBullet>();
-
-    }
     private void OnCollisionEnter(Collision col)
     {
         sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
@@ -49,7 +40,7 @@ public class BulletController : MonoBehaviour
                 {
                     sb.DestroyBullet();
                 }
-                DestroyObjectStatus dos = col.gameObject.GetComponent<DestroyObjectStatus>();
+                DestroyByAttack dos = col.gameObject.GetComponent<DestroyByAttack>();
                 dos.hitBullet();
                 Destroy(this.gameObject);
             }

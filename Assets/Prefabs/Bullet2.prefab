@@ -87,7 +87,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 4121901742601857690}
   m_Material: {fileID: 13400000, guid: 14222ca1020217843aa4e90bcc3a46fc, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -179,7 +179,7 @@ SphereCollider:
   m_GameObject: {fileID: 8755558938454697545}
   m_Material: {fileID: 13400000, guid: 14222ca1020217843aa4e90bcc3a46fc, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 3592902109126082740}
   - component: {fileID: 9100544370054304331}
   - component: {fileID: 351780964138359971}
+  - component: {fileID: 8915149660309494412}
   m_Layer: 0
   m_Name: Bullet2
   m_TagString: SpecialBullet
@@ -260,3 +261,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7406bbffdd4fb934196457f603dd79fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &8915149660309494412
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8995141988321080169}
+  m_Material: {fileID: 13400000, guid: 14222ca1020217843aa4e90bcc3a46fc, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0.1}

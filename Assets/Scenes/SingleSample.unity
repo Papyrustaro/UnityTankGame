@@ -1299,6 +1299,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   batteryPrefab: {fileID: 8967038384967113193, guid: 5122a2239bc57d1408075eb8ead84dd8,
     type: 3}
+  protectDomePrefab: {fileID: 8248038076540944924, guid: 74404136e2324f440810f123df85b31d,
+    type: 3}
 --- !u!114 &1702962125 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8701739839975398149, guid: dde1de7e9ba52e14b9d31b92bec04994,
@@ -1720,7 +1722,7 @@ PrefabInstance:
     - target: {fileID: 8967038384967113192, guid: 5122a2239bc57d1408075eb8ead84dd8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.6
+      value: 8.7
       objectReference: {fileID: 0}
     - target: {fileID: 8967038384967113192, guid: 5122a2239bc57d1408075eb8ead84dd8,
         type: 3}

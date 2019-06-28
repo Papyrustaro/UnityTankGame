@@ -21,7 +21,8 @@ public class UseSkill : MonoBehaviour
     public float shotSpecialBulletInterval = 20f;
     public Image shotSpecialBulletIcon;
 
-    public float putBatteryInterval = 30f;
+    public float putBatteryInterval = 1f; //本当は30fくらい
+    public float putProtectDomeInterval = 1f; //本当は30fくらい
 
     private float countTime;
     private TankMovement tm;
@@ -59,10 +60,15 @@ public class UseSkill : MonoBehaviour
             countTime = 0f;
             sb.Shot(specialBulletPrefab);
         }
-        if(Input.GetButtonDown("Skill1") && countTime >= putBatteryInterval)
+        /*if(Input.GetButtonDown("Skill1") && countTime >= putBatteryInterval)
         {
             countTime = 0f;
             useSkillPutBattery();
+        }*/
+        if(Input.GetButtonDown("Skill1") && countTime >= putProtectDomeInterval)
+        {
+            countTime = 0f;
+            useSkillPutProtectDome();
         }
         SetFillAmount();
     }
@@ -89,6 +95,10 @@ public class UseSkill : MonoBehaviour
     public void useSkillPutBattery()
     {
         po.PutBatteryPrefab();
+    }
+    public void useSkillPutProtectDome()
+    {
+        po.PutProtectDomePrefab();
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)

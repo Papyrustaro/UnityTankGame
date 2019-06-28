@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyObjectStatus : MonoBehaviour
+public class DestroyByAttack : MonoBehaviour
 {
     public int hp;
+
     private bool alive = true;
     private void Update()
     {
