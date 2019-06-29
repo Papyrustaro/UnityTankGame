@@ -978,6 +978,16 @@ PrefabInstance:
       propertyPath: skill2Interval
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 833784279, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
+      propertyPath: skill2IconPrefab
+      value: 
+      objectReference: {fileID: 6772432737553311672, guid: 583f278d3e8ba03449403aca2999a9cd,
+        type: 3}
+    - target: {fileID: 833784279, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
+      propertyPath: skill1IconPrefab
+      value: 
+      objectReference: {fileID: 8190723901781706025, guid: 44cfe312111b00444afb7b69c50a0d91,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
 --- !u!1 &844628612
