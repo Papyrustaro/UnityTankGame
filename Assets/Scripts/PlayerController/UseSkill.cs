@@ -11,13 +11,15 @@ public class UseSkill : MonoBehaviour
     private float shotSpeedUpMagni = 2f;
     private float shotSpeedUpTime = 2f;
 
-    public float skill1Interval = 1f;
-    public float skill2Interval = 1f;
+    public float skill1Interval = 5f;
+    public float skill2Interval = 5f;
     public GameObject skill1Icon;
     public GameObject skill2Icon;
     public int skill1Num; //スキル番号
     public int skill2Num;
     private int skillKindNum = 6; //スキルの種類数
+    private Image ableSkill1Icon;
+    private Image ableSkill2Icon;
 
     public GameObject specialBulletPrefab;
     private float countTime1;
@@ -47,8 +49,12 @@ public class UseSkill : MonoBehaviour
     public void SkillIconSet()
     {
         GameObject skillIconCanvas = GameObject.Find("SkillIconCanvas");
-        Instantiate(skill1Icon, Vector3.zero, Quaternion.identity, skillIconCanvas.transform);
-        Instantiate(skill2Icon, Vector3.zero, Quaternion.identity, skillIconCanvas.transform);
+        Instantiate(skill1Icon, new Vector3(-230f, 60f, 0f), Quaternion.identity, skillIconCanvas.transform);
+        Instantiate(skill2Icon, new Vector3(-230f, -20f, 0f), Quaternion.identity, skillIconCanvas.transform);
+        ableSkill1Icon = skill1Icon.transform.Find("AbleIcon").gameObject.GetComponent<Image>();
+        ableSkill2Icon = skill2Icon.transform.Find("AbleIcon").gameObject.GetComponent<Image>();
+        ableSkill1Icon.fillAmount = 0f;
+        ableSkill2Icon.fillAmount = 0f;
     }
     // Start is called before the first frame update
     void Start()
@@ -136,7 +142,10 @@ public class UseSkill : MonoBehaviour
     }
     private void SetFillAmount()
     {
-        //skill1Icon.fillAmount = SetFillAmount(countTime1 / skill1Interval);
-        //skill2Icon.fillAmount = SetFillAmount(countTime2 / skill2Interval);
+        Debug.Log(SetFillAmount(countTime1 / skill1Interval));
+        ableSkill1Icon.fillAmount = SetFillAmount(countTime1 / skill1Interval);
+        ableSkill2Icon.fillAmount = SetFillAmount(countTime2 / skill2Interval);
+        //ableSkill1Icon.fillAmount = 0.5f;
+        //ableSkill2Icon.fillAmount = 0.5f;
     }
 }
