@@ -8,78 +8,79 @@ public class UseSkill : MonoBehaviour
 {
     private float moveSpeedUpMagni = 1.5f; //何倍のスピードになるか
     private float moveSpeedUpTime = 2f; //スキル適用時間
-    public float moveSpeedUpInterval = 10f; //スキルを使用してから次使えるまで
-    //private bool isSpeedUp = false; //インターバル長いためいらない
-    public Image moveSpeedUpIcon;
-
-    private float shotSpeedUpMagni = 1.5f;
+    private float shotSpeedUpMagni = 2f;
     private float shotSpeedUpTime = 2f;
-    public float shotSpeedUpInterval = 10f;
-    public Image shotSpeedUpIcon;
+
+    public float skill1Interval = 1f;
+    public float skill2Interval = 1f;
+    public GameObject skill1Icon;
+    public GameObject skill2Icon;
+    public int skill1Num; //スキル番号
+    public int skill2Num;
+    private int skillKindNum = 6; //スキルの種類数
 
     public GameObject specialBulletPrefab;
-    public float shotSpecialBulletInterval = 20f;
-    public Image shotSpecialBulletIcon;
-
-    public float putBatteryInterval = 1f; //本当は30fくらい
-    public float putProtectDomeInterval = 1f; //本当は30fくらい
-    public float putRemoteBombInterval = 1f;
-
-    private float countTime;
+    private float countTime1;
+    private float countTime2;
     private TankMovement tm;
     private ShotBullet sb;
     private PutObject po;
 
+    private delegate void skillFunction();
+    struct skillArray
+    {
+        public skillFunction sFunc;
+    }
+    private skillArray[] SA;
+
+    public void SkillSet()
+    {
+        SA = new skillArray[skillKindNum];
+        SA[0].sFunc = UseSkillMoveSpeedUp;
+        SA[1].sFunc = UseSkillShotSpeedUp;
+        SA[2].sFunc = UseSkillShotSpecialBullet;
+        SA[3].sFunc = UseSkillPutShooter;
+        SA[4].sFunc = UseSkillPutProtectDome;
+        SA[5].sFunc = UseSkillPutRemoteBomb;
+    }
+
+    public void SkillIconSet()
+    {
+        GameObject skillIconCanvas = GameObject.Find("SkillIconCanvas");
+        Instantiate(skill1Icon, Vector3.zero, Quaternion.identity, skillIconCanvas.transform);
+        Instantiate(skill2Icon, Vector3.zero, Quaternion.identity, skillIconCanvas.transform);
+    }
     // Start is called before the first frame update
     void Start()
     {
         tm = GetComponent<TankMovement>();
         sb = GameObject.Find("Player/Cannon/ShotBullet").GetComponent<ShotBullet>();
         po = GameObject.Find("Player/Cannon").GetComponent<PutObject>();
-        countTime = 0f;
-        moveSpeedUpIcon.fillAmount = 0f;
-        shotSpeedUpIcon.fillAmount = 0f;
-        shotSpecialBulletIcon.fillAmount = 0f;
+        countTime1 = 0f;
+        countTime2 = 0f;
+        SkillSet();
+        SkillIconSet();
     }
 
     // Update is called once per frame
     void Update()
     {
-        countTime += Time.deltaTime;
-        /*if (Input.GetButtonDown("Skill1") && countTime >= moveSpeedUpInterval)
+        countTime1 += Time.deltaTime;
+        countTime2 += Time.deltaTime;
+        if(Input.GetButtonDown("Skill1") && countTime1 >= skill1Interval)
         {
-            countTime = 0f;
-            useSkillMoveSpeedUp();
-        }*/
-        if(Input.GetButtonDown("Skill2") && countTime >= shotSpeedUpInterval)
-        {
-            countTime = 0f;
-            useSkillShotSpeedUp();
+            SA[skill1Num].sFunc();
+            countTime1 = 0f;
         }
-        if (Input.GetButtonDown("Fire2") && countTime >= shotSpecialBulletInterval)
+        if(Input.GetButtonDown("Skill2") && countTime2 >= skill2Interval)
         {
-            countTime = 0f;
-            sb.Shot(specialBulletPrefab);
-        }
-        /*if(Input.GetButtonDown("Skill1") && countTime >= putBatteryInterval)
-        {
-            countTime = 0f;
-            useSkillPutBattery();
-        }*/
-        /*if(Input.GetButtonDown("Skill1") && countTime >= putProtectDomeInterval)
-        {
-            countTime = 0f;
-            useSkillPutProtectDome();
-        }*/
-        if (Input.GetButtonDown("Skill1") && countTime >= putRemoteBombInterval)
-        {
-            countTime = 0f;
-            useSkillPutRemoteBomb();
+            SA[skill2Num].sFunc();
+            countTime2 = 0f;
         }
         SetFillAmount();
     }
 
-    public void useSkillMoveSpeedUp()
+    public void UseSkillMoveSpeedUp()
     {
         tm.setMoveSpeed(moveSpeedUpMagni);
         StartCoroutine(DelayMethod(moveSpeedUpTime, () =>
@@ -88,7 +89,7 @@ public class UseSkill : MonoBehaviour
         }));
     }
 
-    public void useSkillShotSpeedUp()
+    public void UseSkillShotSpeedUp()
     {
         sb.setShotSpeed(shotSpeedUpMagni);
         StartCoroutine(DelayMethod(shotSpeedUpTime, () =>
@@ -97,16 +98,21 @@ public class UseSkill : MonoBehaviour
         }));
     }
 
+    public void UseSkillShotSpecialBullet()
+    {
+        sb.Shot(specialBulletPrefab);
+    }
+
     //砲台を設置するスキル
-    public void useSkillPutBattery()
+    public void UseSkillPutShooter()
     {
         po.PutBatteryPrefab();
     }
-    public void useSkillPutProtectDome()
+    public void UseSkillPutProtectDome()
     {
         po.PutProtectDomePrefab();
     }
-    public void useSkillPutRemoteBomb()
+    public void UseSkillPutRemoteBomb()
     {
         po.PutRemoteBombPrefab();
     }
@@ -130,8 +136,7 @@ public class UseSkill : MonoBehaviour
     }
     private void SetFillAmount()
     {
-        moveSpeedUpIcon.fillAmount = SetFillAmount(countTime / moveSpeedUpInterval);
-        shotSpeedUpIcon.fillAmount = SetFillAmount(countTime / shotSpeedUpInterval);
-        shotSpecialBulletIcon.fillAmount = SetFillAmount(countTime / shotSpecialBulletInterval);
+        //skill1Icon.fillAmount = SetFillAmount(countTime1 / skill1Interval);
+        //skill2Icon.fillAmount = SetFillAmount(countTime2 / skill2Interval);
     }
 }
