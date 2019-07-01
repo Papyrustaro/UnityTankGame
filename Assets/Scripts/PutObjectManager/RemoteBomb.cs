@@ -13,8 +13,8 @@ public class RemoteBomb : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        player = GameObject.Find("Player");
-        shotBullet = GameObject.Find("Player/Cannon/ShotBullet");
+        player = GameObject.FindWithTag("Player");
+        shotBullet = player.transform.Find("Cannon/ShotBullet").gameObject;
     }
 
     private void FixedUpdate()

@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SingleSample.unity
     guid: c3f52c8053c4cf448baf98c0ebe5a58b
+  - enabled: 1
+    path: Assets/Scenes/PlayerSelectTank.unity
+    guid: 7e7ef5e696006e54482b8b0b89e1ee16
   m_configObjects: {}

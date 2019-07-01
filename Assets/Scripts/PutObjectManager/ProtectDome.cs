@@ -7,7 +7,8 @@ public class ProtectDome : MonoBehaviour
     private ShotBullet sb;
     private void OnTriggerEnter(Collider other)
     {
-        sb = GameObject.Find("Player/Cannon/ShotBullet").GetComponent<ShotBullet>();
+        GameObject player = GameObject.FindWithTag("Player");
+        sb = player.transform.Find("Cannon/ShotBullet").GetComponent<ShotBullet>();
         if (other.gameObject.CompareTag("Bullet"))
         {
             Destroy(other.gameObject);

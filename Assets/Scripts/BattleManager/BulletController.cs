@@ -12,12 +12,17 @@ public class BulletController : MonoBehaviour
     private ScoreManager sm;
     private EnemyStatus es;
     private ShotBullet sb;
+    private GameObject player;
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
     private void OnCollisionEnter(Collision col)
     {
         sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
 
         //1人プレイのときのみ有効
-        sb = GameObject.Find("Player/Cannon/ShotBullet").GetComponent<ShotBullet>();
+        sb = player.transform.Find("Cannon/ShotBullet").GetComponent<ShotBullet>();
 
         if (hit == false)
         {

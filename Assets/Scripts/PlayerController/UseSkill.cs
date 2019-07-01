@@ -60,8 +60,8 @@ public class UseSkill : MonoBehaviour
     void Start()
     {
         tm = GetComponent<TankMovement>();
-        sb = GameObject.Find("Player/Cannon/ShotBullet").GetComponent<ShotBullet>();
-        po = GameObject.Find("Player/Cannon").GetComponent<PutObject>();
+        sb = this.transform.Find("Cannon/ShotBullet").gameObject.GetComponent<ShotBullet>();
+        po = this.transform.Find("Cannon").gameObject.GetComponent<PutObject>();
         countTime1 = 0f;
         countTime2 = 0f;
         SkillSet();

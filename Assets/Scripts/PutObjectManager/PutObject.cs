@@ -22,7 +22,8 @@ public class PutObject : MonoBehaviour
     {
         if (!putBomb)
         {
-            GameObject shotBullet = GameObject.Find("Player/Cannon/ShotBullet");
+            GameObject player = GameObject.FindWithTag("Player");
+            GameObject shotBullet = player.transform.Find("Cannon/ShotBullet").gameObject;
             GameObject remoteBomb = Instantiate(remoteBombPrefab, shotBullet.transform.position, Quaternion.identity);
         }
         else
