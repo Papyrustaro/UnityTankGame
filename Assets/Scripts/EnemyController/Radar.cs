@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Radar : MonoBehaviour
 {
-    public GameObject target;
+    private GameObject target;
+
+    void Start()
+    {
+        target = GameObject.FindWithTag("Player");
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
