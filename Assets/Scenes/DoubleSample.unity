@@ -729,12 +729,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 833784279, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
       propertyPath: skill2Num
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1702775884, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
       propertyPath: bombermanPrefab
       value: 
       objectReference: {fileID: 2596646904597101280, guid: a1b5027688fdb5045bf7e2e4e99c84e0,
+        type: 3}
+    - target: {fileID: 1702775884, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
+      propertyPath: laserPrefab
+      value: 
+      objectReference: {fileID: 2869804885271355402, guid: 40c66e064b1c48143aa2a13b0ed88a8e,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
@@ -767,6 +772,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Directional Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 848785154914452423, guid: 5ef0b9be3770c2a44a58d7d7233e7638,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 2.1417677e+29
+      objectReference: {fileID: 0}
+    - target: {fileID: 848785154914452423, guid: 5ef0b9be3770c2a44a58d7d7233e7638,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 4.47e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 848785154914452423, guid: 5ef0b9be3770c2a44a58d7d7233e7638,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 2.131634e+29
       objectReference: {fileID: 0}
     - target: {fileID: 848785154914452422, guid: 5ef0b9be3770c2a44a58d7d7233e7638,
         type: 3}

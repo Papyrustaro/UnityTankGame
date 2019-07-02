@@ -17,7 +17,7 @@ public class UseSkill : MonoBehaviour
     public GameObject skill2IconPrefab;
     public int skill1Num; //スキル番号
     public int skill2Num;
-    private int skillKindNum = 7; //スキルの種類数
+    private int skillKindNum = 8; //スキルの種類数
     private Image ableSkill1Icon;
     private Image ableSkill2Icon;
 
@@ -28,10 +28,10 @@ public class UseSkill : MonoBehaviour
     private ShotBullet sb;
     private PutObject po;
 
-    private delegate void skillFunction();
+    //private delegate void skillFunction();
     struct skillArray
     {
-        public skillFunction sFunc;
+        public Action sFunc;
     }
     private skillArray[] SA;
 
@@ -45,6 +45,7 @@ public class UseSkill : MonoBehaviour
         SA[4].sFunc = UseSkillPutProtectDome;
         SA[5].sFunc = UseSkillPutRemoteBomb;
         SA[6].sFunc = UseSkillPutBomberMan;
+        SA[7].sFunc = UseSkillPutLaser;
     }
 
     public void SkillIconSet()
@@ -126,6 +127,10 @@ public class UseSkill : MonoBehaviour
     public void UseSkillPutBomberMan()
     {
         po.PutBombermanPrefab();
+    }
+    public void UseSkillPutLaser()
+    {
+        po.PutLaserPrefab();
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)

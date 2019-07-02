@@ -6,10 +6,10 @@ using System;
 public class BomberMan : MonoBehaviour
 {
     public GameObject explosionPrefab;
-    private float distancePX; //+x方向の距離
-    private float distanceNX; //-x方向の距離
-    private float distancePZ;
-    private float distanceNZ;
+    private float distancePX = 0f; //+x方向の距離
+    private float distanceNX = 0f; //-x方向の距離
+    private float distancePZ = 0f;
+    private float distanceNZ = 0f;
     private GameObject[] explosion = new GameObject[2];
     private void Start()
     {
