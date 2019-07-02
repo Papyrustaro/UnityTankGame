@@ -8,6 +8,7 @@ public class PutObject : MonoBehaviour
     public GameObject protectDomePrefab;
     public GameObject remoteBombPrefab;
     public GameObject remoteBombExplosionPrefab;
+    public GameObject bombermanPrefab;
     private bool putBomb = false;
 
     public void PutBatteryPrefab()
@@ -34,6 +35,11 @@ public class PutObject : MonoBehaviour
             Destroy(Explosion, 3f);
         }
         putBomb = !putBomb;
+    }
+
+    public void PutBombermanPrefab()
+    {
+        GameObject ProtectDomePrefab = (GameObject)Instantiate(bombermanPrefab, transform.position, Quaternion.identity);
     }
 
 
