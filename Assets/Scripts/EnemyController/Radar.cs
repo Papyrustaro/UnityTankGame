@@ -14,7 +14,11 @@ public class Radar : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            transform.parent.LookAt(target.transform);
+            this.transform.LookAt(target.transform);
         }
+    }
+    public GameObject GetTarget()
+    {
+        return target;
     }
 }

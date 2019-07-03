@@ -41,6 +41,12 @@ public class Warp : MonoBehaviour
         warpAble = false;
         mr.material.color = new Color(0.77f, 0.59f, 0.84f, 0.25f);
     }
+
+    public void DestroyWarp()
+    {
+        Destroy(pareWarpPrefab);
+        Destroy(this.gameObject);
+    }
     public void SetPareWarp(GameObject pareWarp)
     {
         this.pareWarpPrefab = pareWarp;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PutObject : MonoBehaviour
 {
@@ -63,8 +64,18 @@ public class PutObject : MonoBehaviour
             GameObject exitwarp = (GameObject)Instantiate(exitWarpPrefab, transform.position, Quaternion.identity);
             warp.GetComponent<Warp>().SetPareWarp(exitwarp);
             exitwarp.GetComponent<Warp>().SetPareWarp(warp);
+            StartCoroutine(DelayMethod(10f, () =>
+            {
+                exitwarp.GetComponent<Warp>().DestroyWarp();
+            }));
         }
         putWarp = !putWarp;
+    }
+
+    private IEnumerator DelayMethod(float waitTime, Action action)
+    {
+        yield return new WaitForSeconds(waitTime);
+        action();
     }
 
 

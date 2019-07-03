@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4951800486071177953}
   - component: {fileID: 4951800486071177952}
   - component: {fileID: 4951800486071177884}
-  - component: {fileID: 602636092}
   m_Layer: 0
   m_Name: ExitWarp
   m_TagString: Untagged
@@ -105,16 +104,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be56aaca062530f4e90b335b8e20809b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &602636092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4951800486071177959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d6bb2012b74ef8409c74109838b7c4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyTime: 20

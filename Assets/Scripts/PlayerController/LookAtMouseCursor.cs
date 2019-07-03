@@ -66,6 +66,18 @@ public class LookAtMouseCursor : MonoBehaviour
     {
         return this.useController;
     }
+
+    public Vector3 GetDirection()
+    {
+        if (useController)
+        {
+            return new Vector3(Input.GetAxis("CannonHorizontal"), 0f, Input.GetAxis("CannonVertical"));
+        }
+        else
+        {
+            return Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        }
+    }
     public float GetMouseAim()
     {
         pos = Camera.main.WorldToScreenPoint(transform.position);
