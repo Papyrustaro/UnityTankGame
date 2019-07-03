@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RemoteBomb : MonoBehaviour
+public class RemoteController : MonoBehaviour
 {
     private Rigidbody rb;
     private GameObject player;
