@@ -5,15 +5,14 @@ using System;
 
 public class Warp : MonoBehaviour
 {
-    public GameObject exitWarpPrefab;
-    private bool warpAble = true;
+    private GameObject pareWarpPrefab;
+    private bool warpAble = false;
     private MeshRenderer mr;
     private Warp exitWarp;
 
-    private void Start()
+    private void Awake()
     {
         mr = GetComponent<MeshRenderer>();
-        exitWarp = exitWarpPrefab.GetComponent<Warp>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,7 +22,7 @@ public class Warp : MonoBehaviour
         {
             SetUseNotAble();
             exitWarp.SetUseNotAble();
-            hitOb.transform.position = exitWarpPrefab.transform.position;
+            hitOb.transform.position = pareWarpPrefab.transform.position;
             StartCoroutine(DelayMethod(3f, () =>
             {
                 SetUseAble();
@@ -32,15 +31,25 @@ public class Warp : MonoBehaviour
         }
     }
 
-    private void SetUseAble()
+    public void SetUseAble()
     {
         warpAble = true;
         mr.material.color = new Color(0.77f, 0.59f, 0.84f, 0.74f);
     }
-    private void SetUseNotAble()
+    public void SetUseNotAble()
     {
         warpAble = false;
         mr.material.color = new Color(0.77f, 0.59f, 0.84f, 0.25f);
+    }
+    public void SetPareWarp(GameObject pareWarp)
+    {
+        this.pareWarpPrefab = pareWarp;
+        this.exitWarp = pareWarpPrefab.GetComponent<Warp>();
+        StartCoroutine(DelayMethod(1f, () =>
+        {
+            SetUseAble();
+            exitWarp.SetUseAble();
+        }));
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)

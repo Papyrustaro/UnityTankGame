@@ -10,7 +10,12 @@ public class PutObject : MonoBehaviour
     public GameObject remoteBombExplosionPrefab;
     public GameObject bombermanPrefab;
     public GameObject laserPrefab;
+    public GameObject warpPrefab;
+    public GameObject exitWarpPrefab;
+
+    private GameObject warp;
     private bool putBomb = false;
+    private bool putWarp = false;
 
     public void PutBatteryPrefab()
     {
@@ -45,6 +50,21 @@ public class PutObject : MonoBehaviour
     public void PutLaserPrefab()
     {
         Instantiate(laserPrefab, transform.position, transform.rotation);
+    }
+
+    public void PutWarpPrefab()
+    {
+        if (!putWarp)
+        {
+            warp = (GameObject)Instantiate(warpPrefab, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            GameObject exitwarp = (GameObject)Instantiate(exitWarpPrefab, transform.position, Quaternion.identity);
+            warp.GetComponent<Warp>().SetPareWarp(exitwarp);
+            exitwarp.GetComponent<Warp>().SetPareWarp(warp);
+        }
+        putWarp = !putWarp;
     }
 
 
