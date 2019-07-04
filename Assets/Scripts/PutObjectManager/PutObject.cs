@@ -13,11 +13,17 @@ public class PutObject : MonoBehaviour
     public GameObject laserPrefab;
     public GameObject warpPrefab;
     public GameObject exitWarpPrefab;
+    public GameObject switchGatePrefab;
+    private GameObject shotBullet;
 
     private GameObject warp;
     private bool putBomb = false;
     private bool putWarp = false;
 
+    private void Start()
+    {
+        shotBullet = this.transform.Find("ShotBullet").gameObject;
+    }
     public void PutBatteryPrefab()
     {
         GameObject BatteryPrefab = (GameObject)Instantiate(batteryPrefab, transform.position, transform.rotation);
@@ -70,6 +76,11 @@ public class PutObject : MonoBehaviour
             }));
         }
         putWarp = !putWarp;
+    }
+
+    public void PutSwitchGatePrefab()
+    {
+        Instantiate(switchGatePrefab, shotBullet.transform.position, transform.rotation);
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)

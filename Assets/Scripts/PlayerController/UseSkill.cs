@@ -17,7 +17,7 @@ public class UseSkill : MonoBehaviour
     public GameObject skill2IconPrefab;
     public int skill1Num; //スキル番号
     public int skill2Num;
-    private int skillKindNum = 9; //スキルの種類数
+    private int skillKindNum = 10; //スキルの種類数
     private Image ableSkill1Icon;
     private Image ableSkill2Icon;
 
@@ -47,6 +47,7 @@ public class UseSkill : MonoBehaviour
         SA[6].sFunc = UseSkillPutBomberMan;
         SA[7].sFunc = UseSkillPutLaser;
         SA[8].sFunc = UseSkillPutWarp;
+        SA[9].sFunc = UseSkillPutSwitchGate;
     }
 
     public void SkillIconSet()
@@ -136,6 +137,10 @@ public class UseSkill : MonoBehaviour
     public void UseSkillPutWarp()
     {
         po.PutWarpPrefab();
+    }
+    public void UseSkillPutSwitchGate()
+    {
+        po.PutSwitchGatePrefab();
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)
