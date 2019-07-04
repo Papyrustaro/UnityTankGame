@@ -7,14 +7,16 @@ public class NormalEnemyAI : MonoBehaviour
     private EnemyShotManager esm;
     private RaycastHit hit;
     private LookAtMouseCursor lamc;
-    private Radar radar;
     public float shotInterval = 1f;
     private float countTime = 0f;
+    private GameObject head;
+    private GameObject turret;
     void Start()
     {
         esm = GetComponent<EnemyShotManager>();
         lamc = GameObject.FindWithTag("Player").transform.Find("Cannon").GetComponent<LookAtMouseCursor>();
-        radar = this.transform.Find("Cannon").GetComponent<Radar>();
+        head = this.transform.Find("Cannon/Head").gameObject;
+        turret = this.transform.Find("Cannon/Turret").gameObject;
 
     }
     private void Update()
@@ -22,7 +24,7 @@ public class NormalEnemyAI : MonoBehaviour
         countTime += Time.deltaTime;
         if(shotInterval <= countTime)
         {
-            if (Physics.Raycast(this.transform.position, radar.GetTarget().transform.position - this.transform.position, out hit, 50f))
+            if (Physics.Raycast(this.transform.position, turret.transform.position - head.transform.position, out hit, 50f))
             {
                 if (hit.collider.gameObject.CompareTag("Player"))
                 {
