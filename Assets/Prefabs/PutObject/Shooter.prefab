@@ -267,7 +267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8967038385507136091}
-  - component: {fileID: 8967038385507136090}
+  - component: {fileID: 317447722659330106}
   m_Layer: 0
   m_Name: ShotBullet
   m_TagString: Untagged
@@ -289,7 +289,7 @@ Transform:
   m_Father: {fileID: 8967038384967113192}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8967038385507136090
+--- !u!114 &317447722659330106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -298,10 +298,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8967038385507136084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 890ff7717e1b5554689ebbafee33989d, type: 3}
+  m_Script: {fileID: 11500000, guid: dacb528552f79314f81b7e16105bfded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4540304694690131576, guid: 4d74be05ba638ce409cb920525b97287,
     type: 3}
-  shotSpeed: 500
-  shotIntarval: 60
+  shotInterval: 5

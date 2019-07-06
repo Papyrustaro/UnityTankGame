@@ -67,6 +67,16 @@ MonoBehaviour:
     type: 3}
   remoteBombExplosionPrefab: {fileID: 8078290451973256078, guid: 9fb0136c2dfd0c94fadb14636a09deb0,
     type: 3}
+  bombermanPrefab: {fileID: 2596646904597101280, guid: a1b5027688fdb5045bf7e2e4e99c84e0,
+    type: 3}
+  laserPrefab: {fileID: 2869804885271355402, guid: 40c66e064b1c48143aa2a13b0ed88a8e,
+    type: 3}
+  warpPrefab: {fileID: 3934169058858696270, guid: b3b681f4446d67a4e86f3d85dc301d77,
+    type: 3}
+  exitWarpPrefab: {fileID: 4951800486071177959, guid: 6fc513cac7995984d9c040c8fa0a08ee,
+    type: 3}
+  switchGatePrefab: {fileID: 8358079274986022997, guid: 0f056e953418c79459b39cac841efd2c,
+    type: 3}
 --- !u!1 &573398700844701672
 GameObject:
   m_ObjectHideFlags: 0

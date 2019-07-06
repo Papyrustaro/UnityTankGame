@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 7224687072219657385}
   - component: {fileID: 1939913198}
   - component: {fileID: 1939913199}
+  - component: {fileID: 750456590129327241}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: Enemy
@@ -403,6 +404,19 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2870335993345986624, guid: 3904b2c24e7ddc84b9be533f87a7c8ee,
     type: 3}
   ableBulletNum: 2
+--- !u!65 &750456590129327241
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7224687072219657384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7224687072241668170
 GameObject:
   m_ObjectHideFlags: 0

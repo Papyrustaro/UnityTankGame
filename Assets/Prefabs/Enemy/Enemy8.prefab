@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 964169301158307627}
   - component: {fileID: 7065632798252995551}
   - component: {fileID: 7065632798252995544}
+  - component: {fileID: 6490090370781408469}
   m_Layer: 0
   m_Name: Enemy8
   m_TagString: Enemy
@@ -493,3 +494,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotInterval: 3
+--- !u!65 &6490090370781408469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610646616319491786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}

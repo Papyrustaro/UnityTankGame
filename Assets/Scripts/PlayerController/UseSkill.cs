@@ -28,7 +28,6 @@ public class UseSkill : MonoBehaviour
     private ShotBullet sb;
     private PutObject po;
 
-    //private delegate void function();
     private Action[] sFunc; //スキルの関数を格納
     public void SkillSet()
     {

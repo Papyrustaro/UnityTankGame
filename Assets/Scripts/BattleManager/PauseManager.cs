@@ -39,7 +39,7 @@ public class PauseManager : MonoBehaviour
     public void OnRestartButtonClicked()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("SingleSample");
     }
     public void OnGoToMenuButtonClicked()
     {

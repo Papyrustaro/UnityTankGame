@@ -17,7 +17,7 @@ public class GameClearSceneManager : MonoBehaviour
     // Update is called once per frame
     public void OnContinueButtonClicked()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("PlayerSelectTank");
     }
     public void OnMoveMenuSceneButtonClicked()
     {
