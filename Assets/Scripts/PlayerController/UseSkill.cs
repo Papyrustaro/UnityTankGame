@@ -28,26 +28,21 @@ public class UseSkill : MonoBehaviour
     private ShotBullet sb;
     private PutObject po;
 
-    //private delegate void skillFunction();
-    struct skillArray
-    {
-        public Action sFunc;
-    }
-    private skillArray[] SA;
-
+    //private delegate void function();
+    private Action[] sFunc; //スキルの関数を格納
     public void SkillSet()
     {
-        SA = new skillArray[skillKindNum];
-        SA[0].sFunc = UseSkillMoveSpeedUp;
-        SA[1].sFunc = UseSkillShotSpeedUp;
-        SA[2].sFunc = UseSkillShotSpecialBullet;
-        SA[3].sFunc = UseSkillPutShooter;
-        SA[4].sFunc = UseSkillPutProtectDome;
-        SA[5].sFunc = UseSkillPutRemoteBomb;
-        SA[6].sFunc = UseSkillPutBomberMan;
-        SA[7].sFunc = UseSkillPutLaser;
-        SA[8].sFunc = UseSkillPutWarp;
-        SA[9].sFunc = UseSkillPutSwitchGate;
+        sFunc = new Action[skillKindNum];
+        sFunc[0] = UseSkillMoveSpeedUp;
+        sFunc[1] = UseSkillShotSpeedUp;
+        sFunc[2] = UseSkillShotSpecialBullet;
+        sFunc[3] = UseSkillPutShooter;
+        sFunc[4] = UseSkillPutProtectDome;
+        sFunc[5] = UseSkillPutRemoteBomb;
+        sFunc[6] = UseSkillPutBomberMan;
+        sFunc[7] = UseSkillPutLaser;
+        sFunc[8] = UseSkillPutWarp;
+        sFunc[9] = UseSkillPutSwitchGate;
     }
 
     public void SkillIconSet()
@@ -79,12 +74,12 @@ public class UseSkill : MonoBehaviour
         countTime2 += Time.deltaTime;
         if(Input.GetButtonDown("Skill1") && countTime1 >= skill1Interval)
         {
-            SA[skill1Num].sFunc();
+            sFunc[skill1Num]();
             countTime1 = 0f;
         }
         if(Input.GetButtonDown("Skill2") && countTime2 >= skill2Interval)
         {
-            SA[skill2Num].sFunc();
+            sFunc[skill2Num]();
             countTime2 = 0f;
         }
         SetFillAmount();

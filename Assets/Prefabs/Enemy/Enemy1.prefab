@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db75338ea10d7ff4a8246c066f417c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotInterval: 1
+  shotInterval: 3
 --- !u!114 &573705168
 MonoBehaviour:
   m_ObjectHideFlags: 0
