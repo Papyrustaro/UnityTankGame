@@ -15,7 +15,6 @@ public class DecreaseRootHP : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("EnemyBullet"))
         {
-            Debug.Log("aaaa");
             root.hitBullet();
         }
     }

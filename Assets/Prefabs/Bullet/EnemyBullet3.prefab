@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceAble: 2
-  bulletSpeed: 1500
+  bulletSpeed: 1800
 --- !u!114 &4543647407929781450
 MonoBehaviour:
   m_ObjectHideFlags: 0
