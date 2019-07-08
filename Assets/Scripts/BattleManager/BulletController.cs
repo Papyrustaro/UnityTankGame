@@ -13,9 +13,14 @@ public class BulletController : MonoBehaviour
     private EnemyStatus es;
     private ShotBullet sb;
     private GameObject player;
+
+    //シングルミッション
+    private SingleMissionManager smm;
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
+        //シングルミッション
+        smm = GameObject.Find("SingleMissionManager").GetComponent<SingleMissionManager>();
     }
     private void OnCollisionEnter(Collision col)
     {
@@ -60,6 +65,9 @@ public class BulletController : MonoBehaviour
             }
             if (col.gameObject.CompareTag("Enemy"))
             {
+                //singlemission
+                smm.EnemyDestroy(col.gameObject.name);
+
                 es = GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>();
                 sm.AddScore(es);
                 Destroy(col.gameObject);
@@ -71,12 +79,15 @@ public class BulletController : MonoBehaviour
             }
             if (col.gameObject.CompareTag("Player"))
             {
+                //singlemission
+                smm.PlayerDestroy();
+
                 Destroy(sb);
                 col.gameObject.SetActive(false);
                 this.gameObject.SetActive(false);
 
                 //GameOverSceneへ
-                Invoke("GameOver", 0.5f);
+                //Invoke("GameOver", 0.5f);
             }
         }
     }

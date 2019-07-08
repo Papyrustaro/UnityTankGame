@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayerSelectTank.unity
     guid: 7e7ef5e696006e54482b8b0b89e1ee16
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission1.unity
+    guid: 8e4fe6331b14ed248b608621d4c00c73
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission2.unity
+    guid: 8b997cb1d0a5966489c1da5f61b4390f
   m_configObjects: {}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6976663921644275610}
   - component: {fileID: 7159517687794193433}
   m_Layer: 5
-  m_Name: PlayerLife
+  m_Name: PlayerLifeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4624184060173470649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 4745610211394274724}
   - component: {fileID: 2930633477889196555}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: MissionTitlePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 3261845978832842082}
   - component: {fileID: 4855038595613909550}
   m_Layer: 5
-  m_Name: EnemyCounter
+  m_Name: EnemyCounterText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 1131362991101257781}
   - component: {fileID: 7575097586614194332}
   m_Layer: 5
-  m_Name: MissionNumber
+  m_Name: MissionNumberText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
