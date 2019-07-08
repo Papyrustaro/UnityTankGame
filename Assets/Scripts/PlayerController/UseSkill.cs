@@ -27,6 +27,7 @@ public class UseSkill : MonoBehaviour
     private TankMovement tm;
     private ShotBullet sb;
     private PutObject po;
+    private int gamePadNum;
 
     private Action[] sFunc; //スキルの関数を格納
     public void SkillSet()
@@ -60,6 +61,7 @@ public class UseSkill : MonoBehaviour
         tm = GetComponent<TankMovement>();
         sb = this.transform.Find("Cannon/ShotBullet").gameObject.GetComponent<ShotBullet>();
         po = this.transform.Find("Cannon").gameObject.GetComponent<PutObject>();
+        gamePadNum = GetComponent<GamePadManager>().GetGamePadNum();
         countTime1 = 0f;
         countTime2 = 0f;
         SkillSet();
@@ -71,12 +73,12 @@ public class UseSkill : MonoBehaviour
     {
         countTime1 += Time.deltaTime;
         countTime2 += Time.deltaTime;
-        if(Input.GetButtonDown("Skill1") && countTime1 >= skill1Interval)
+        if(Input.GetButtonDown(GamePadManager.padSkill1[gamePadNum]) && countTime1 >= skill1Interval)
         {
             sFunc[skill1Num]();
             countTime1 = 0f;
         }
-        if(Input.GetButtonDown("Skill2") && countTime2 >= skill2Interval)
+        if(Input.GetButtonDown(GamePadManager.padSkill2[gamePadNum]) && countTime2 >= skill2Interval)
         {
             sFunc[skill2Num]();
             countTime2 = 0f;

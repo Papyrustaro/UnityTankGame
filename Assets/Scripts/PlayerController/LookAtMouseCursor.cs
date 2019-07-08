@@ -7,12 +7,14 @@ public class LookAtMouseCursor : MonoBehaviour
 {
     private Vector3 pos;
     private bool useController = false;
+    private int gamePadNum;
     // Start is called before the first frame update
     void Start()
     {
+        gamePadNum = this.transform.root.gameObject.GetComponent<GamePadManager>().GetGamePadNum();
         try
         {
-            if (Input.GetJoystickNames()[0] != "") //ゲームパッドが接続されているか
+            if (Input.GetJoystickNames()[gamePadNum] != "") //ゲームパッドが接続されているか
             {
                 useController = true;
             }
@@ -32,11 +34,11 @@ public class LookAtMouseCursor : MonoBehaviour
         }
         if (useController)
         {
-            var h = Input.GetAxis("CannonHorizontal");
-            var v = Input.GetAxis("CannonVertical");
+            var h = Input.GetAxis(GamePadManager.padCannonHorizontal[gamePadNum]);
+            var v = Input.GetAxis(GamePadManager.padCannonVertical[gamePadNum]);
             if (v * v + h * h > 0f) //倒していないときに上を向かないように
             {
-                transform.eulerAngles = new Vector3(0, Mathf.Atan2(Input.GetAxis("CannonHorizontal"), Input.GetAxis("CannonVertical")) * 180 / Mathf.PI, 0);
+                transform.eulerAngles = new Vector3(0, Mathf.Atan2(Input.GetAxis(GamePadManager.padCannonHorizontal[gamePadNum]), Input.GetAxis(GamePadManager.padCannonVertical[gamePadNum])) * 180 / Mathf.PI, 0);
             }
         }
         else
@@ -71,7 +73,7 @@ public class LookAtMouseCursor : MonoBehaviour
     {
         if (useController)
         {
-            return new Vector3(Input.GetAxis("CannonHorizontal"), 0f, Input.GetAxis("CannonVertical"));
+            return new Vector3(Input.GetAxis(GamePadManager.padCannonHorizontal[gamePadNum]), 0f, Input.GetAxis(GamePadManager.padCannonVertical[gamePadNum]));
         }
         else
         {

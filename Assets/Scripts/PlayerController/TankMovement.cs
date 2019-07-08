@@ -9,17 +9,19 @@ public class TankMovement : MonoBehaviour
     private float z = 0f;
     Rigidbody rb;
     private Vector3 movement;
+    private int gamePadNum;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        gamePadNum = GetComponent<GamePadManager>().GetGamePadNum();
     }
 
     void FixedUpdate()
     {
-        x = Input.GetAxis("Horizontal") * moveSpeed;
-        z = Input.GetAxis("Vertical") * moveSpeed;
+        x = Input.GetAxis(GamePadManager.padHorizontal[gamePadNum]) * moveSpeed;
+        z = Input.GetAxis(GamePadManager.padVertical[gamePadNum]) * moveSpeed;
         movement = transform.forward * z * moveSpeed * Time.deltaTime 
             + transform.right * x * moveSpeed * Time.deltaTime;
         rb.MovePosition(rb.position + movement);

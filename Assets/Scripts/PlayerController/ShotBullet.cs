@@ -8,10 +8,12 @@ public class ShotBullet : MonoBehaviour
     private float shotSpeedMagni = 1f; //発射速度何倍か
     public int ableBeBulletNum;
     private int bulletNum = 0;
+    private int gamePadNum;
 
     private void Start()
     {
         bulletNum = 0;
+        gamePadNum = this.transform.root.gameObject.GetComponent<GamePadManager>().GetGamePadNum();
     }
 
     void Update()
@@ -20,7 +22,7 @@ public class ShotBullet : MonoBehaviour
         {
             return;
         }
-        if (Input.GetButtonDown("Fire1") && bulletNum < ableBeBulletNum)
+        if (Input.GetButtonDown(GamePadManager.padFire1[gamePadNum]) && bulletNum < ableBeBulletNum)
         {
             bulletNum++;
             Shot(normalBulletPrefab);
