@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainGameController : MonoBehaviour
 {
+    public static int gameNumber = 0; //1.singleMission, 2.survival, 3.VS
     private static int playerSelectTankNumber;
     public static void SetPlayerSelectTankNumber(int n)
     {

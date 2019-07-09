@@ -20,7 +20,10 @@ public class BulletController : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         //シングルミッション
-        smm = GameObject.Find("SingleMissionManager").GetComponent<SingleMissionManager>();
+        if(MainGameController.gameNumber == 1)
+        {
+            smm = GameObject.Find("SingleMissionManager").GetComponent<SingleMissionManager>();
+        }
     }
     private void OnCollisionEnter(Collision col)
     {
@@ -66,7 +69,10 @@ public class BulletController : MonoBehaviour
             if (col.gameObject.CompareTag("Enemy"))
             {
                 //singlemission
-                smm.EnemyDestroy(col.gameObject.name);
+                if(MainGameController.gameNumber == 1)
+                {
+                    smm.EnemyDestroy(col.gameObject.name);
+                }
 
                 es = GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>();
                 sm.AddScore(es);
@@ -80,14 +86,14 @@ public class BulletController : MonoBehaviour
             if (col.gameObject.CompareTag("Player"))
             {
                 //singlemission
-                smm.PlayerDestroy();
+                if(MainGameController.gameNumber == 1)
+                {
+                    smm.PlayerDestroy();
+                }
 
                 Destroy(sb);
                 col.gameObject.SetActive(false);
                 this.gameObject.SetActive(false);
-
-                //GameOverSceneへ
-                //Invoke("GameOver", 0.5f);
             }
         }
     }
