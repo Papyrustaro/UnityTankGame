@@ -305,7 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1545019315873190147}
   m_Layer: 0
-  m_Name: EnemyShotBullet
+  m_Name: ShotBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

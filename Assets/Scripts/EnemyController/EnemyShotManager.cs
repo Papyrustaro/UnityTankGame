@@ -13,7 +13,7 @@ public class EnemyShotManager : MonoBehaviour
     private void Start()
     {
         this.bulletNum = 0;
-        enemyShotBullet = this.transform.Find("Cannon/EnemyShotBullet").gameObject;
+        enemyShotBullet = this.transform.Find("Cannon/ShotBullet").gameObject;
     }
 
     public void DestroyBullet()

@@ -17,6 +17,7 @@ public class PutObject : MonoBehaviour
     private GameObject shotBullet;
 
     private GameObject warp;
+    private GameObject remoteBomb;
     private bool putBomb = false;
     private bool putWarp = false;
 
@@ -26,24 +27,22 @@ public class PutObject : MonoBehaviour
     }
     public void PutBatteryPrefab()
     {
-        GameObject BatteryPrefab = (GameObject)Instantiate(batteryPrefab, transform.position, transform.rotation);
+        Instantiate(batteryPrefab, transform.position, transform.rotation);
     }
     public void PutProtectDomePrefab()
     {
-        GameObject ProtectDomePrefab = (GameObject)Instantiate(protectDomePrefab, transform.position, Quaternion.identity);
+        Instantiate(protectDomePrefab, transform.position, Quaternion.identity);
     }
     public void PutRemoteBombPrefab()
     {
         if (!putBomb)
         {
-            GameObject player = GameObject.FindWithTag("Player");
-            GameObject shotBullet = player.transform.Find("Cannon/ShotBullet").gameObject;
-            GameObject remoteBomb = Instantiate(remoteBombPrefab, shotBullet.transform.position, Quaternion.identity);
+            remoteBomb = (GameObject)Instantiate(remoteBombPrefab, shotBullet.transform.position, Quaternion.identity);
+            remoteBomb.GetComponent<RemoteController>().SetController(this.gameObject, shotBullet);
         }
         else
         {
-            GameObject remoteBomb = GameObject.Find("RemoteBomb(Clone)");
-            GameObject Explosion = Instantiate(remoteBombExplosionPrefab, remoteBomb.transform.position, Quaternion.identity);
+            GameObject Explosion = (GameObject)Instantiate(remoteBombExplosionPrefab, remoteBomb.transform.position, Quaternion.identity);
             Destroy(remoteBomb);
             Destroy(Explosion, 3f);
         }
@@ -52,7 +51,7 @@ public class PutObject : MonoBehaviour
 
     public void PutBombermanPrefab()
     {
-        GameObject ProtectDomePrefab = (GameObject)Instantiate(bombermanPrefab, transform.position, Quaternion.identity);
+        Instantiate(bombermanPrefab, transform.position, Quaternion.identity);
     }
     public void PutLaserPrefab()
     {

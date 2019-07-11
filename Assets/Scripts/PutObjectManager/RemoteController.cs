@@ -5,7 +5,7 @@ using UnityEngine;
 public class RemoteController : MonoBehaviour
 {
     private Rigidbody rb;
-    private GameObject player;
+    private GameObject controllObject;
     private GameObject shotBullet;
     public float forcePower = 30f;
 
@@ -13,14 +13,17 @@ public class RemoteController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        player = GameObject.FindWithTag("Player");
-        shotBullet = player.transform.Find("Cannon/ShotBullet").gameObject;
     }
 
     private void FixedUpdate()
     {
-        Vector3 v = new Vector3(shotBullet.transform.position.x - player.transform.position.x,
-            0f, shotBullet.transform.position.z - player.transform.position.z);
+        Vector3 v = new Vector3(shotBullet.transform.position.x - controllObject.transform.position.x,
+            0f, shotBullet.transform.position.z - controllObject.transform.position.z);
         rb.AddForce(v * forcePower);
+    }
+    public void SetController(GameObject controllObject, GameObject shotBullet)
+    {
+        this.controllObject = controllObject;
+        this.shotBullet = shotBullet;
     }
 }
