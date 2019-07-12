@@ -7,6 +7,8 @@ public class EnemyShotManager : MonoBehaviour
     public GameObject bulletPrefab;
     private float shotSpeedMagni = 1f; //発射速度何倍か
     public int ableBulletNum = 5;
+    public float shotInterval = 3f;
+    private float countTime = 0f;
     private int bulletNum = 0;
     private GameObject enemyShotBullet;
 
@@ -14,6 +16,11 @@ public class EnemyShotManager : MonoBehaviour
     {
         this.bulletNum = 0;
         enemyShotBullet = this.transform.Find("Cannon/ShotBullet").gameObject;
+    }
+
+    private void Update()
+    {
+        countTime += Time.deltaTime;
     }
 
     public void DestroyBullet()
@@ -28,7 +35,7 @@ public class EnemyShotManager : MonoBehaviour
 
     public bool Shot()
     {
-        if (ableBulletNum <= bulletNum)
+        if (ableBulletNum <= bulletNum || countTime < shotInterval)
         {
             return false;
         }
@@ -38,6 +45,7 @@ public class EnemyShotManager : MonoBehaviour
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             BulletController bc = bullet.GetComponent<BulletController>();
             bulletRb.AddForce(enemyShotBullet.transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
+            countTime = 0f;
             return true;
         }
     }

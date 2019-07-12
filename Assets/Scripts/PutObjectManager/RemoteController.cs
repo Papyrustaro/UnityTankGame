@@ -17,9 +17,14 @@ public class RemoteController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 v = new Vector3(shotBullet.transform.position.x - controllObject.transform.position.x,
+        try{
+            Vector3 v = new Vector3(shotBullet.transform.position.x - controllObject.transform.position.x,
             0f, shotBullet.transform.position.z - controllObject.transform.position.z);
-        rb.AddForce(v * forcePower);
+            rb.AddForce(v * forcePower);
+        }catch(MissingReferenceException)
+        {
+            Destroy(this.gameObject);
+        }
     }
     public void SetController(GameObject controllObject, GameObject shotBullet)
     {

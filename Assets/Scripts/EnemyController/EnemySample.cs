@@ -8,7 +8,9 @@ public class EnemySample : MonoBehaviour
     private PutObject po;
     private TriggerNearEnemy tne;
     private TriggerAwayEnemy tae;
+    private EnemyController ec;
 
+    private float countTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,42 +20,39 @@ public class EnemySample : MonoBehaviour
         tae = transform.Find("Cannon").gameObject.GetComponent<TriggerAwayEnemy>();
         tne.SetFunc(NearEnter, NearExit, NearStay);
         tae.SetFunc(AwayEnter, AwayExit, AwayStay);
+        ec = GetComponent<EnemyController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        countTime += Time.deltaTime;
+        if(countTime >= 1f)
+        {
+            if (ec.RayCastCannon())
+            {
+                Debug.Log(ec.GetRaycastHit().collider.gameObject.name);
+                em.TurnCannonAdd(90);
+            }
+            countTime = 0f;
+        }
     }
 
     private void NearEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            po.PutRemoteBombPrefab();
-            em.TurnCannonAdd(90);
-        }
     }
     private void NearExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            em.TurnCannonAdd(90);
-        }
     }
     private void NearStay(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-        }
     }
     private void AwayEnter(Collider other)
     {
-        Debug.Log("awayEnter");
     }
     private void AwayExit(Collider other)
     {
-        Debug.Log("awayExit");
     }
     private void AwayStay(Collider other)
     {

@@ -44,7 +44,7 @@ public class PutObject : MonoBehaviour
         {
             GameObject Explosion = (GameObject)Instantiate(remoteBombExplosionPrefab, remoteBomb.transform.position, Quaternion.identity);
             Destroy(remoteBomb);
-            Destroy(Explosion, 3f);
+            Destroy(Explosion, 0.5f);
         }
         putBomb = !putBomb;
     }
