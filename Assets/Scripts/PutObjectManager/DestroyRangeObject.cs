@@ -34,6 +34,10 @@ public class DestroyRangeObject : MonoBehaviour
             //GameOverSceneへ
             Invoke("GameOver", 0.5f);
         }
+        if (other.CompareTag("DestroyableWall"))
+        {
+            Destroy(other.gameObject);
+        }
     }
     void GameOver()
     {

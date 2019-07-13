@@ -11,14 +11,12 @@ public class BulletController : MonoBehaviour
     private bool hit = false;
     private ScoreManager sm;
     private EnemyStatus es;
-    private ShotBullet sb;
-    private GameObject player;
+    private GameObject shooter; //発射した戦車
 
     //シングルミッション
     private SingleMissionManager smm;
     private void Start()
     {
-        player = GameObject.FindWithTag("Player");
         //シングルミッション
         if(MainGameController.gameNumber == 1)
         {
@@ -29,9 +27,6 @@ public class BulletController : MonoBehaviour
     {
         sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
 
-        //1人プレイのときのみ有効
-        sb = player.transform.Find("Cannon/ShotBullet").GetComponent<ShotBullet>();
-
         if (hit == false)
         {
             hit = true;
@@ -40,31 +35,19 @@ public class BulletController : MonoBehaviour
                 bounceAble--;
                 if (bounceAble < 0)
                 {
-                    if (this.gameObject.CompareTag("Bullet")) //プレイヤーの弾だったら
-                    {
-                        sb.DestroyBullet();
-                    }
-                    Destroy(this.gameObject);
+                    DestroyBullet(this.gameObject);
                 }
             }
             if (col.gameObject.CompareTag("DestroyableObject"))
             {
-                if (this.gameObject.CompareTag("Bullet"))
-                {
-                    sb.DestroyBullet();
-                }
                 DestroyByAttack dos = col.gameObject.GetComponent<DestroyByAttack>();
                 dos.hitBullet();
-                Destroy(this.gameObject);
+                DestroyBullet(this.gameObject);
             }
             if(col.gameObject.CompareTag("Bullet") || col.gameObject.CompareTag("EnemyBullet") || col.gameObject.CompareTag("SpecialBullet"))
             {
-                if (this.gameObject.CompareTag("Bullet")) //プレイヤーの弾だったら
-                {
-                    sb.DestroyBullet();
-                }
-                Destroy(col.gameObject);
-                Destroy(this.gameObject);
+                DestroyBullet(col.gameObject);
+                DestroyBullet(this.gameObject);
             }
             if (col.gameObject.CompareTag("Enemy"))
             {
@@ -77,11 +60,7 @@ public class BulletController : MonoBehaviour
                 es = GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>();
                 sm.AddScore(es);
                 Destroy(col.gameObject);
-                if (this.gameObject.CompareTag("Bullet")) //プレイヤーの弾だったら
-                {
-                    sb.DestroyBullet();
-                }
-                Destroy(this.gameObject);
+                DestroyBullet(this.gameObject);
             }
             if (col.gameObject.CompareTag("Player"))
             {
@@ -91,13 +70,24 @@ public class BulletController : MonoBehaviour
                     smm.PlayerDestroy();
                 }
 
-                Destroy(sb);
                 col.gameObject.SetActive(false);
                 this.gameObject.SetActive(false);
             }
         }
     }
 
+
+    public void DestroyBullet(GameObject bullet)
+    {
+        if (bullet.CompareTag("Bullet") || bullet.CompareTag("SpecialBullet")) //プレイヤーの弾だったら
+        {
+            this.shooter.GetComponent<ShotBullet>().DestroyBullet();
+        }else if (bullet.CompareTag("EnemyBullet"))
+        {
+            this.shooter.GetComponent<EnemyShotManager>().DestroyBullet();
+        }
+        Destroy(bullet);
+    }
     private void OnCollisionExit(Collision col)
     {
         hit = false;
@@ -111,5 +101,13 @@ public class BulletController : MonoBehaviour
     public float getBulletSpeed()
     {
         return bulletSpeed;
+    }
+    public void SetShooter(GameObject shooter)
+    {
+        this.shooter = shooter;
+    }
+    public GameObject GetShooter()
+    {
+        return this.shooter;
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - EnemyBullet
   - SpecialBullet
   - DestroyableObject
+  - DestroyableWall
   layers:
   - Default
   - TransparentFX

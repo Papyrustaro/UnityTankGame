@@ -14,6 +14,7 @@ public class PutObject : MonoBehaviour
     public GameObject warpPrefab;
     public GameObject exitWarpPrefab;
     public GameObject switchGatePrefab;
+    public GameObject landMinePrefab;
     private GameObject shotBullet;
 
     private GameObject warp;
@@ -80,6 +81,11 @@ public class PutObject : MonoBehaviour
     public void PutSwitchGatePrefab()
     {
         Instantiate(switchGatePrefab, shotBullet.transform.position, transform.rotation);
+    }
+
+    public void PutLandMinePrefab()
+    {
+        Instantiate(landMinePrefab, transform.position, Quaternion.identity);
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)

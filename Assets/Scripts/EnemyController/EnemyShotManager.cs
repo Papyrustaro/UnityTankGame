@@ -41,9 +41,11 @@ public class EnemyShotManager : MonoBehaviour
         }
         else
         {
-            GameObject bullet = Instantiate(this.bulletPrefab, enemyShotBullet.transform.position, enemyShotBullet.transform.rotation) as GameObject;
+            bulletNum++;
+            GameObject bullet = Instantiate(this.bulletPrefab, enemyShotBullet.transform.position, enemyShotBullet.transform.rotation, this.transform) as GameObject;
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             BulletController bc = bullet.GetComponent<BulletController>();
+            bc.SetShooter(this.gameObject);
             bulletRb.AddForce(enemyShotBullet.transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
             countTime = 0f;
             return true;

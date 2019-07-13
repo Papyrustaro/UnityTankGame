@@ -43,6 +43,7 @@ public class ShotBullet : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
         BulletController bc = bullet.GetComponent<BulletController>();
+        bc.SetShooter(this.gameObject);
         bulletRb.AddForce(transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
     }
 }
