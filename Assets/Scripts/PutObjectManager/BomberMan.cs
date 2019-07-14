@@ -10,6 +10,8 @@ public class BomberMan : MonoBehaviour
     private float distanceNX = 0f; //-x方向の距離
     private float distancePZ = 0f;
     private float distanceNZ = 0f;
+
+    private bool isBomb = false; //爆発したかどうか
     private GameObject[] explosion = new GameObject[2];
     private void Start()
     {
@@ -45,19 +47,44 @@ public class BomberMan : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isBomb)
+        {
+            if (other.CompareTag("Bullet") || other.CompareTag("EnemyBullet") || other.CompareTag("SpecialBullet"))
+            {
+                other.gameObject.GetComponent<BulletController>().DestroyBullet(other.gameObject);
+                explosionX();
+                explosionZ();
+            }
+            if (other.CompareTag("AttackFlag"))
+            {
+                explosionX();
+                explosionZ();
+            }
+        }
+    }
+
     public void explosionX()
     {
-        explosion[0] = (GameObject)Instantiate(explosionPrefab, transform.position + new Vector3((distancePX - distanceNX) / 2, 0f, 0f), Quaternion.identity);
-        explosion[0].transform.localScale = new Vector3(distancePX + distanceNX, 2f, 2f);
+        if (!isBomb)
+        {
+            explosion[0] = (GameObject)Instantiate(explosionPrefab, transform.position + new Vector3((distancePX - distanceNX) / 2, 0f, 0f), Quaternion.identity);
+            explosion[0].transform.localScale = new Vector3(distancePX + distanceNX, 2f, 2f);
+        }
     }
     public void explosionZ()
     {
-        explosion[1] = (GameObject)Instantiate(explosionPrefab, transform.position + new Vector3(0f, 0f, (distancePZ - distanceNZ) / 2), Quaternion.identity);
-        explosion[1].transform.localScale = new Vector3(2f, 2f, distancePZ + distanceNZ);
+        if (!isBomb)
+        {
+            explosion[1] = (GameObject)Instantiate(explosionPrefab, transform.position + new Vector3(0f, 0f, (distancePZ - distanceNZ) / 2), Quaternion.identity);
+            explosion[1].transform.localScale = new Vector3(2f, 2f, distancePZ + distanceNZ);
+        }
         StartCoroutine(DelayMethod(1f, () =>
         {
             DestroyBomb();
         }));
+        isBomb = true;
     }
     private void DestroyBomb()
     {

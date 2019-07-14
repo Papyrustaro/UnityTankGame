@@ -7,6 +7,7 @@ public class LandMine : MonoBehaviour
 {
     public GameObject explosionPrefab;
     public Material beforeExplosionMaterial;
+    private PutObject po;
 
     private void Start()
     {
@@ -26,17 +27,25 @@ public class LandMine : MonoBehaviour
         {
             other.gameObject.GetComponent<BulletController>().DestroyBullet(other.gameObject);
             Bomb();
+        }else if(other.CompareTag("AttackFlag"))
+        {
+            Bomb();
         }
     }
 
     public void Bomb()
     {
+        po.LandMineBomb();
         GameObject Explosion = (GameObject)Instantiate(explosionPrefab, this.transform.position, Quaternion.identity);
         this.gameObject.SetActive(false);
         Destroy(Explosion, 0.5f);
         Destroy(this.gameObject, 0.6f);
     }
 
+    public void SetPutter(PutObject po)
+    {
+        this.po = po;
+    }
     private IEnumerator DelayMethod(float waitTime, Action action)
     {
         yield return new WaitForSeconds(waitTime);

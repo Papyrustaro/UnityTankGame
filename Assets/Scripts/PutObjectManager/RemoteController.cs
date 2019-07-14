@@ -26,6 +26,19 @@ public class RemoteController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("SpecialBullet"))
+        {
+            collision.gameObject.GetComponent<BulletController>().DestroyBullet(collision.gameObject);
+            this.controllObject.GetComponent<PutObject>().PutRemoteBombPrefab();
+        }
+        if (collision.gameObject.CompareTag("AttackFlag"))
+        {
+            this.controllObject.GetComponent<PutObject>().PutRemoteBombPrefab();
+        }
+    }
     public void SetController(GameObject controllObject, GameObject shotBullet)
     {
         this.controllObject = controllObject;

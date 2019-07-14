@@ -12,6 +12,8 @@ TagManager:
   - SpecialBullet
   - DestroyableObject
   - DestroyableWall
+  - AttackFlag
+  - Wall
   layers:
   - Default
   - TransparentFX

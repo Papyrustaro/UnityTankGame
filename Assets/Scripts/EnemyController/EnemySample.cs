@@ -2,59 +2,65 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySample : MonoBehaviour
+public class EnemySample : MonoBehaviour, TriggerFuncInterface
 {
-    private EnemyMovement em;
+    /*----------------------------*/
     private PutObject po;
-    private TriggerNearEnemy tne;
-    private TriggerAwayEnemy tae;
     private EnemyController ec;
+    private EnemyShotManager esm;
+    /*----------------------------*/
 
+    private int a = 0;
     private float countTime = 0f;
+    private float Interval = 1f;
     // Start is called before the first frame update
     void Start()
     {
-        em = GetComponent<EnemyMovement>();
+        /*----------------------------*/
         po = transform.Find("Cannon").gameObject.GetComponent<PutObject>();
-        tne = transform.Find("Body").gameObject.GetComponent<TriggerNearEnemy>();
-        tae = transform.Find("Cannon").gameObject.GetComponent<TriggerAwayEnemy>();
-        tne.SetFunc(NearEnter, NearExit, NearStay);
-        tae.SetFunc(AwayEnter, AwayExit, AwayStay);
         ec = GetComponent<EnemyController>();
+        ec.SetTriggerFunc(BodyEnter, BodyExit, BodyStay, NearEnter, NearExit, NearStay);
+        esm = GetComponent<EnemyShotManager>();
+        /*----------------------------*/
     }
 
     // Update is called once per frame
     void Update()
     {
-
         countTime += Time.deltaTime;
-        if(countTime >= 1f)
+        if (a == 0) ec.MoveRight();
+        if (a == 1) ec.MoveUp();
+        if (a == 2) ec.MoveLeft();
+        if (a == 3) ec.MoveDown();
+        if (countTime >= Interval)
         {
-            if (ec.RayCastCannon())
-            {
-                Debug.Log(ec.GetRaycastHit().collider.gameObject.name);
-                em.TurnCannonAdd(90);
-            }
+            po.PutLaserPrefab();
+            po.PutProtectDomePrefab();
             countTime = 0f;
         }
     }
-
-    private void NearEnter(Collider other)
+    public void BodyEnter(Collider other)
+    {
+        if (other.CompareTag("Wall") || other.CompareTag("DestroyableWall"))
+        {
+            Debug.Log("AAA");
+            a = (a + 1) % 4;
+            ec.TurnCannonAdd(-90);
+        }
+    }
+    public void BodyExit(Collider other)
     {
     }
-    private void NearExit(Collider other)
+    public void BodyStay(Collider other)
     {
     }
-    private void NearStay(Collider other)
+    public void NearEnter(Collider other)
     {
     }
-    private void AwayEnter(Collider other)
+    public void NearExit(Collider other)
     {
     }
-    private void AwayExit(Collider other)
-    {
-    }
-    private void AwayStay(Collider other)
+    public void NearStay(Collider other)
     {
     }
 }

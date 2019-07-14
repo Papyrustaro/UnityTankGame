@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class TriggerAwayEnemy : MonoBehaviour
+public class TriggerBodyEnemy : MonoBehaviour
 {
     private Action<Collider> enterFunc;
     private Action<Collider> exitFunc;

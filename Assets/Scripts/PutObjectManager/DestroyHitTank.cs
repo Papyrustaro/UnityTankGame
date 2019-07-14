@@ -20,7 +20,7 @@ public class DestroyHitTank : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.SetActive(false);
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
 
             //GameOverSceneへ
             Invoke("GameOver", 0.5f);

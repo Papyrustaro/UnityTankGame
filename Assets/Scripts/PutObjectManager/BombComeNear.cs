@@ -15,12 +15,12 @@ public class BombComeNear : MonoBehaviour
     {
         countTime += Time.deltaTime;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (countTime >= 1f && (other.CompareTag("Player") || other.CompareTag("Enemy")))
         {
             lm.SetColorRed();
-            StartCoroutine(DelayMethod(0.5f, () =>
+            StartCoroutine(DelayMethod(1f, () =>
             {
                 lm.Bomb();
             }));

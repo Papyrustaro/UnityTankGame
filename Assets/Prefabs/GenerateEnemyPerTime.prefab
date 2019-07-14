@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4127734929085049500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4127734929085049502}
+  - component: {fileID: 4127734929085049501}
+  m_Layer: 0
+  m_Name: GenerateEnemyPerTime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4127734929085049502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4127734929085049500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4127734929085049501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4127734929085049500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25906be425eb06f45a48d8e38374dd91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab:
+  - {fileID: 256277812437685900, guid: 4d7f550e5e18f0e4c945de134cd14059, type: 3}
+  - {fileID: 1545019315281517806, guid: 3647faa7e6ba81d4ebc58d0fb6d4be80, type: 3}
+  - {fileID: 7224687072219657384, guid: 1f8231a0e155d4945a5e512893eb7848, type: 3}
+  - {fileID: 1106364073933302632, guid: f31092a34ec0bbb4bbc5dbc38b1566db, type: 3}
+  - {fileID: 8500711452183027604, guid: 51224db745bf2c040b95484be356058d, type: 3}
+  - {fileID: 3637768709059249750, guid: 3a7f8cf83d6ef164699511c27409f65f, type: 3}
+  - {fileID: 2062641554636430647, guid: 483d627efe2977b4d87d1d6dfc4d5495, type: 3}
+  - {fileID: 8610646616319491786, guid: e64d9ddd5caa17145a6b7941a0a18bf8, type: 3}
+  minX: -25
+  maxX: 25
+  minZ: -25
+  maxZ: 25
+  notMinX: -1
+  notMaxX: 1
+  notMinZ: 17
+  notMaxZ: -17
+  playerPrefab: {fileID: 0}
+  generateTime: 1

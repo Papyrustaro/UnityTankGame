@@ -21,6 +21,8 @@ public class PutObject : MonoBehaviour
     private GameObject remoteBomb;
     private bool putBomb = false;
     private bool putWarp = false;
+    public int putAbleLandMineNum = 2;
+    private int putLandMineNum = 0;
 
     private void Start()
     {
@@ -85,7 +87,16 @@ public class PutObject : MonoBehaviour
 
     public void PutLandMinePrefab()
     {
-        Instantiate(landMinePrefab, transform.position, Quaternion.identity);
+        if(putLandMineNum < putAbleLandMineNum)
+        {
+            GameObject landMine = (GameObject)Instantiate(landMinePrefab, transform.position, Quaternion.identity);
+            landMine.GetComponent<LandMine>().SetPutter(this.GetComponent<PutObject>());
+            putLandMineNum++;
+        }
+    }
+    public void LandMineBomb()
+    {
+        this.putLandMineNum--;
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)

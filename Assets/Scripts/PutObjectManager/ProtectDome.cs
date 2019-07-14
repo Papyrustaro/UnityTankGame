@@ -6,7 +6,7 @@ public class ProtectDome : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Bullet") || other.CompareTag("SpecialBullet") || other.CompareTag("SpecialBullet"))
+        if(other.CompareTag("Bullet") || other.CompareTag("EnemyBullet") || other.CompareTag("SpecialBullet"))
         {
             other.gameObject.GetComponent<BulletController>().DestroyBullet(other.gameObject);
         }

@@ -77,6 +77,9 @@ MonoBehaviour:
     type: 3}
   switchGatePrefab: {fileID: 8358079274986022997, guid: 0f056e953418c79459b39cac841efd2c,
     type: 3}
+  landMinePrefab: {fileID: 549062095217743270, guid: 7dba624c9da526f409c39a2b3eae2536,
+    type: 3}
+  putAbleLandMineNum: 2
 --- !u!1 &573398700844701672
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +367,7 @@ GameObject:
   - component: {fileID: 573398702535845208}
   - component: {fileID: 437908813}
   - component: {fileID: 833784279}
+  - component: {fileID: 2587909627727634333}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -379,7 +383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573398702535845210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7, y: 0, z: -8.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 573398700844701676}
@@ -447,10 +451,23 @@ MonoBehaviour:
     type: 3}
   skill2IconPrefab: {fileID: 6772432737553311672, guid: 583f278d3e8ba03449403aca2999a9cd,
     type: 3}
-  skill1Num: 4
-  skill2Num: 5
+  skill1Num: 6
+  skill2Num: 7
   specialBulletPrefab: {fileID: 8995141988321080169, guid: 58714508992df3f47936cdab371982cd,
     type: 3}
+--- !u!114 &2587909627727634333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573398702535845210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd55b1258986b74a89496113e2acf75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePadNum: 0
 --- !u!1001 &573398701958907226
 PrefabInstance:
   m_ObjectHideFlags: 0

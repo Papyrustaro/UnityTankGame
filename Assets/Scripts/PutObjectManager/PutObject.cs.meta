@@ -22,6 +22,8 @@ MonoImporter:
       type: 3}
   - switchGatePrefab: {fileID: 8358079274986022997, guid: 0f056e953418c79459b39cac841efd2c,
       type: 3}
+  - landMinePrefab: {fileID: 549062095217743270, guid: 7dba624c9da526f409c39a2b3eae2536,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

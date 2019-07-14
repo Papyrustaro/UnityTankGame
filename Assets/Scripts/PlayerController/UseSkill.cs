@@ -83,6 +83,10 @@ public class UseSkill : MonoBehaviour
             sFunc[skill2Num]();
             countTime2 = 0f;
         }
+        if (Input.GetButtonDown(GamePadManager.padFire2[gamePadNum]))
+        {
+            po.PutLandMinePrefab();
+        }
         SetFillAmount();
     }
 

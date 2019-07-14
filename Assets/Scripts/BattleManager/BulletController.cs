@@ -46,7 +46,6 @@ public class BulletController : MonoBehaviour
             }
             if(col.gameObject.CompareTag("Bullet") || col.gameObject.CompareTag("EnemyBullet") || col.gameObject.CompareTag("SpecialBullet"))
             {
-                DestroyBullet(col.gameObject);
                 DestroyBullet(this.gameObject);
             }
             if (col.gameObject.CompareTag("Enemy"))
@@ -79,7 +78,7 @@ public class BulletController : MonoBehaviour
 
     public void DestroyBullet(GameObject bullet)
     {
-        if (bullet.CompareTag("Bullet") || bullet.CompareTag("SpecialBullet")) //プレイヤーの弾だったら
+        if (bullet.CompareTag("Bullet")) //プレイヤーの弾だったら
         {
             this.shooter.GetComponent<ShotBullet>().DestroyBullet();
         }else if (bullet.CompareTag("EnemyBullet"))

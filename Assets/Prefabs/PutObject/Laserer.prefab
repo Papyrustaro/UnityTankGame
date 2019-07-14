@@ -290,6 +290,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2445299743657817300, guid: 860b5cd57fcb555448175fb00c7029bd,
+        type: 3}
+      propertyPath: m_TagString
+      value: AttackFlag
+      objectReference: {fileID: 0}
     - target: {fileID: 6143105183096327489, guid: 860b5cd57fcb555448175fb00c7029bd,
         type: 3}
       propertyPath: m_LocalPosition.x
