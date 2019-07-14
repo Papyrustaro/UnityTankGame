@@ -53,7 +53,7 @@ Project内の保存したい位置にドラッグ＆ドロップです。
 
 ### publicメソッド
 ・(void)Move(float x, float z)...x,zのベクトルを足した方向へ一定速度で移動  
-・(void)MoveRight()...X軸正の方向に一定速度で移動
+・(void)MoveRight()...X軸正の方向に一定速度で移動  
 ・MoveLeft(),MoveUp(),MoveDown()...省略
 
 ・(void)TurnCannon(float angle)...Cannonを、Z軸正方向(↑)を0として時計回りにangle回転  
@@ -69,7 +69,7 @@ Project内の保存したい位置にドラッグ＆ドロップです。
 ## <a id="section2_1" href="#section2_1">PutObject</a>
 
 ### public変数
-・設置する各オブジェクト。
+・設置する各オブジェクト。  
 ・(int)putAbleLandMineNum...ステージに同時における地雷の数
 
 ### publicメソッド
@@ -94,5 +94,6 @@ Project内の保存したい位置にドラッグ＆ドロップです。
 <p class="ec__link-index"><a href="#index">[↑ 目次へ]</a></p>
 
 # <a id="section3" href="#section3">参考文献</a>
+<a href="https://codegenius.org/open/courses/24/sections/104">Code Genius(Unityの基礎)</a>
 
 <p class="ec__link-index"><a href="#index">[↑ 目次へ]</a></p>
