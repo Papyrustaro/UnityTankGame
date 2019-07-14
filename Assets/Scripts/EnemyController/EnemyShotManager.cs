@@ -28,7 +28,7 @@ public class EnemyShotManager : MonoBehaviour
         this.bulletNum--;
     }
 
-    public void setShotSpeed(float magnification)
+    public void SetShotSpeed(float magnification)
     {
         this.shotSpeedMagni *= magnification;
     }

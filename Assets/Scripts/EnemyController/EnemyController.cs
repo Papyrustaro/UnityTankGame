@@ -52,23 +52,23 @@ public class EnemyController : MonoBehaviour
         cannonPrefab.transform.Rotate(0, angle, 0);
     }
 
-    public bool RayCastCannon()
+    public bool RaycastCannon()
     {
         return Physics.Raycast(transform.position, turretPrefab.transform.position - headPrefab.transform.position, out hit, 100f);
     }
-    public bool RayCastRight()
+    public bool RaycastRight()
     {
         return Physics.Raycast(transform.position, new Vector3(1f, 0f, 0f), out hit, 100f);
     }
-    public bool RayCastLeft()
+    public bool RaycastLeft()
     {
         return Physics.Raycast(transform.position, new Vector3(-1f, 0f, 0f), out hit, 100f);
     }
-    public bool RayCastUp()
+    public bool RaycastUp()
     {
         return Physics.Raycast(transform.position, new Vector3(0f, 0f, 1f), out hit, 100f);
     }
-    public bool RayCastDown()
+    public bool RaycastDown()
     {
         return Physics.Raycast(transform.position, new Vector3(0f, 0f, -1f), out hit, 100f);
     }
