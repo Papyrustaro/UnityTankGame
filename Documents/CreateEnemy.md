@@ -17,6 +17,8 @@
     - [DestroyTimeAgo](#section3_3)
     - [RemoteController](#section3_4)
 - [参考文献](#section4)
+- [その他お知らせ](#section5)
+    - [Enemyのメソッド](#section5_0)
 
 # <a id="section0" href="#section0">作業の流れ</a>
 
@@ -113,18 +115,18 @@ UseSkillはデバックでお世話になるかもですね（笑）
 ## <a id="section3_1" href="#section3_1">UseSkill</a>
 ・(float)SkillInterval1,2...Skill1,2それぞれのスキルの再発動可能までの時間(s)  
 ・(int)SkillNum1,2...発動するスキル番号
-    0.移動速度アップ
-    1.弾の速度アップ
-    2.特殊弾発射
-    3.固定砲台設置
-    4.防御ドーム設置
-    5.リモートボム設置or爆発
-    6.ボ〇バーマン設置
-    7.レーザー設置
-    8.ワープ設置
-    9.スイッチゲート設置
+    0.移動速度アップ  
+    1.弾の速度アップ  
+    2.特殊弾発射  
+    3.固定砲台設置  
+    4.防御ドーム設置  
+    5.リモートボム設置or爆発  
+    6.ボ〇バーマン設置  
+    7.レーザー設置  
+    8.ワープ設置  
+    9.スイッチゲート設置  
 
-## <a id="section3_2" href="#section3_2"DestroyByAttack</a>
+## <a id="section3_2" href="#section3_2">DestroyByAttack</a>
 ・(int)HP...消えるまでに必要な弾の個数。被弾すると1減る。  
 
 ## <a id="section3_3" href="#section3_3">DestroyTimeAgo</a>
@@ -135,5 +137,19 @@ UseSkillはデバックでお世話になるかもですね（笑）
 
 # <a id="section4" href="#section4">参考文献</a>
 <a href="https://codegenius.org/open/courses/24/sections/104">Code Genius(Unityの基礎)</a>
+
+<p class="ec__link-index"><a href="#index">[↑ 目次へ]</a></p>
+
+# <a id="section5" href="#section5">その他おしらせ</a>
+
+## <a id="section5_0" href="#section5_0">Enemyのメソッド</a>
+EnemyAI用のクラスに絶対に用意する衝突判定のメソッドについて軽く説明  
+
+・BodyEnter...BodyのColliderに他のColliderが衝突した瞬間に呼ばれるメソッド  
+・BodyExit...(省略)が触れていたものが離れた瞬間に呼ばれるメソッド  
+・BodyStay...(省略)が触れ続けている間呼ばれ続けるメソッド(頻繁に呼ばれるため注意が必要)  
+・NearEnter...EnemyのCannonにあるSphereColliderが衝突判定。これに衝突した瞬間に呼ばれるメソッド  
+・NearExit...上に同じ  
+・NearStay...上に同じ  
 
 <p class="ec__link-index"><a href="#index">[↑ 目次へ]</a></p>
