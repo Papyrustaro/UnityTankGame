@@ -10,7 +10,13 @@
     - [EnemyController](#section2_0)
     - [PutObject](#section2_1)
     - [EnemyShotManager](#section2_2)
-- [参考文献](#sectiton3)
+- [その他よく使うpublic変数](#section3)
+    - [はじめに](#section3_0)
+    - [UseSkill](#section3_1)
+    - [DestroyByAttack](#section3_2)
+    - [DestroyTimeAgo](#section3_3)
+    - [RemoteController](#section3_4)
+- [参考文献](#section4)
 
 # <a id="section0" href="#section0">作業の流れ</a>
 
@@ -69,14 +75,18 @@ Project内の保存したい位置にドラッグ＆ドロップです。
 ## <a id="section2_1" href="#section2_1">PutObject</a>
 
 ### public変数
-・設置する各オブジェクト。  
+・設置する各オブジェクト
 ・(int)putAbleLandMineNum...ステージに同時における地雷の数
 
 ### publicメソッド
-・Put?Prefab()...各オブジェクトをCannonの座標・向きに設置。以下の2点のみ注意が必要
-
-・PutRemoteBombPrefab()...ステージにまだ爆弾がある場合にこのメソッドを呼ぶとその爆弾を爆発させる  
-・PutWarpPrefab()...二回呼び出して、ワープのペアがいないと、ワープはできない。
+・PutBatteryPrefab()...固定砲台設置  
+・PutProtectDomePrefab()...防御ドーム設置  
+・PutRemoteBombPrefab()...遠隔操作できる爆弾設置。爆弾がある場合にこの関数を呼ぶと、爆発させる関数に。  
+・PutBombermanPrefab()...ボ〇バーマンのような爆弾設置  
+・PutLaserPrefab()...レーザー発射するもの設置  
+・PutWarpPrefab()...ワープの片方を設置。2つで1ペア  
+・PutSwitchGatePrefab()...スイッチ付きゲート設置  
+・PutLandMinePrefab()...地雷設置  
 
 <p class="ec__link-index"><a href="#index">[↑ 目次へ]</a></p>
 
@@ -93,7 +103,37 @@ Project内の保存したい位置にドラッグ＆ドロップです。
 
 <p class="ec__link-index"><a href="#index">[↑ 目次へ]</a></p>
 
-# <a id="section3" href="#section3">参考文献</a>
+# <a id="section3" href="#section3">その他よく使うpublic変数</a>
+
+## <a id="section3_0" href="#section3_0">はじめに</a>
+public変数はインスペクタ上からいつでも値を書き換えることができます。  
+自分の気に入る値にして、prefabとして新しく保存しましょう。  
+UseSkillはデバックでお世話になるかもですね（笑）
+
+## <a id="section3_1" href="#section3_1">UseSkill</a>
+・(float)SkillInterval1,2...Skill1,2それぞれのスキルの再発動可能までの時間(s)  
+・(int)SkillNum1,2...発動するスキル番号
+    0.移動速度アップ
+    1.弾の速度アップ
+    2.特殊弾発射
+    3.固定砲台設置
+    4.防御ドーム設置
+    5.リモートボム設置or爆発
+    6.ボ〇バーマン設置
+    7.レーザー設置
+    8.ワープ設置
+    9.スイッチゲート設置
+
+## <a id="section3_2" href="#section3_2"DestroyByAttack</a>
+・(int)HP...消えるまでに必要な弾の個数。被弾すると1減る。  
+
+## <a id="section3_3" href="#section3_3">DestroyTimeAgo</a>
+・(int)DestroyTime...消えるまでにかかる秒数。  
+
+## <a id="section3_4" href="#section3_4">RemoteController</a>
+・(float)ForcePower...遠隔操作でかける力の大きさ。
+
+# <a id="section4" href="#section4">参考文献</a>
 <a href="https://codegenius.org/open/courses/24/sections/104">Code Genius(Unityの基礎)</a>
 
 <p class="ec__link-index"><a href="#index">[↑ 目次へ]</a></p>

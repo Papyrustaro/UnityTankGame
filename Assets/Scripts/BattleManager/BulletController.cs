@@ -78,7 +78,8 @@ public class BulletController : MonoBehaviour
 
     public void DestroyBullet(GameObject bullet)
     {
-        if (bullet.CompareTag("Bullet")) //プレイヤーの弾だったら
+        //if (bullet.CompareTag("Bullet")) //プレイヤーの弾だったら
+        if(bullet.name == "Bullet(Clone)")
         {
             this.shooter.GetComponent<ShotBullet>().DestroyBullet();
         }else if (bullet.CompareTag("EnemyBullet"))

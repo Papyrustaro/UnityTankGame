@@ -301,6 +301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dacb528552f79314f81b7e16105bfded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4540304694690131576, guid: 4d74be05ba638ce409cb920525b97287,
+  bulletPrefab: {fileID: 2457044918935824202, guid: 85374dbdbba48d5409850df38c9fc1b4,
     type: 3}
   shotInterval: 5

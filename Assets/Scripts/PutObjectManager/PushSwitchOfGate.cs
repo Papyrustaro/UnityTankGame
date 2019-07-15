@@ -11,7 +11,7 @@ public class PushSwitchOfGate : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("SpecialBullet"))
         {
             gateWallPrefab.SetActive(!gateWallPrefab.activeSelf);
         }

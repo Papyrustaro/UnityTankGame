@@ -335,6 +335,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 2065709545922031956, guid: 963ff152e88d0814d980e896d1b2a831,
+        type: 3}
+      propertyPath: pauseUI
+      value: 
+      objectReference: {fileID: 5257763213745971971}
+    - target: {fileID: 2065709545922031956, guid: 963ff152e88d0814d980e896d1b2a831,
+        type: 3}
+      propertyPath: resumeButton
+      value: 
+      objectReference: {fileID: 8701739839557202752}
     - target: {fileID: 2065709545922031957, guid: 963ff152e88d0814d980e896d1b2a831,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -390,16 +400,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2065709545922031956, guid: 963ff152e88d0814d980e896d1b2a831,
-        type: 3}
-      propertyPath: pauseUI
-      value: 
-      objectReference: {fileID: 5257763213745971971}
-    - target: {fileID: 2065709545922031956, guid: 963ff152e88d0814d980e896d1b2a831,
-        type: 3}
-      propertyPath: resumeButton
-      value: 
-      objectReference: {fileID: 8701739839557202752}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 963ff152e88d0814d980e896d1b2a831, type: 3}
 --- !u!1001 &3950464325500113263
