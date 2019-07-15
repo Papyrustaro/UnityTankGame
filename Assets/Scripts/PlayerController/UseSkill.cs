@@ -48,8 +48,8 @@ public class UseSkill : MonoBehaviour
     public void SkillIconSet()
     {
         GameObject skillIconCanvas = GameObject.Find("SkillIconCanvas");
-        GameObject skill1Icon = (GameObject)Instantiate(skill1IconPrefab, new Vector3(-230f, 60f, 0f), Quaternion.identity, skillIconCanvas.transform);
-        GameObject skill2Icon = (GameObject)Instantiate(skill2IconPrefab, new Vector3(-230f, -20f, 0f), Quaternion.identity, skillIconCanvas.transform);
+        GameObject skill1Icon = Instantiate(skill1IconPrefab, new Vector3(-230f, 60f, 0f), Quaternion.identity, skillIconCanvas.transform);
+        GameObject skill2Icon = Instantiate(skill2IconPrefab, new Vector3(-230f, -20f, 0f), Quaternion.identity, skillIconCanvas.transform);
         ableSkill1Icon = skill1Icon.transform.Find("AbleIcon").gameObject.GetComponent<Image>();
         ableSkill2Icon = skill2Icon.transform.Find("AbleIcon").gameObject.GetComponent<Image>();
         ableSkill1Icon.fillAmount = 0f;

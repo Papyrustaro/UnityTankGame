@@ -114,7 +114,7 @@ UseSkillはデバックでお世話になるかもですね（笑）
 
 ## <a id="section3_1" href="#section3_1">UseSkill</a>
 ・(float)SkillInterval1,2...Skill1,2それぞれのスキルの再発動可能までの時間(s)  
-・(int)SkillNum1,2...発動するスキル番号
+・(int)SkillNum1,2...発動するスキル番号  
     0.移動速度アップ  
     1.弾の速度アップ  
     2.特殊弾発射  
@@ -137,6 +137,7 @@ UseSkillはデバックでお世話になるかもですね（笑）
 
 # <a id="section4" href="#section4">参考文献</a>
 <a href="https://codegenius.org/open/courses/24/sections/104">Code Genius(Unityの基礎)</a>
+<a href="https://qiita.com/papyrustaro/items/904702e0c16c3d72df6b">Unityでよく使う実装方法まとめ</a>
 
 <p class="ec__link-index"><a href="#index">[↑ 目次へ]</a></p>
 
