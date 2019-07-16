@@ -21,6 +21,19 @@ public class PutObject : MonoBehaviour
     private GameObject remoteBomb;
     private bool putBomb = false;
     private bool putWarp = false;
+
+    public int putAbleBatteryNum = 2;
+    private int putBatteryNum = 0;
+    public int putAbleProtectDomeNum = 2;
+    private int putProtectDomeNum = 0;
+    public int putAbleWarpPairNum = 2;
+    private int putWarpPairNum = 0;
+    public int putAbleBomberManNum = 2;
+    private int putBomberManNum = 0;
+    public int putAbleLaserNum = 2;
+    private int putLaserNum = 0;
+    public int putAbleSwitchGateNum = 2;
+    private int putSwitchGateNum = 0;
     public int putAbleLandMineNum = 2;
     private int putLandMineNum = 0;
 
@@ -30,11 +43,22 @@ public class PutObject : MonoBehaviour
     }
     public void PutBatteryPrefab()
     {
-        Instantiate(batteryPrefab, transform.position, transform.rotation);
+        if (putBatteryNum < putAbleBatteryNum)
+        {
+            GameObject battery = Instantiate(batteryPrefab, transform.position, transform.rotation);
+            battery.GetComponent<DestroyTimeAgo>().SetPutter(this.GetComponent<PutObject>());
+            battery.GetComponent<DestroyByAttack>().SetPutter(this.GetComponent<PutObject>());
+            putBatteryNum++;
+        }
     }
     public void PutProtectDomePrefab()
     {
-        Instantiate(protectDomePrefab, transform.position, Quaternion.identity);
+        if (putProtectDomeNum < putAbleProtectDomeNum)
+        {
+            GameObject protectDome = Instantiate(protectDomePrefab, transform.position, Quaternion.identity);
+            protectDome.GetComponent<DestroyTimeAgo>().SetPutter(this.GetComponent<PutObject>());
+            putProtectDomeNum++;
+        }
     }
     public void PutRemoteBombPrefab()
     {
@@ -54,35 +78,57 @@ public class PutObject : MonoBehaviour
 
     public void PutBombermanPrefab()
     {
-        Instantiate(bombermanPrefab, transform.position, Quaternion.identity);
+        if (putBomberManNum < putAbleBomberManNum)
+        {
+            GameObject bomberman = Instantiate(bombermanPrefab, transform.position, Quaternion.identity);
+            bomberman.GetComponent<BomberMan>().SetPutter(this.GetComponent<PutObject>());
+            putBomberManNum++;
+        }
     }
     public void PutLaserPrefab()
     {
-        Instantiate(laserPrefab, transform.position, transform.rotation);
+        if(putLaserNum < putAbleLaserNum)
+        {
+            GameObject laser = Instantiate(laserPrefab, transform.position, transform.rotation);
+            laser.GetComponent<Laser>().SetPutter(this.GetComponent<PutObject>());
+            putLaserNum++;
+        }
     }
 
     public void PutWarpPrefab()
     {
-        if (!putWarp)
+        if(putWarpPairNum < putAbleWarpPairNum)
         {
-            warp = (GameObject)Instantiate(warpPrefab, transform.position, Quaternion.identity);
-        }
-        else
-        {
-            GameObject exitwarp = (GameObject)Instantiate(exitWarpPrefab, transform.position, Quaternion.identity);
-            warp.GetComponent<Warp>().SetPareWarp(exitwarp);
-            exitwarp.GetComponent<Warp>().SetPareWarp(warp);
-            StartCoroutine(DelayMethod(10f, () =>
+            if (!putWarp)
             {
-                exitwarp.GetComponent<Warp>().DestroyWarp();
-            }));
+                warp = (GameObject)Instantiate(warpPrefab, transform.position, Quaternion.identity);
+                warp.GetComponent<Warp>().SetPutter(this.GetComponent<PutObject>());
+            }
+            else
+            {
+                GameObject exitwarp = (GameObject)Instantiate(exitWarpPrefab, transform.position, Quaternion.identity);
+                warp.GetComponent<Warp>().SetPareWarp(exitwarp);
+                exitwarp.GetComponent<Warp>().SetPareWarp(warp);
+                exitwarp.GetComponent<Warp>().SetPutter(this.GetComponent<PutObject>());
+                putWarpPairNum++;
+                StartCoroutine(DelayMethod(10f, () =>
+                {
+                    exitwarp.GetComponent<Warp>().DestroyWarp();
+                }));
+            }
+            putWarp = !putWarp;
         }
-        putWarp = !putWarp;
     }
 
     public void PutSwitchGatePrefab()
     {
-        Instantiate(switchGatePrefab, shotBullet.transform.position, transform.rotation);
+        if (putSwitchGateNum < putAbleSwitchGateNum)
+        {
+            GameObject switchGate = Instantiate(switchGatePrefab, shotBullet.transform.position, transform.rotation);
+            switchGate.GetComponent<DestroyTimeAgo>().SetPutter(this.GetComponent<PutObject>());
+            switchGate.GetComponent<DestroyByAttack>().SetPutter(this.GetComponent<PutObject>());
+            putSwitchGateNum++;
+        }
     }
 
     public void PutLandMinePrefab()
@@ -93,6 +139,36 @@ public class PutObject : MonoBehaviour
             landMine.GetComponent<LandMine>().SetPutter(this.GetComponent<PutObject>());
             putLandMineNum++;
         }
+    }
+    public void DestroyObject(GameObject gameObject)
+    {
+        if(gameObject.name == "Shooter(Clone)")
+        {
+            this.putBatteryNum--;
+            return;
+        }
+        if(gameObject.name == "ProtectDome(Clone)")
+        {
+            this.putProtectDomeNum--;
+            return;
+        }
+        if(gameObject.name == "SwitchGate(Clone)")
+        {
+            this.putSwitchGateNum--;
+            return;
+        }
+    }
+    public void DestroyLaser()
+    {
+        this.putLaserNum--;
+    }
+    public void BomberManBomb()
+    {
+        this.putBomberManNum--;
+    }
+    public void DestroyWarp()
+    {
+        this.putWarpPairNum--;
     }
     public void LandMineBomb()
     {

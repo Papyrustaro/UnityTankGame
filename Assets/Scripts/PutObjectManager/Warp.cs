@@ -9,6 +9,7 @@ public class Warp : MonoBehaviour
     private bool warpAble = false;
     private MeshRenderer mr;
     private Warp exitWarp;
+    private PutObject po;
 
     private void Awake()
     {
@@ -44,6 +45,7 @@ public class Warp : MonoBehaviour
 
     public void DestroyWarp()
     {
+        po.DestroyWarp();
         Destroy(pareWarpPrefab);
         Destroy(this.gameObject);
     }
@@ -56,6 +58,10 @@ public class Warp : MonoBehaviour
             SetUseAble();
             exitWarp.SetUseAble();
         }));
+    }
+    public void SetPutter(PutObject po)
+    {
+        this.po = po;
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)

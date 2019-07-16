@@ -507,6 +507,7 @@ GameObject:
   - component: {fileID: 8358079274986022986}
   - component: {fileID: 8358079274986022987}
   - component: {fileID: 8358079274986022984}
+  - component: {fileID: 2190686044901072630}
   m_Layer: 0
   m_Name: SwitchGate
   m_TagString: Stage
@@ -562,6 +563,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
+--- !u!114 &2190686044901072630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8358079274986022997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6bb2012b74ef8409c74109838b7c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 5
 --- !u!1 &8358079275288996379
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,16 +704,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8358079274986022986}
     m_Modifications:
-    - target: {fileID: 5566042885342530582, guid: c14d5ab9cd893034c8fde9d03348a8be,
-        type: 3}
-      propertyPath: m_Name
-      value: Pillar0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5566042885342530582, guid: c14d5ab9cd893034c8fde9d03348a8be,
-        type: 3}
-      propertyPath: m_TagString
-      value: Stage
-      objectReference: {fileID: 0}
     - target: {fileID: 9207992255947910372, guid: c14d5ab9cd893034c8fde9d03348a8be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -755,6 +759,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5566042885342530582, guid: c14d5ab9cd893034c8fde9d03348a8be,
+        type: 3}
+      propertyPath: m_Name
+      value: Pillar0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566042885342530582, guid: c14d5ab9cd893034c8fde9d03348a8be,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
     - target: {fileID: 8132927037808605326, guid: c14d5ab9cd893034c8fde9d03348a8be,
         type: 3}
       propertyPath: m_Material
@@ -770,16 +784,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8358079274986022986}
     m_Modifications:
-    - target: {fileID: 5566042885342530582, guid: c14d5ab9cd893034c8fde9d03348a8be,
-        type: 3}
-      propertyPath: m_Name
-      value: Pillar1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5566042885342530582, guid: c14d5ab9cd893034c8fde9d03348a8be,
-        type: 3}
-      propertyPath: m_TagString
-      value: Stage
-      objectReference: {fileID: 0}
     - target: {fileID: 9207992255947910372, guid: c14d5ab9cd893034c8fde9d03348a8be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -834,6 +838,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566042885342530582, guid: c14d5ab9cd893034c8fde9d03348a8be,
+        type: 3}
+      propertyPath: m_Name
+      value: Pillar1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566042885342530582, guid: c14d5ab9cd893034c8fde9d03348a8be,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
       objectReference: {fileID: 0}
     - target: {fileID: 8132927037808605326, guid: c14d5ab9cd893034c8fde9d03348a8be,
         type: 3}

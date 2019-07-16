@@ -13,6 +13,8 @@ public class BomberMan : MonoBehaviour
 
     private bool isBomb = false; //爆発したかどうか
     private GameObject[] explosion = new GameObject[2];
+
+    private PutObject po;
     private void Start()
     {
         RaycastHit hit;
@@ -90,6 +92,7 @@ public class BomberMan : MonoBehaviour
     {
         Destroy(explosion[0]);
         Destroy(explosion[1]);
+        po.BomberManBomb();
         Destroy(this.gameObject);
     }
 
@@ -97,6 +100,12 @@ public class BomberMan : MonoBehaviour
     {
         GetComponent<Renderer>().material.color = Color.red;
     }
+
+    public void SetPutter(PutObject po)
+    {
+        this.po = po;
+    }
+
     private IEnumerator DelayMethod(float waitTime, Action action)
     {
         yield return new WaitForSeconds(waitTime);

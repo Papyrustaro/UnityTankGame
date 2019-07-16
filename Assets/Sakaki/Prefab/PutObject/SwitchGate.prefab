@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5954194983799585497}
   - component: {fileID: 5954194983799585496}
   - component: {fileID: 5954194983799585499}
+  - component: {fileID: -6317328537783027114}
   m_Layer: 0
   m_Name: SwitchGate
   m_TagString: Stage
@@ -66,6 +67,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
+--- !u!114 &-6317328537783027114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5954194983799585478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6bb2012b74ef8409c74109838b7c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 5
 --- !u!1 &5954194983981443410
 GameObject:
   m_ObjectHideFlags: 0

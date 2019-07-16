@@ -6,6 +6,7 @@ using System;
 public class Laser : MonoBehaviour
 {
     private GameObject laser;
+    private PutObject po;
     private void Start()
     {
         laser = this.gameObject.transform.Find("Laser").gameObject;
@@ -25,7 +26,13 @@ public class Laser : MonoBehaviour
     }
     private void DestroyLaser()
     {
+        po.DestroyLaser();
         Destroy(this.gameObject);
+    }
+
+    public void SetPutter(PutObject po)
+    {
+        this.po = po;
     }
 
 
