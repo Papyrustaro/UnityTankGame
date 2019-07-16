@@ -41,7 +41,7 @@ public class PutObject : MonoBehaviour
     {
         shotBullet = this.transform.Find("ShotBullet").gameObject;
     }
-    public void PutBatteryPrefab()
+    public bool PutBatteryPrefab()
     {
         if (putBatteryNum < putAbleBatteryNum)
         {
@@ -49,16 +49,20 @@ public class PutObject : MonoBehaviour
             battery.GetComponent<DestroyTimeAgo>().SetPutter(this.GetComponent<PutObject>());
             battery.GetComponent<DestroyByAttack>().SetPutter(this.GetComponent<PutObject>());
             putBatteryNum++;
+            return true;
         }
+        return false;
     }
-    public void PutProtectDomePrefab()
+    public bool PutProtectDomePrefab()
     {
         if (putProtectDomeNum < putAbleProtectDomeNum)
-        {
+        {            
             GameObject protectDome = Instantiate(protectDomePrefab, transform.position, Quaternion.identity);
             protectDome.GetComponent<DestroyTimeAgo>().SetPutter(this.GetComponent<PutObject>());
             putProtectDomeNum++;
+            return true;
         }
+        return false;
     }
     public void PutRemoteBombPrefab()
     {
@@ -76,26 +80,30 @@ public class PutObject : MonoBehaviour
         putBomb = !putBomb;
     }
 
-    public void PutBombermanPrefab()
+    public bool PutBombermanPrefab()
     {
         if (putBomberManNum < putAbleBomberManNum)
         {
             GameObject bomberman = Instantiate(bombermanPrefab, transform.position, Quaternion.identity);
             bomberman.GetComponent<BomberMan>().SetPutter(this.GetComponent<PutObject>());
             putBomberManNum++;
+            return true;
         }
+        return false;
     }
-    public void PutLaserPrefab()
+    public bool PutLaserPrefab()
     {
         if(putLaserNum < putAbleLaserNum)
         {
             GameObject laser = Instantiate(laserPrefab, transform.position, transform.rotation);
             laser.GetComponent<Laser>().SetPutter(this.GetComponent<PutObject>());
             putLaserNum++;
+            return true;
         }
+        return false;
     }
 
-    public void PutWarpPrefab()
+    public bool PutWarpPrefab()
     {
         if(putWarpPairNum < putAbleWarpPairNum)
         {
@@ -117,10 +125,12 @@ public class PutObject : MonoBehaviour
                 }));
             }
             putWarp = !putWarp;
+            return true;
         }
+        return false;
     }
 
-    public void PutSwitchGatePrefab()
+    public bool PutSwitchGatePrefab()
     {
         if (putSwitchGateNum < putAbleSwitchGateNum)
         {
@@ -128,17 +138,21 @@ public class PutObject : MonoBehaviour
             switchGate.GetComponent<DestroyTimeAgo>().SetPutter(this.GetComponent<PutObject>());
             switchGate.GetComponent<DestroyByAttack>().SetPutter(this.GetComponent<PutObject>());
             putSwitchGateNum++;
+            return true;
         }
+        return false;
     }
 
-    public void PutLandMinePrefab()
+    public bool PutLandMinePrefab()
     {
         if(putLandMineNum < putAbleLandMineNum)
         {
             GameObject landMine = (GameObject)Instantiate(landMinePrefab, transform.position, Quaternion.identity);
             landMine.GetComponent<LandMine>().SetPutter(this.GetComponent<PutObject>());
             putLandMineNum++;
+            return true;
         }
+        return false;
     }
     public void DestroyObject(GameObject gameObject)
     {

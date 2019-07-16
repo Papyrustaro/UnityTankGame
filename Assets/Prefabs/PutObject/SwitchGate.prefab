@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8358079273743289134}
   - component: {fileID: 8358079273743289133}
   - component: {fileID: 8358079273743289122}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pillar0
   m_TagString: Stage
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 8358079273952928517}
   - component: {fileID: 8358079273952928633}
   - component: {fileID: 8358079273952928638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall
   m_TagString: Stage
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 8358079274600976546}
   - component: {fileID: 8358079274600976545}
   - component: {fileID: 8358079274600976550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pillar1
   m_TagString: Stage
   m_Icon: {fileID: 0}
@@ -769,6 +769,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Stage
       objectReference: {fileID: 0}
+    - target: {fileID: 5566042885342530582, guid: c14d5ab9cd893034c8fde9d03348a8be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8132927037808605326, guid: c14d5ab9cd893034c8fde9d03348a8be,
         type: 3}
       propertyPath: m_Material
@@ -848,6 +853,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566042885342530582, guid: c14d5ab9cd893034c8fde9d03348a8be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8132927037808605326, guid: c14d5ab9cd893034c8fde9d03348a8be,
         type: 3}

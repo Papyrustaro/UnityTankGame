@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     private CharacterController controller;
     private GameObject cannonPrefab;
 
-    private void Start()
+    private void Awake()
     {
         headPrefab = transform.Find("Cannon/Head").gameObject;
         turretPrefab = transform.Find("Cannon/Turret").gameObject;
@@ -52,6 +52,33 @@ public class EnemyController : MonoBehaviour
         cannonPrefab.transform.Rotate(0, angle, 0);
     }
 
+    public bool RaycastCannon(int bounceNum)
+    {
+        if (Physics.Raycast(transform.position, turretPrefab.transform.position - headPrefab.transform.position, out hit, 100f))
+        {
+            //float angle = Vector3.Angle(hit.normal, hit.point - transform.position);
+            //float syahen = 1 / Mathf.Cos(180 - angle);
+            //Vector3 v = (hit.point - transform.position) * (syahen / hit.distance) + 2 * hit.normal;
+            //Debug.Log(v);
+
+            //この場合はxかz軸に平行な壁でしか正しく動かない
+            Vector3 v = hit.point - transform.position;
+            if(hit.normal.x == 0)
+            {
+                v = new Vector3(v.x, 0f, v.z * -1);
+            }
+            else
+            {
+                v = new Vector3(v.x * -1, 0f, v.z);
+            }
+
+            if(Physics.Raycast(hit.point, v, out hit, 100f))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public bool RaycastCannon()
     {
         return Physics.Raycast(transform.position, turretPrefab.transform.position - headPrefab.transform.position, out hit, 100f);
