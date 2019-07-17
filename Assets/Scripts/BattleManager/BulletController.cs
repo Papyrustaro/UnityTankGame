@@ -30,7 +30,7 @@ public class BulletController : MonoBehaviour
         if (hit == false)
         {
             hit = true;
-            if (col.gameObject.CompareTag("Stage"))
+            if (col.gameObject.CompareTag("Stage") || col.gameObject.CompareTag("Wall"))
             {
                 bounceAble--;
                 if (bounceAble < 0)

@@ -14,6 +14,7 @@ TagManager:
   - DestroyableWall
   - AttackFlag
   - Wall
+  - Body
   layers:
   - Default
   - TransparentFX

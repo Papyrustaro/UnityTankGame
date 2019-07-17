@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4951800486071177953}
   - component: {fileID: 4951800486071177952}
   - component: {fileID: 4951800486071177884}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExitWarp
   m_TagString: Untagged
   m_Icon: {fileID: 0}

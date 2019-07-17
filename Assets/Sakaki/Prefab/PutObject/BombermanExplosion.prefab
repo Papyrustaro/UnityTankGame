@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 765702550767990603}
   - component: {fileID: 1615632605351094775}
   - component: {fileID: 6912900631907997221}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BombermanExplosion
   m_TagString: AttackFlag
   m_Icon: {fileID: 0}
