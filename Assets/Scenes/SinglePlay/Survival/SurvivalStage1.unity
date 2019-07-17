@@ -723,6 +723,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Directional Light
       objectReference: {fileID: 0}
+    - target: {fileID: 848785154914452423, guid: 5ef0b9be3770c2a44a58d7d7233e7638,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 848785154914452423, guid: 5ef0b9be3770c2a44a58d7d7233e7638,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 848785154914452423, guid: 5ef0b9be3770c2a44a58d7d7233e7638,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 848785154914452422, guid: 5ef0b9be3770c2a44a58d7d7233e7638,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -778,21 +793,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 848785154914452423, guid: 5ef0b9be3770c2a44a58d7d7233e7638,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 848785154914452423, guid: 5ef0b9be3770c2a44a58d7d7233e7638,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 848785154914452423, guid: 5ef0b9be3770c2a44a58d7d7233e7638,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ef0b9be3770c2a44a58d7d7233e7638, type: 3}
 --- !u!1001 &2587909627888653656
@@ -820,7 +820,7 @@ PrefabInstance:
     - target: {fileID: 573398702535845209, guid: eef65ddd5ebbbc64ca071e7d068ca6c6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.9
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 573398702535845209, guid: eef65ddd5ebbbc64ca071e7d068ca6c6,
         type: 3}
@@ -864,11 +864,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 833784279, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
       propertyPath: skill1Num
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 833784279, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
       propertyPath: skill2Num
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
@@ -1016,17 +1016,6 @@ PrefabInstance:
     - target: {fileID: 7526767623570646490, guid: fe522d0363476834e9025befa71a2db1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008731594462759117, guid: fe522d0363476834e9025befa71a2db1,
-        type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 5154427828572670728, guid: 7054bc3dc52c9cb4489b04f7624f2e51,
-        type: 3}
-    - target: {fileID: 7526767623486705181, guid: fe522d0363476834e9025befa71a2db1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -369,7 +369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7526767623486705250}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.03, y: 1.3, z: 1}
+  m_LocalPosition: {x: 0, y: 1.3, z: 1}
   m_LocalScale: {x: 0.5, y: 0.600001, z: 0.50000095}
   m_Children: []
   m_Father: {fileID: 7526767623207323838}
@@ -446,7 +446,6 @@ GameObject:
   - component: {fileID: 7526767623570646491}
   - component: {fileID: 1326926784801946681}
   - component: {fileID: 9008731594462759117}
-  - component: {fileID: 9008731594462759114}
   - component: {fileID: 2226796286065914398}
   - component: {fileID: 9008731595068414093}
   - component: {fileID: 6294315763265700294}
@@ -515,22 +514,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b87be6050f0cc440bb687c3a7598ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4540304694690131576, guid: 4d74be05ba638ce409cb920525b97287,
+  bulletPrefab: {fileID: 5154427828572670728, guid: 7054bc3dc52c9cb4489b04f7624f2e51,
     type: 3}
   ableBulletNum: 5
   shotInterval: 0.5
---- !u!114 &9008731594462759114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7526767623570646488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db75338ea10d7ff4a8246c066f417c50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2226796286065914398
 BoxCollider:
   m_ObjectHideFlags: 0

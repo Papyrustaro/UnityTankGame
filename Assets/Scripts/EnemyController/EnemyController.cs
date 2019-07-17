@@ -52,18 +52,25 @@ public class EnemyController : MonoBehaviour
         cannonPrefab.transform.Rotate(0, angle, 0);
     }
 
-    public bool RaycastCannon(int bounceNum)
+    public RaycastHit GetRaycastCannon(int bounceNum)
     {
-        if (Physics.Raycast(transform.position, turretPrefab.transform.position - headPrefab.transform.position, out hit, 100f))
-        {
-            //float angle = Vector3.Angle(hit.normal, hit.point - transform.position);
-            //float syahen = 1 / Mathf.Cos(180 - angle);
-            //Vector3 v = (hit.point - transform.position) * (syahen / hit.distance) + 2 * hit.normal;
-            //Debug.Log(v);
+        if (bounceNum >= 3) bounceNum = 3;
+        Physics.Raycast(transform.position, turretPrefab.transform.position - headPrefab.transform.position, out hit, 100f);
+        //float angle = Vector3.Angle(hit.normal, hit.point - transform.position);
+        //float syahen = 1 / Mathf.Cos(180 - angle);
+        //Vector3 v = (hit.point - transform.position) * (syahen / hit.distance) + 2 * hit.normal;
 
+        if (!hit.transform.CompareTag("Stage"))
+        {
+            return hit;
+        }
+
+        Vector3 v = hit.point - transform.position;
+
+        for(int i = 0; i < bounceNum; i++)
+        {
             //この場合はxかz軸に平行な壁でしか正しく動かない
-            Vector3 v = hit.point - transform.position;
-            if(hit.normal.x == 0)
+            if (hit.normal.x == 0)
             {
                 v = new Vector3(v.x, 0f, v.z * -1);
             }
@@ -71,13 +78,19 @@ public class EnemyController : MonoBehaviour
             {
                 v = new Vector3(v.x * -1, 0f, v.z);
             }
-
-            if(Physics.Raycast(hit.point, v, out hit, 100f))
+            Physics.Raycast(hit.point, v, out hit, 100f);
+            if (!hit.transform.CompareTag("Stage"))
             {
-                return true;
+                return hit;
             }
         }
-        return false;
+
+        return hit;
+    }
+    public RaycastHit GetRaycastCannon()
+    {
+        Physics.Raycast(transform.position, turretPrefab.transform.position - headPrefab.transform.position, out hit, 100f);
+        return hit;
     }
     public bool RaycastCannon()
     {

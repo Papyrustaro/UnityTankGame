@@ -32,14 +32,12 @@ public class EnemySample1 : MonoBehaviour , TriggerFuncInterface
         countTime += Time.deltaTime;
         if(countTime >= 2f)
         {
-            if (ec.RaycastCannon(1))
+            Debug.Log(ec.GetRaycastCannon(2).collider.gameObject);
+            if (ec.GetRaycastHit().transform.CompareTag("Player"))
             {
-                Debug.Log(ec.GetRaycastHit().transform.gameObject);
-                if (ec.GetRaycastHit().transform.gameObject.CompareTag("Player"))
-                {
-                    esm.Shot();
-                }
+                esm.Shot();
             }
+            
             countTime = 0f;
         }
     }
