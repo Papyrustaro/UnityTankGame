@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4855031232849121746}
   - component: {fileID: 3020185424214902753}
   - component: {fileID: 8674179645236541043}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CheckWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 517508689213219724}
   - component: {fileID: 3274706371866669102}
   - component: {fileID: 3274706372303635347}
+  - component: {fileID: 1567671987}
   m_Layer: 2
   m_Name: Cannon
   m_TagString: Untagged
@@ -121,7 +122,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3274706371866669102
 MonoBehaviour:
@@ -174,6 +175,18 @@ MonoBehaviour:
   putAbleLaserNum: 2
   putAbleSwitchGateNum: 2
   putAbleLandMineNum: 2
+--- !u!114 &1567671987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323932433163400014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c72d739842a7c4f94ec88f77abfc8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1323932433437668755
 GameObject:
   m_ObjectHideFlags: 0

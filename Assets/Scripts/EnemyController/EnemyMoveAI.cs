@@ -10,7 +10,9 @@ public class EnemyMoveAI : MonoBehaviour
     private int a = 0;
     private bool exitWall = true;
     private GameObject hitWall;
+    private Vector3 returnV;
     private float countTime = 0f;
+    private bool isNormalMove = true;
 
     private void Awake()
     {
@@ -21,24 +23,28 @@ public class EnemyMoveAI : MonoBehaviour
     void Update()
     {
         countTime += Time.deltaTime;
-        if (exitWall)
+        if (isNormalMove)
         {
-            if(countTime > 1f)
+            if (exitWall)
             {
-                a = UnityEngine.Random.Range(0, 4);
-                countTime = 0f;
+                if (countTime > 1f)
+                {
+                    a = UnityEngine.Random.Range(0, 4);
+                    countTime = 0f;
+                }
+                if (a == 0) ec.MoveUp();
+                else if (a == 1) ec.MoveRight();
+                else if (a == 2) ec.MoveDown();
+                else ec.MoveLeft();
             }
-            if (a == 0) ec.MoveUp();
-            else if (a == 1) ec.MoveRight();
-            else if (a == 2) ec.MoveDown();
-            else ec.MoveLeft();
-        }
-        else
-        {
-            if (a == 0) ec.MoveDown();
-            else if (a == 1) ec.MoveLeft();
-            else if (a == 2) ec.MoveUp();
-            else ec.MoveRight();
+            else
+            {
+                ec.Move(returnV);
+                /*if (a == 0) ec.MoveDown();
+                else if (a == 1) ec.MoveLeft();
+                else if (a == 2) ec.MoveUp();
+                else ec.MoveRight();*/
+            }
         }
     }
 
@@ -51,6 +57,7 @@ public class EnemyMoveAI : MonoBehaviour
         }
         if (other.CompareTag("Wall") || other.CompareTag("DestroyableWall") || other.CompareTag("Body"))
         {
+            returnV = this.transform.position - other.ClosestPointOnBounds(this.transform.position);
             exitWall = false;
             hitWall = other.gameObject;
         }
@@ -71,6 +78,11 @@ public class EnemyMoveAI : MonoBehaviour
                 a = t;
             }
         }
+    }
+
+    public void SetIsNormalMove(bool flag)
+    {
+        this.isNormalMove = flag;
     }
 
     private IEnumerator DelayMethod(int delayFrameCount, Action action)

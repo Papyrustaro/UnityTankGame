@@ -25,6 +25,11 @@ public class EnemyController : MonoBehaviour
         float rad = Mathf.Atan2(z, x);
         controller.SimpleMove(new Vector3(moveSpeed * Mathf.Cos(rad), 0f, moveSpeed * Mathf.Sin(rad)));
     }
+    public void Move(Vector3 v)
+    {
+        float rad = Mathf.Atan2(v.z, v.x);
+        controller.SimpleMove(new Vector3(moveSpeed * Mathf.Cos(rad), 0f, moveSpeed * Mathf.Sin(rad)));
+    }
     public void MoveRight()
     {
         controller.SimpleMove(new Vector3(moveSpeed, 0f, 0f));
