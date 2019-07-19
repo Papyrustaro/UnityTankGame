@@ -26,6 +26,7 @@ public class AvoidAttack : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        //自分が発射した瞬間に反応することあり(直さない方がいいかも)
         if(other.CompareTag("Bullet") || other.CompareTag("EnemyBullet") || other.CompareTag("SpecialBullet"))
         {
             Vector3 v = other.transform.Find("BulletHead").transform.position - other.transform.Find("BulletBody").transform.position;

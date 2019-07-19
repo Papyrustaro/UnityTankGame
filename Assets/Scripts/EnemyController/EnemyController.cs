@@ -100,9 +100,6 @@ public class EnemyController : MonoBehaviour
                 Physics.Raycast(hit.point, v, out hit, 100f);
                 if (!hit.transform.CompareTag("Stage") && !hit.transform.CompareTag("Wall"))
                 {
-                    Debug.Log("i = " + i);
-                    Debug.Log("j = " + j);
-                    Debug.Log(hit.transform.tag);
                     return hit;
                 }
             }

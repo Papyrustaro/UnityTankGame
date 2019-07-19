@@ -54,11 +54,9 @@ public class EnemyShotAI : MonoBehaviour
         {
             if (toPlayerNotWall)
             {
-                Debug.Log("射線上に障害物なし");
                 esm.Shot();
             }else if (ec.GetRaycastCannon(bulletBounceNum).transform.root.CompareTag("Player"))
             {
-                Debug.Log("跳ね返り先に敵あり");
                 esm.Shot();
             }
             countTime = 0f;

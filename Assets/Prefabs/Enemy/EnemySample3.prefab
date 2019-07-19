@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 5161206115919117717}
   - component: {fileID: 2612671996686014214}
   - component: {fileID: 1017395872770068045}
-  - component: {fileID: 2387401755256768403}
   - component: {fileID: 2552586885428335954}
   m_Layer: 0
   m_Name: EnemySample3
@@ -156,10 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b87be6050f0cc440bb687c3a7598ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5154427828572670728, guid: 7054bc3dc52c9cb4489b04f7624f2e51,
+  bulletPrefab: {fileID: 4540304694690131576, guid: 4d74be05ba638ce409cb920525b97287,
     type: 3}
   ableBulletNum: 5
-  shotInterval: 0.5
+  shotInterval: 1
 --- !u!65 &5161206115919117717
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -204,18 +203,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
---- !u!114 &2387401755256768403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3545196809349917267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899abaa499ee0a04b8652c892cdfc239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2552586885428335954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,8 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d791ce3a6718f4fad22a181336a9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletBounceNum: 2
-  checkInterval: 0.5
+  bulletBounceNum: 1
+  checkInterval: 1
 --- !u!1 &3545196809433809385
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +319,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3545196810251241269}
   - component: {fileID: 2612671996335904758}
-  - component: {fileID: 1017395872937215060}
   - component: {fileID: 1017395872432977897}
   - component: {fileID: 2552586887403270857}
   m_Layer: 2
@@ -372,18 +358,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1017395872937215060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3545196810251241268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8969f53868b65c4ea4ef25f118e5b47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1017395872432977897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,7 +512,6 @@ GameObject:
   - component: {fileID: 3545196810938601368}
   - component: {fileID: 3545196810938601371}
   - component: {fileID: 1976946946630396431}
-  - component: {fileID: 1976946946630396429}
   - component: {fileID: 1017395871487828994}
   m_Layer: 2
   m_Name: Body
@@ -622,18 +595,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &1976946946630396429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3545196810938601372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d4db9f50693e4e429bf29bb9a96450a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1017395871487828994
 BoxCollider:
   m_ObjectHideFlags: 0
