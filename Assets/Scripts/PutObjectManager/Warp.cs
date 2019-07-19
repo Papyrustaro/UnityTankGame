@@ -45,7 +45,13 @@ public class Warp : MonoBehaviour
 
     public void DestroyWarp()
     {
-        po.DestroyWarp();
+        try
+        {
+            po.DestroyWarp();
+        }
+        catch (MissingReferenceException)
+        {
+        }
         Destroy(pareWarpPrefab);
         Destroy(this.gameObject);
     }

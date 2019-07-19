@@ -12,7 +12,14 @@ public class DestroyByAttack : MonoBehaviour
     {
         if(!alive || hp <= 0)
         {
-            po.DestroyObject(this.gameObject);
+            try
+            {
+                po.DestroyObject(this.gameObject);
+            }
+            catch(MissingReferenceException)
+            {
+
+            }
             Destroy(this.gameObject);
         }
     }

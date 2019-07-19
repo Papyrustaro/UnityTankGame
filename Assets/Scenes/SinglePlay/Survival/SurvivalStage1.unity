@@ -884,13 +884,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2612671997292447558, guid: f2631e8d9f8bd454690db3f315a638f6,
         type: 3}
-      propertyPath: shotInterval
-      value: 0.5
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 4540304694690131576, guid: 4d74be05ba638ce409cb920525b97287,
+        type: 3}
+    - target: {fileID: 2552586885428335954, guid: f2631e8d9f8bd454690db3f315a638f6,
+        type: 3}
+      propertyPath: bulletBounceNum
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2552586885428335954, guid: f2631e8d9f8bd454690db3f315a638f6,
         type: 3}
       propertyPath: checkInterval
-      value: 0.25
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560755450356318729, guid: f2631e8d9f8bd454690db3f315a638f6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2552586887403270857, guid: f2631e8d9f8bd454690db3f315a638f6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2631e8d9f8bd454690db3f315a638f6, type: 3}
@@ -967,7 +983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 833784279, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
       propertyPath: skill2Num
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}

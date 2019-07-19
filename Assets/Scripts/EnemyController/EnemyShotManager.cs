@@ -42,7 +42,7 @@ public class EnemyShotManager : MonoBehaviour
         else
         {
             bulletNum++;
-            GameObject bullet = Instantiate(this.bulletPrefab, enemyShotBullet.transform.position, enemyShotBullet.transform.rotation, this.transform) as GameObject;
+            GameObject bullet = Instantiate(this.bulletPrefab, enemyShotBullet.transform.position, enemyShotBullet.transform.rotation) as GameObject;
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             BulletController bc = bullet.GetComponent<BulletController>();
             bc.SetShooter(this.gameObject);
@@ -53,16 +53,19 @@ public class EnemyShotManager : MonoBehaviour
     }
     public bool Shot(GameObject bulletPrefab)
     {
-        if(ableBulletNum <= bulletNum)
+        if(ableBulletNum <= bulletNum || countTime < shotInterval)
         {
             return false;
         }
         else
         {
+            bulletNum++;
             GameObject bullet = Instantiate(bulletPrefab, enemyShotBullet.transform.position, enemyShotBullet.transform.rotation) as GameObject;
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             BulletController bc = bullet.GetComponent<BulletController>();
+            bc.SetShooter(this.gameObject);
             bulletRb.AddForce(enemyShotBullet.transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
+            countTime = 0f;
             return true;
         }
     }

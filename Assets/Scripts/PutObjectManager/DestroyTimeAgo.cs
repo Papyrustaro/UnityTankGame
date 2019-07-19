@@ -12,7 +12,13 @@ public class DestroyTimeAgo : MonoBehaviour
         destroyTime -= Time.deltaTime;
         if(destroyTime <= 0f)
         {
-            po.DestroyObject(this.gameObject);
+            try
+            {
+                po.DestroyObject(this.gameObject);
+            }
+            catch (MissingReferenceException)
+            {
+            }
             Destroy(this.gameObject);
         }
     }

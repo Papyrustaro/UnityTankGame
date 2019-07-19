@@ -26,7 +26,13 @@ public class Laser : MonoBehaviour
     }
     private void DestroyLaser()
     {
-        po.DestroyLaser();
+        try
+        {
+            po.DestroyLaser();
+        }
+        catch (MissingReferenceException)
+        {
+        }
         Destroy(this.gameObject);
     }
 

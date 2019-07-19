@@ -92,7 +92,13 @@ public class BomberMan : MonoBehaviour
     {
         Destroy(explosion[0]);
         Destroy(explosion[1]);
-        po.BomberManBomb();
+        try
+        {
+            po.BomberManBomb();
+        }
+        catch (MissingReferenceException)
+        {
+        }
         Destroy(this.gameObject);
     }
 

@@ -35,7 +35,13 @@ public class LandMine : MonoBehaviour
 
     public void Bomb()
     {
-        po.LandMineBomb();
+        try
+        {
+            po.LandMineBomb();
+        }
+        catch (MissingReferenceException)
+        {
+        }
         GameObject Explosion = (GameObject)Instantiate(explosionPrefab, this.transform.position, Quaternion.identity);
         this.gameObject.SetActive(false);
         Destroy(Explosion, 0.5f);

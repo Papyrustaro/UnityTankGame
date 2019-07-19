@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletBounceNum: 2
-  shotInterval: 2
+  checkInterval: 0.5
 --- !u!1 &3545196809433809385
 GameObject:
   m_ObjectHideFlags: 0
