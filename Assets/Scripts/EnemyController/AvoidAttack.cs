@@ -29,8 +29,8 @@ public class AvoidAttack : MonoBehaviour
         if(other.CompareTag("Bullet") || other.CompareTag("EnemyBullet") || other.CompareTag("SpecialBullet"))
         {
             Vector3 v = other.transform.Find("BulletHead").transform.position - other.transform.Find("BulletBody").transform.position;
-            Vector3 v2 = Quaternion.Euler(0, 90f, 0) * v;
-            Vector3 from = other.transform.position + v2 * 0.4f;
+            Vector3 v2 = Quaternion.Euler(0, 90f, 0) * v / 2; //0.6→0.3
+            Vector3 from = other.transform.position + v2;
             Physics.Raycast(from, v, out hit, 100f);
             if(hit.transform.gameObject == transform.root.gameObject)
             {

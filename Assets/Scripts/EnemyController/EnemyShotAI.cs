@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class EnemyShotAI : MonoBehaviour
 {
-    public int bulletBounceNum;
+    public int bulletBounceNum = 0;
+    public float checkInterval = 0.25f;
     private EnemyController ec;
     private EnemyShotManager esm;
     private float countTime = 0f;
     private GameObject target;
     private GameObject cannon;
+    private bool toPlayerNotWall; //自分とプレイヤーの間に障害物がないか 
 
     private void Awake()
     {
@@ -27,12 +29,36 @@ public class EnemyShotAI : MonoBehaviour
     void Update()
     {
         countTime += Time.deltaTime;
-        cannon.transform.LookAt(target.transform);
-        if(countTime > 1f)
+        if(countTime > checkInterval)
         {
-            if (ec.GetRaycastCannon().transform.CompareTag("Player"))
+            if (ec.GetRaycastToPlayer().transform.CompareTag("Player"))
             {
-                Debug.Log("てきだ");
+                toPlayerNotWall = true;
+            }
+            else
+            {
+                toPlayerNotWall = false;
+            }
+        }
+
+        if (toPlayerNotWall)
+        {
+            cannon.transform.LookAt(target.transform);
+        }
+        else
+        {
+            ec.TurnCannonAdd(1f);
+        }
+
+        if(countTime > checkInterval)
+        {
+            if (toPlayerNotWall)
+            {
+                Debug.Log("射線上に障害物なし");
+                esm.Shot();
+            }else if (ec.GetRaycastCannon(bulletBounceNum).transform.root.CompareTag("Player"))
+            {
+                Debug.Log("跳ね返り先に敵あり");
                 esm.Shot();
             }
             countTime = 0f;

@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed;
     private CharacterController controller;
     private GameObject cannonPrefab;
+    private GameObject player;
 
     private void Awake()
     {
@@ -20,6 +21,10 @@ public class EnemyController : MonoBehaviour
         cannonPrefab = transform.Find("Cannon").gameObject;
     }
 
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
     public void Move(float x, float z)
     {
         float rad = Mathf.Atan2(z, x);
@@ -57,37 +62,51 @@ public class EnemyController : MonoBehaviour
         cannonPrefab.transform.Rotate(0, angle, 0);
     }
 
+    public RaycastHit GetRaycastToPlayer()
+    {
+        Physics.Raycast(transform.position + new Vector3(0f, 0.5f, 0f), player.transform.position - transform.position, out hit, 100f);
+        return hit;
+    }
+
     public RaycastHit GetRaycastCannon(int bounceNum)
     {
         if (bounceNum >= 3) bounceNum = 3;
-        Physics.Raycast(transform.position, turretPrefab.transform.position - headPrefab.transform.position, out hit, 100f);
-        //float angle = Vector3.Angle(hit.normal, hit.point - transform.position);
-        //float syahen = 1 / Mathf.Cos(180 - angle);
-        //Vector3 v = (hit.point - transform.position) * (syahen / hit.distance) + 2 * hit.normal;
 
-        if (!hit.transform.CompareTag("Stage"))
+        Vector3 v = turretPrefab.transform.position - headPrefab.transform.position;
+        Vector3 v2 = Quaternion.Euler(0, -90f, 0) * v;
+        Vector3 from = transform.position + v2 * 0.4f + new Vector3(0f, 0.5f, 0f);
+
+        for(int i = 0; i < 2; i++) //弾の左端と右端で2セット
         {
-            return hit;
-        }
-
-        Vector3 v = hit.point - transform.position;
-
-        for(int i = 0; i < bounceNum; i++)
-        {
-            //この場合はxかz軸に平行な壁でしか正しく動かない
-            if (hit.normal.x == 0)
-            {
-                v = new Vector3(v.x, 0f, v.z * -1);
-            }
-            else
-            {
-                v = new Vector3(v.x * -1, 0f, v.z);
-            }
-            Physics.Raycast(hit.point, v, out hit, 100f);
-            if (!hit.transform.CompareTag("Stage"))
+            Physics.Raycast(from, v, out hit, 100f);
+            if (!hit.transform.CompareTag("Stage") && !hit.transform.CompareTag("Wall"))
             {
                 return hit;
             }
+
+            v = hit.point - transform.position;
+
+            for (int j = 0; j < bounceNum; j++)
+            {
+                //この場合はxかz軸に平行な壁でしか正しく動かない
+                if (hit.normal.x == 0)
+                {
+                    v = new Vector3(v.x, 0f, v.z * -1);
+                }
+                else
+                {
+                    v = new Vector3(v.x * -1, 0f, v.z);
+                }
+                Physics.Raycast(hit.point, v, out hit, 100f);
+                if (!hit.transform.CompareTag("Stage") && !hit.transform.CompareTag("Wall"))
+                {
+                    Debug.Log("i = " + i);
+                    Debug.Log("j = " + j);
+                    Debug.Log(hit.transform.tag);
+                    return hit;
+                }
+            }
+            from -= v2 * 2f;
         }
 
         return hit;
