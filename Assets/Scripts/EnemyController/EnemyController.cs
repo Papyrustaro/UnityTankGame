@@ -57,10 +57,17 @@ public class EnemyController : MonoBehaviour
     {
         cannonPrefab.transform.rotation = Quaternion.AngleAxis(angle, new Vector3(0, 1, 0));
     }
+
+    public void TurnCannon(Vector3 v)
+    {
+        cannonPrefab.transform.eulerAngles = new Vector3(0, Mathf.Atan2(v.x, v.z) * 180 / Mathf.PI, 0);
+    }
+
     public void TurnCannonAdd(float angle)
     {
         cannonPrefab.transform.Rotate(0, angle, 0);
     }
+
 
     public RaycastHit GetRaycastToPlayer()
     {

@@ -303,4 +303,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2457044918935824202, guid: 85374dbdbba48d5409850df38c9fc1b4,
     type: 3}
-  shotInterval: 5
+  shotInterval: 3

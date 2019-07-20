@@ -19,7 +19,7 @@ public class Warp : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         GameObject hitOb = other.gameObject.transform.root.gameObject;
-        if (warpAble && (hitOb.CompareTag("Player") || hitOb.CompareTag("Enemy")))
+        if (warpAble && (hitOb.CompareTag("Player")))
         {
             SetUseNotAble();
             exitWarp.SetUseNotAble();
