@@ -45,7 +45,7 @@ public class PutObject : MonoBehaviour
     {
         if (putBatteryNum < putAbleBatteryNum)
         {
-            GameObject battery = Instantiate(batteryPrefab, transform.position, transform.rotation);
+            GameObject battery = Instantiate(batteryPrefab, new Vector3(shotBullet.transform.position.x, 0f, shotBullet.transform.position.z), transform.rotation);
             battery.GetComponent<DestroyTimeAgo>().SetPutter(this.GetComponent<PutObject>());
             battery.GetComponent<DestroyByAttack>().SetPutter(this.GetComponent<PutObject>());
             putBatteryNum++;
@@ -68,7 +68,7 @@ public class PutObject : MonoBehaviour
     {
         if (!putBomb)
         {
-            remoteBomb = (GameObject)Instantiate(remoteBombPrefab, shotBullet.transform.position, Quaternion.identity);
+            remoteBomb = (GameObject)Instantiate(remoteBombPrefab, new Vector3(shotBullet.transform.position.x, 0f, shotBullet.transform.position.z), Quaternion.identity);
             remoteBomb.GetComponent<RemoteController>().SetController(this.gameObject, shotBullet);
         }
         else
@@ -95,7 +95,7 @@ public class PutObject : MonoBehaviour
     {
         if(putLaserNum < putAbleLaserNum)
         {
-            GameObject laser = Instantiate(laserPrefab, transform.position, transform.rotation);
+            GameObject laser = Instantiate(laserPrefab, shotBullet.transform.position, transform.rotation);
             laser.GetComponent<Laser>().SetPutter(this.GetComponent<PutObject>());
             putLaserNum++;
             return true;
@@ -134,7 +134,7 @@ public class PutObject : MonoBehaviour
     {
         if (putSwitchGateNum < putAbleSwitchGateNum)
         {
-            GameObject switchGate = Instantiate(switchGatePrefab, shotBullet.transform.position, transform.rotation);
+            GameObject switchGate = Instantiate(switchGatePrefab, new Vector3(shotBullet.transform.position.x, 0f, shotBullet.transform.position.z), transform.rotation);
             switchGate.GetComponent<DestroyTimeAgo>().SetPutter(this.GetComponent<PutObject>());
             switchGate.GetComponent<DestroyByAttack>().SetPutter(this.GetComponent<PutObject>());
             putSwitchGateNum++;
