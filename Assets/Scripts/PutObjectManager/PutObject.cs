@@ -189,6 +189,11 @@ public class PutObject : MonoBehaviour
         this.putLandMineNum--;
     }
 
+    public GameObject GetRemoteBomb()
+    {
+        return this.remoteBomb;
+    }
+
     private IEnumerator DelayMethod(float waitTime, Action action)
     {
         yield return new WaitForSeconds(waitTime);
