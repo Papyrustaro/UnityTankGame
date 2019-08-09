@@ -5,8 +5,8 @@ using UnityEngine;
 public class ProtectDomeAI : MonoBehaviour
 {
     private PutObject po;
-    private float countTime = 0f;
-    public float putInterval = 3f;
+    private float countTime = 8f;
+    public float putInterval = 8f;
     private void Awake()
     {
         po = GetComponent<PutObject>();
