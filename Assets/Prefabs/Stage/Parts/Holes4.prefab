@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6563042262969924353}
   - component: {fileID: 6563042262969924358}
   m_Layer: 0
-  m_Name: Holes
+  m_Name: Holes4
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
