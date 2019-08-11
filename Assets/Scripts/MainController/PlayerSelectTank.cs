@@ -10,12 +10,12 @@ public class PlayerSelectTank : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerSelectTank[1].Select();
+        playerSelectTank[0].Select();
     }
 
     public void SelectTankNum(int n)
     {
         MainGameController.SetPlayerSelectTankNumber(n);
-        SceneManager.LoadScene("SingleSample");
+        SceneManager.LoadScene("SingleMission1");
     }
 }

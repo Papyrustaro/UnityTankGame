@@ -349,6 +349,19 @@ MonoBehaviour:
     type: 3}
   remoteBombExplosionPrefab: {fileID: 8078290451973256078, guid: 9fb0136c2dfd0c94fadb14636a09deb0,
     type: 3}
+  bombermanPrefab: {fileID: 0}
+  laserPrefab: {fileID: 0}
+  warpPrefab: {fileID: 0}
+  exitWarpPrefab: {fileID: 0}
+  switchGatePrefab: {fileID: 0}
+  landMinePrefab: {fileID: 0}
+  putAbleBatteryNum: 2
+  putAbleProtectDomeNum: 2
+  putAbleWarpPairNum: 2
+  putAbleBomberManNum: 2
+  putAbleLaserNum: 2
+  putAbleSwitchGateNum: 2
+  putAbleLandMineNum: 2
 --- !u!1 &1740936893388648858
 GameObject:
   m_ObjectHideFlags: 0
