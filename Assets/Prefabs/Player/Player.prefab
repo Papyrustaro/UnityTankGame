@@ -79,6 +79,12 @@ MonoBehaviour:
     type: 3}
   landMinePrefab: {fileID: 549062095217743270, guid: 7dba624c9da526f409c39a2b3eae2536,
     type: 3}
+  putAbleBatteryNum: 2
+  putAbleProtectDomeNum: 2
+  putAbleWarpPairNum: 2
+  putAbleBomberManNum: 2
+  putAbleLaserNum: 2
+  putAbleSwitchGateNum: 2
   putAbleLandMineNum: 2
 --- !u!1 &573398700844701672
 GameObject:
@@ -368,6 +374,7 @@ GameObject:
   - component: {fileID: 437908813}
   - component: {fileID: 833784279}
   - component: {fileID: 2587909627727634333}
+  - component: {fileID: 5916424612161452053}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -468,6 +475,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePadNum: 0
+--- !u!114 &5916424612161452053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573398702535845210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3b800146ff88744ea518c10b050cf1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeedMagni: 1
+  shotSpeedMagni: 1
+  shotAbleBulletNum: 5
+  putAbleLandMineNum: 2
+  addScore: 0
+  haveSkillNum: 0
+  lifeNum: 5
+  skillDescription: 
+  description: "\u30D0\u30E9\u30F3\u30B9\u306E\u3068\u308C\u305F\u6226\u8ECA"
 --- !u!1001 &573398701958907226
 PrefabInstance:
   m_ObjectHideFlags: 0

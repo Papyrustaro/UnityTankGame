@@ -11,6 +11,8 @@ public class PlayerTankParameter : MonoBehaviour
     public int addScore = 0;
     public int haveSkillNum = 0;
     public int lifeNum = 5;
+    public string skillDescription;
+    public string description;
     // Start is called before the first frame update
     void Start()
     {
