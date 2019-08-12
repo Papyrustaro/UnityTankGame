@@ -11,6 +11,14 @@ public class TankMovement : MonoBehaviour
     private Vector3 movement;
     private int gamePadNum;
 
+    private PlayerTankParameter ptp;
+
+    private void Awake()
+    {
+        ptp = transform.root.gameObject.GetComponent<PlayerTankParameter>();
+        moveSpeed *= ptp.GetMoveSpeedMagni();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

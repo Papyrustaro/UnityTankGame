@@ -10,6 +10,13 @@ public class ShotBullet : MonoBehaviour
     private int bulletNum = 0;
     private int gamePadNum;
 
+    private PlayerTankParameter ptp;
+    private void Awake()
+    {
+        ptp = transform.root.gameObject.GetComponent<PlayerTankParameter>();
+        this.shotSpeedMagni = ptp.GetShotSpeedMagni();
+        this.ableBeBulletNum = ptp.GetShotAbleBulletNum();
+    }
     private void Start()
     {
         bulletNum = 0;
