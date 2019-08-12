@@ -25,4 +25,12 @@ public class PlayerTankParameter : MonoBehaviour
     {
         return this.shotAbleBulletNum;
     }
+    public int GetLifeNum()
+    {
+        return this.lifeNum;
+    }
+    public string GetDescription()
+    {
+        return this.description;
+    }
 }
