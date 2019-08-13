@@ -12,6 +12,7 @@ public class PlayerTankParameter : MonoBehaviour
     public int haveSkillNum = 0;
     public int lifeNum = 5;
     public string description;
+    public int tankNumber;
 
     public float GetMoveSpeedMagni()
     {
@@ -32,5 +33,9 @@ public class PlayerTankParameter : MonoBehaviour
     public string GetDescription()
     {
         return this.description;
+    }
+    public int GetTankNumber()
+    {
+        return this.tankNumber;
     }
 }

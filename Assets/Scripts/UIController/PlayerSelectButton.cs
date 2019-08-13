@@ -8,6 +8,7 @@ public class PlayerSelectButton : MonoBehaviour
     public GameObject parameterPanel;
     public GameObject selectTankObject;
     private PlayerTankParameter ptp;
+    private PlayerSelectUI psui;
 
     private Text lifeNumText;
     private Text moveSpeedText;
@@ -24,6 +25,7 @@ public class PlayerSelectButton : MonoBehaviour
     private void Awake()
     {
         ptp = selectTankObject.GetComponent<PlayerTankParameter>();
+        psui = transform.parent.transform.parent.gameObject.GetComponent<PlayerSelectUI>();
         lifeNumText = parameterPanel.transform.Find("Life").gameObject.GetComponent<Text>();
         moveSpeedText = parameterPanel.transform.Find("MoveSpeed").gameObject.GetComponent<Text>();
         shotSpeedText = parameterPanel.transform.Find("ShotSpeed").gameObject.GetComponent<Text>();
@@ -47,7 +49,16 @@ public class PlayerSelectButton : MonoBehaviour
     }
     public void OnDeselect()
     {
-        selectTankObject.SetActive(false);
-        selectTankObject.transform.position = new Vector3(3f, 0f, 0f);
+        if (!psui.IsSelectTank())
+        {
+            selectTankObject.SetActive(false);
+            selectTankObject.transform.position = new Vector3(3f, 0f, 0f);
+        }
+    }
+
+    public void OnPress()
+    {
+        psui.SetSelectTankNum(ptp.GetTankNumber());
+        psui.PressTankButton();
     }
 }
