@@ -20,7 +20,7 @@ public class ShotBullet : MonoBehaviour
     private void Start()
     {
         bulletNum = 0;
-        gamePadNum = this.transform.root.gameObject.GetComponent<GamePadManager>().GetGamePadNum();
+        gamePadNum = transform.parent.transform.parent.gameObject.GetComponent<GamePadManager>().GetGamePadNum();
     }
 
     void Update()

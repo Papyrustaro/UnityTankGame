@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SingleMissionStaticData : MonoBehaviour
 {
-    public static GameObject selectTank;
+    public static int selectTankNumber;
     public static int playerScore = 0;
     public static int playerLife = 3;
     public static int enemyNumSetStage;
