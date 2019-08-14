@@ -48,7 +48,7 @@ public class SingleMissionManager : MonoBehaviour
 
     public void DisplayMissionTitle()
     {
-        missionNumberText.text = "ミッション " + SingleMissionStaticData.missionNumber;
+        missionNumberText.text = "ミッション " + (SingleMissionStaticData.missionNumber + 1);
         enemyCounterText.text = "敵戦車 あと" + SingleMissionStaticData.remainEnemyNum + "体";
         playerLifeText.text = "残機 " + SingleMissionStaticData.playerLife;
         missionTitlePanel.transform.parent.gameObject.SetActive(true);

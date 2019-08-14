@@ -12,9 +12,12 @@ public class PutLaserAI : MonoBehaviour
     private void Awake()
     {
         po = GetComponent<PutObject>();
-        target = GameObject.FindWithTag("Player");
     }
 
+    private void Start()
+    {
+        target = GameObject.FindWithTag("Player");
+    }
     private void Update()
     {
         countTime += Time.deltaTime;

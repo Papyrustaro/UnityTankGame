@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class PlayerSelectUI : MonoBehaviour
 {
     public Button[] buttons = new Button[21];
-    public GameObject[] selectTank = new GameObject[21];
     public int selectTankNum;
 
     private GameObject tankButtonPanel;
