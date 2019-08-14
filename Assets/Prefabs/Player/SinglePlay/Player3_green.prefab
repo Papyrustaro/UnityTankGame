@@ -135,6 +135,7 @@ MonoBehaviour:
   haveSkillNum: 0
   lifeNum: 5
   description: "\u30B9\u30AD\u30EB\u767A\u52D5\u3067\u7279\u6B8A\u5F3E\u767A\u5C04"
+  tankNumber: 3
 --- !u!1 &3120817373286095847
 GameObject:
   m_ObjectHideFlags: 0

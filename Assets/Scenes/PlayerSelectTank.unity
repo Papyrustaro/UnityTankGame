@@ -1063,6 +1063,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5916424612161452053, guid: eef65ddd5ebbbc64ca071e7d068ca6c6,
+        type: 3}
+      propertyPath: description
+      value: "\u30D0\u30E9\u30F3\u30B9\u306E\u3068\u308C\u305F\u6226\u8ECA"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
 --- !u!1 &151907404
@@ -7574,7 +7579,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7279\u5FB4: "
+  m_Text: "\u7279\u5FB4:"
 --- !u!222 &2055611807
 CanvasRenderer:
   m_ObjectHideFlags: 0
