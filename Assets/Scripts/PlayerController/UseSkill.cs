@@ -11,19 +11,16 @@ public class UseSkill : MonoBehaviour
     private float shotSpeedUpMagni = 2f;
     private float shotSpeedUpTime = 2f;
 
-    public float skill1Interval = 5f;
-    public float skill2Interval = 5f;
-    public GameObject skill1IconPrefab;
-    public GameObject skill2IconPrefab;
-    public int skill1Num; //スキル番号
-    public int skill2Num;
+    public int haveSkillNum; //持ってるスキルの数
+    public float[] skillInterval;
+    public GameObject[] skillIconPrefab;
+    public int[] skillNum; //スキル番号
+    private Image[] ableSkillIcon = new Image[2];
+
     private int skillKindNum = 10; //スキルの種類数
-    private Image ableSkill1Icon;
-    private Image ableSkill2Icon;
 
     public GameObject specialBulletPrefab;
-    private float countTime1;
-    private float countTime2;
+    private float[] countTime = new float[2];
     private TankMovement tm;
     private ShotBullet sb;
     private PutObject po;
@@ -48,12 +45,19 @@ public class UseSkill : MonoBehaviour
     public void SkillIconSet()
     {
         GameObject skillIconCanvas = GameObject.Find("SkillIconCanvas");
-        GameObject skill1Icon = Instantiate(skill1IconPrefab, new Vector3(-230f, 60f, 0f), Quaternion.identity, skillIconCanvas.transform);
-        GameObject skill2Icon = Instantiate(skill2IconPrefab, new Vector3(-230f, -20f, 0f), Quaternion.identity, skillIconCanvas.transform);
-        ableSkill1Icon = skill1Icon.transform.Find("AbleIcon").gameObject.GetComponent<Image>();
-        ableSkill2Icon = skill2Icon.transform.Find("AbleIcon").gameObject.GetComponent<Image>();
-        ableSkill1Icon.fillAmount = 0f;
-        ableSkill2Icon.fillAmount = 0f;
+        if(haveSkillNum > 0)
+        {
+            GameObject skill1Icon = Instantiate(skillIconPrefab[0], new Vector3(-230f, 60f, 0f), Quaternion.identity, skillIconCanvas.transform);
+            ableSkillIcon[0] = skill1Icon.transform.Find("AbleIcon").gameObject.GetComponent<Image>();
+            ableSkillIcon[0].fillAmount = 0f;
+        }
+        if(haveSkillNum > 1)
+        {
+            GameObject skill2Icon = Instantiate(skillIconPrefab[1], new Vector3(-230f, -20f, 0f), Quaternion.identity, skillIconCanvas.transform);
+            ableSkillIcon[1] = skill2Icon.transform.Find("AbleIcon").gameObject.GetComponent<Image>();
+            ableSkillIcon[1].fillAmount = 0f;
+        }
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -62,8 +66,8 @@ public class UseSkill : MonoBehaviour
         sb = this.transform.Find("Cannon/ShotBullet").gameObject.GetComponent<ShotBullet>();
         po = this.transform.Find("Cannon").gameObject.GetComponent<PutObject>();
         gamePadNum = GetComponent<GamePadManager>().GetGamePadNum();
-        countTime1 = 0f;
-        countTime2 = 0f;
+        countTime[0] = 0f;
+        countTime[0] = 0f;
         SkillSet();
         SkillIconSet();
     }
@@ -71,17 +75,23 @@ public class UseSkill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        countTime1 += Time.deltaTime;
-        countTime2 += Time.deltaTime;
-        if(Input.GetButtonDown(GamePadManager.padSkill1[gamePadNum]) && countTime1 >= skill1Interval)
+        if(haveSkillNum > 0)
         {
-            sFunc[skill1Num]();
-            countTime1 = 0f;
+            countTime[0] += Time.deltaTime;
+            if (Input.GetButtonDown(GamePadManager.padSkill1[gamePadNum]) && countTime[0] >= skillInterval[0])
+            {
+                sFunc[skillNum[0]]();
+                countTime[0] = 0f;
+            }
         }
-        if(Input.GetButtonDown(GamePadManager.padSkill2[gamePadNum]) && countTime2 >= skill2Interval)
+        if (haveSkillNum > 1)
         {
-            sFunc[skill2Num]();
-            countTime2 = 0f;
+            countTime[1] += Time.deltaTime;
+            if (Input.GetButtonDown(GamePadManager.padSkill2[gamePadNum]) && countTime[1] >= skillInterval[1])
+            {
+                sFunc[skillNum[1]]();
+                countTime[1] = 0f;
+            }
         }
         if (Input.GetButtonDown(GamePadManager.padFire2[gamePadNum]))
         {
@@ -162,7 +172,9 @@ public class UseSkill : MonoBehaviour
     }
     private void SetFillAmount()
     {
-        ableSkill1Icon.fillAmount = SetFillAmount(countTime1 / skill1Interval);
-        ableSkill2Icon.fillAmount = SetFillAmount(countTime2 / skill2Interval);
+        for(int i = 0; i < haveSkillNum; i++)
+        {
+            ableSkillIcon[i].fillAmount = SetFillAmount(countTime[i] / skillInterval[i]);
+        }
     }
 }

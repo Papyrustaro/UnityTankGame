@@ -63,6 +63,7 @@ public class PlayerSelectButton : MonoBehaviour
 
     public void OnPress()
     {
+        SingleMissionStaticData.playerLife = ptp.GetLifeNum();
         SingleMissionStaticData.selectTankNumber = ptp.GetTankNumber();
         psui.SetSelectTankNum(ptp.GetTankNumber());
         psui.PressTankButton();
