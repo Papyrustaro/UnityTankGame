@@ -22,5 +22,5 @@
 16.Shooter  
 17.Laser  
 18.ProtectDome  
-19.RemoteBomb   
-21.金?(スコアup)  
+19.RemoteBomb  
+21.金?(動けないけど反射弾、remotebomb)

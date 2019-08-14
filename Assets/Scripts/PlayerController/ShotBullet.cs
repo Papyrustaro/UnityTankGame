@@ -13,7 +13,7 @@ public class ShotBullet : MonoBehaviour
     private PlayerTankParameter ptp;
     private void Awake()
     {
-        ptp = transform.root.gameObject.GetComponent<PlayerTankParameter>();
+        ptp = transform.parent.transform.parent.gameObject.GetComponent<PlayerTankParameter>();
         this.shotSpeedMagni = ptp.GetShotSpeedMagni();
         this.ableBeBulletNum = ptp.GetShotAbleBulletNum();
     }

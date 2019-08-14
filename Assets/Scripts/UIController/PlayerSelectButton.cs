@@ -32,9 +32,14 @@ public class PlayerSelectButton : MonoBehaviour
         bulletNumText = parameterPanel.transform.Find("BulletNum").gameObject.GetComponent<Text>();
         descriptionText = parameterPanel.transform.Find("Description").gameObject.GetComponent<Text>();
 
+        int moveS = (int)(ptp.GetMoveSpeedMagni() * 100);
+        int shotS = (int)(ptp.GetShotSpeedMagni() * 100);
+        if (moveS % 5 != 0) moveS++;
+        if (shotS % 5 != 0) shotS++;
+
         lifeNum = "ライフ: " + ptp.GetLifeNum();
-        moveSpeed = "移動速度: " + (int)(ptp.GetMoveSpeedMagni() * 100);
-        shotSpeed = "発射速度: " + (int)(ptp.GetShotSpeedMagni() * 100);
+        moveSpeed = "移動速度: " + moveS;
+        shotSpeed = "発射速度: " + shotS;
         bulletNum = "装弾数: " + ptp.GetShotAbleBulletNum();
         description = "特徴: " + ptp.GetDescription();
     }

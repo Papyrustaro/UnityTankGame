@@ -11,7 +11,7 @@ public class LookAtMouseCursor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gamePadNum = this.transform.root.gameObject.GetComponent<GamePadManager>().GetGamePadNum();
+        gamePadNum = this.transform.parent.gameObject.GetComponent<GamePadManager>().GetGamePadNum();
         try
         {
             if (Input.GetJoystickNames()[gamePadNum] != "") //ゲームパッドが接続されているか

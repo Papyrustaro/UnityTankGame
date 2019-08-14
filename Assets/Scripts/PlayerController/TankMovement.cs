@@ -15,7 +15,7 @@ public class TankMovement : MonoBehaviour
 
     private void Awake()
     {
-        ptp = transform.root.gameObject.GetComponent<PlayerTankParameter>();
+        ptp = transform.gameObject.GetComponent<PlayerTankParameter>();
         moveSpeed *= ptp.GetMoveSpeedMagni();
     }
 
