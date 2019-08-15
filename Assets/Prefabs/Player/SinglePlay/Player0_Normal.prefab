@@ -452,17 +452,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae51d0c99773d144981175881cf75b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  haveSkillNum: 2
-  skillInterval:
-  - 2
-  - 4
-  skillIconPrefab:
-  - {fileID: 6056323219541300057, guid: 28da6572e4dcd7e49b373664c351c11f, type: 3}
-  - {fileID: 3461781405961902514, guid: 268560c40744ab3469fbc4112c5a222b, type: 3}
-  skillNum: 0600000007000000
-  ableSkillIcon:
-  - {fileID: 0}
-  - {fileID: 0}
+  haveSkillNum: 0
+  skillInterval: []
+  skillIconPrefab: []
+  skillNum: 
   specialBulletPrefab: {fileID: 8995141988321080169, guid: 58714508992df3f47936cdab371982cd,
     type: 3}
 --- !u!114 &2587909627727634333

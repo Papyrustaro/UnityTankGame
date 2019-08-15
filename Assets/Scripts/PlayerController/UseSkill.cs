@@ -13,9 +13,11 @@ public class UseSkill : MonoBehaviour
 
     public int haveSkillNum; //持ってるスキルの数
     public float[] skillInterval;
-    public GameObject[] skillIconPrefab;
-    public int[] skillNum; //スキル番号
+    public int[] skillNumber; //スキル番号
     private Image[] ableSkillIcon = new Image[2];
+    private Sprite[] ableSkillSprite = new Sprite[2];
+    private Sprite[] notAbleSkillSprite = new Sprite[2];
+    private SkillIconData sid;
 
     private int skillKindNum = 10; //スキルの種類数
 
@@ -47,14 +49,29 @@ public class UseSkill : MonoBehaviour
         GameObject skillIconCanvas = GameObject.Find("SkillIconCanvas");
         if(haveSkillNum > 0)
         {
-            GameObject skill1Icon = Instantiate(skillIconPrefab[0], new Vector3(-230f, 60f, 0f), Quaternion.identity, skillIconCanvas.transform);
-            ableSkillIcon[0] = skill1Icon.transform.Find("AbleIcon").gameObject.GetComponent<Image>();
+            GameObject skill1AbleIcon = skillIconCanvas.transform.Find("Skill1Icon/AbleIcon").gameObject;
+            GameObject skill1NotAbleIcon = skillIconCanvas.transform.Find("Skill1Icon/NotAbleIcon").gameObject;
+            skill1AbleIcon.SetActive(true);
+            skill1NotAbleIcon.SetActive(true);
+            sid = skillIconCanvas.GetComponent<SkillIconData>();
+            ableSkillIcon[0] = skill1AbleIcon.GetComponent<Image>();
+
+            skill1AbleIcon.GetComponent<Image>().sprite = sid.GetSkillAbleSprite(skillNumber[0]);
+            skill1NotAbleIcon.GetComponent<Image>().sprite = sid.GetSkillNotAbleSprite(skillNumber[0]);
+
             ableSkillIcon[0].fillAmount = 0f;
         }
         if(haveSkillNum > 1)
         {
-            GameObject skill2Icon = Instantiate(skillIconPrefab[1], new Vector3(-230f, -20f, 0f), Quaternion.identity, skillIconCanvas.transform);
-            ableSkillIcon[1] = skill2Icon.transform.Find("AbleIcon").gameObject.GetComponent<Image>();
+            GameObject skill2AbleIcon = skillIconCanvas.transform.Find("Skill2Icon/AbleIcon").gameObject;
+            GameObject skill2NotAbleIcon = skillIconCanvas.transform.Find("Skill2Icon/NotAbleIcon").gameObject;
+            skill2AbleIcon.SetActive(true);
+            skill2NotAbleIcon.SetActive(true);
+            ableSkillIcon[1] = skill2AbleIcon.GetComponent<Image>();
+
+            skill2AbleIcon.GetComponent<Image>().sprite = sid.GetSkillAbleSprite(skillNumber[1]);
+            skill2NotAbleIcon.GetComponent<Image>().sprite = sid.GetSkillNotAbleSprite(skillNumber[1]);
+
             ableSkillIcon[1].fillAmount = 0f;
         }
         
@@ -80,7 +97,7 @@ public class UseSkill : MonoBehaviour
             countTime[0] += Time.deltaTime;
             if (Input.GetButtonDown(GamePadManager.padSkill1[gamePadNum]) && countTime[0] >= skillInterval[0])
             {
-                sFunc[skillNum[0]]();
+                sFunc[skillNumber[0]]();
                 countTime[0] = 0f;
             }
         }
@@ -89,7 +106,7 @@ public class UseSkill : MonoBehaviour
             countTime[1] += Time.deltaTime;
             if (Input.GetButtonDown(GamePadManager.padSkill2[gamePadNum]) && countTime[1] >= skillInterval[1])
             {
-                sFunc[skillNum[1]]();
+                sFunc[skillNumber[1]]();
                 countTime[1] = 0f;
             }
         }
