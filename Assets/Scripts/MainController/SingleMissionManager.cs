@@ -75,10 +75,14 @@ public class SingleMissionManager : MonoBehaviour
         }
         for (int i = 0; i < enemyNumSetStage; i++)
         {
-            if(enemyPrefabSetStage[i].name == enemyName)
+            try{
+                if (enemyPrefabSetStage[i].name == enemyName)
+                {
+                    SingleMissionStaticData.enemyIsDeath[i] = true;
+                    break;
+                }
+            }catch (MissingReferenceException)
             {
-                SingleMissionStaticData.enemyIsDeath[i] = true;
-                break;
             }
         }
     }
