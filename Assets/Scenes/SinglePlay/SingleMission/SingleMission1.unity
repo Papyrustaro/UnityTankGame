@@ -390,6 +390,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59e9d595696d2064b906b4b44645b8bb, type: 3}
+--- !u!1 &464504301 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8544707597752448771, guid: 59e9d595696d2064b906b4b44645b8bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 464504300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &675054460
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +604,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
+--- !u!1 &984884949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 526121739, guid: 086d3d8353d32074e90d0531b95fca88,
+    type: 3}
+  m_PrefabInstance: {fileID: 984884948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1094135053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1415,6 +1427,16 @@ PrefabInstance:
       propertyPath: enemyPrefabSetStage.Array.data[0]
       value: 
       objectReference: {fileID: 284406572}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: resultUIPanel
+      value: 
+      objectReference: {fileID: 984884949}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: scoreLabel
+      value: 
+      objectReference: {fileID: 464504301}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
 --- !u!1001 &6928880832079464512

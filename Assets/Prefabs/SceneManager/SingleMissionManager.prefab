@@ -43,8 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d213e95ef7d58914cbae2896c15f2ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabSetStage: []
-  enemyNumSetStage: 0
+  enemyPrefabSetStage:
+  - {fileID: 0}
+  enemyNumSetStage: 1
   missionTitlePanel: {fileID: 0}
   missionClearFlagPanel: {fileID: 0}
   missionFailFlagPanel: {fileID: 0}
+  resultUIPanel: {fileID: 0}
+  scoreLabel: {fileID: 0}
+  allMissionNum: 3
