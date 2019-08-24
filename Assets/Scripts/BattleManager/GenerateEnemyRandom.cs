@@ -5,19 +5,21 @@ using System;
 
 public class GenerateEnemyRandom : MonoBehaviour
 {
+    public int enemyPrefabKindNum;
     public GameObject[] enemyPrefab;
-    public int minX, maxX, minZ, maxZ;
-    public int notMinX, notMaxX, notMinZ, notMaxZ;
-    public GameObject playerPrefab;
+    //public int minX, maxX, minZ, maxZ;
+    //public int notMinX, notMaxX, notMinZ, notMaxZ;
+    private GameObject playerPrefab;
     public float generateTime;
     private float countTime = 0f;
 
+    private int[] generatePosition = { -20, 0, 20 };
     private void Start()
     {
+        playerPrefab = GameObject.FindWithTag("Player");
         countTime = 0f;
         StartCoroutine(DelayMethod(2f, () =>
         {
-            GenerateEnemy();
             GenerateEnemy();
         }));
     }
@@ -33,12 +35,12 @@ public class GenerateEnemyRandom : MonoBehaviour
     }
     public void GenerateEnemy()
     {
-        int enemyNum = UnityEngine.Random.Range(0, 8);
+        int enemyNum = UnityEngine.Random.Range(0, enemyPrefabKindNum);
         while (true)
         {
-            int x = UnityEngine.Random.Range(minX, maxX);
-            int z = UnityEngine.Random.Range(minZ, maxZ);
-            if(checkGeneratePosition(x, z)){
+            int x = generatePosition[UnityEngine.Random.Range(0, 3)];
+            int z = generatePosition[UnityEngine.Random.Range(0, 3)];
+            if (checkGeneratePosition(x, z)){
                 Instantiate(enemyPrefab[enemyNum], new Vector3(x, 0f, z), Quaternion.identity);
                 break;
             }
@@ -47,8 +49,7 @@ public class GenerateEnemyRandom : MonoBehaviour
 
     public bool checkGeneratePosition(int x, int z)
     {
-        if(((x > notMinX && x < notMaxX) && (z > notMinZ && z < notMaxZ)) ||
-            Mathf.Abs(playerPrefab.transform.position.x - x) < 5 || Mathf.Abs(playerPrefab.transform.position.z - z) < 5){
+        if(Mathf.Abs(playerPrefab.transform.position.x - x) < 5 || Mathf.Abs(playerPrefab.transform.position.z - z) < 5){
             return false;
         }else
         {

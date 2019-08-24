@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SinglePlay/SingleMission/SingleMission0.unity
     guid: 37813f6b355f79e47948c3a2cfee63f9
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/Survival/SurvivalStage1.unity
+    guid: 155fa378198ae4e4ebc76ad09dabb588
   m_configObjects: {}
