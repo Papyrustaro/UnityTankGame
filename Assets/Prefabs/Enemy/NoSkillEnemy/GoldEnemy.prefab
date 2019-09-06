@@ -69,7 +69,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234361953090827828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7aa6805d96931a64aa8ce15a84a39144, type: 3}
   m_Name: 
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 2546378620516626081}
   - component: {fileID: 1019104090638300606}
   m_Layer: 0
-  m_Name: NoSkillEnemy7
+  m_Name: GoldEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b87be6050f0cc440bb687c3a7598ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4540304694690131576, guid: 4d74be05ba638ce409cb920525b97287,
+  bulletPrefab: {fileID: 5154427828572670728, guid: 7054bc3dc52c9cb4489b04f7624f2e51,
     type: 3}
   ableBulletNum: 5
   shotInterval: 2
@@ -444,8 +444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d791ce3a6718f4fad22a181336a9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletBounceNum: 1
-  checkInterval: 1
+  bulletBounceNum: 2
+  checkInterval: 0.25
 --- !u!1 &2052260777926385925
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +550,8 @@ GameObject:
   - component: {fileID: 651362423417354010}
   - component: {fileID: 2546378619915245317}
   - component: {fileID: 1019104089606165029}
-  - component: {fileID: 9050322624816323588}
+  - component: {fileID: 1318744820}
+  - component: {fileID: 1318744824}
   m_Layer: 2
   m_Name: Cannon
   m_TagString: Untagged
@@ -634,12 +635,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052260778185975768}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36c72d739842a7c4f94ec88f77abfc8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9050322624816323588
+--- !u!114 &1318744820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -648,7 +649,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2052260778185975768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e23d150850c18479c37303161d4d72, type: 3}
+  m_Script: {fileID: 11500000, guid: 12df0e10f677a934ead182bdd8233f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  putInterval: 7
+  putInterval: 8
+--- !u!114 &1318744824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052260778185975768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f44013f95c649b4a89c697f0960af78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  putInterval: 5

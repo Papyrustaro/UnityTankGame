@@ -85,6 +85,11 @@ public class EnemyMoveAI : MonoBehaviour
         this.isNormalMove = flag;
     }
 
+    public bool GetIsNormalMove()
+    {
+        return this.isNormalMove;
+    }
+
     private IEnumerator DelayMethod(int delayFrameCount, Action action)
     {
         for (int i = 0; i < delayFrameCount; i++)
