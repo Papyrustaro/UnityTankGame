@@ -1557,6 +1557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlagUI
       objectReference: {fileID: 0}
+    - target: {fileID: 526121739, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
+      propertyPath: m_Name
+      value: ResultPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 8109559103308285414, guid: 086d3d8353d32074e90d0531b95fca88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1661,6 +1665,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671371602, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
+      propertyPath: m_Name
+      value: RankingPanel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}

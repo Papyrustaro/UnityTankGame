@@ -15,6 +15,7 @@ public class SingleMissionManager : MonoBehaviour
     public GameObject missionFailFlagPanel;
     public GameObject resultUIPanel;
     public GameObject scoreLabel;
+    public GameObject rankingPanel;
     private Text missionNumberText;
     private Text enemyCounterText;
     private Text playerLifeText;
@@ -174,7 +175,10 @@ public class SingleMissionManager : MonoBehaviour
         lifeScoreText.GetComponent<Text>().text = "残機数: " + SingleMissionStaticData.playerLife * 100 + " (" + SingleMissionStaticData.playerLife + ")";
         timeScoreText.GetComponent<Text>().text = "かかった時間: " + timeScore + " (" + minute + "分" + second + "秒)";
 
-        sumScoreValueText.GetComponent<Text>().text = (SingleMissionStaticData.playerScore + (SingleMissionStaticData.playerLife * 100) + timeScore).ToString();
+        int sumScore = SingleMissionStaticData.playerScore + (SingleMissionStaticData.playerLife * 100) + timeScore;
+        sumScoreValueText.GetComponent<Text>().text = sumScore.ToString();
+
+        int playerHighScore = PlayerPrefs.GetInt("SingleMissionHighScore", 0);
 
         StartCoroutine(DelayMethod(2f, () =>
         {
@@ -203,6 +207,70 @@ public class SingleMissionManager : MonoBehaviour
         StartCoroutine(DelayMethod(8f, () =>
         {
             sumScoreValueText.SetActive(true);
+        }));
+    }
+
+    private void SaveHighScore(int score, string name)
+    {
+        int bestScore = PlayerPrefs.GetInt("BestScore");
+        int secondScore = PlayerPrefs.GetInt("SecondScore");
+        int thirdScore = PlayerPrefs.GetInt("ThirdScore");
+        string bestScoreName = PlayerPrefs.GetString("BestScoreName");
+        string secondScoreName = PlayerPrefs.GetString("SecondScoreName");
+        string thirdScoreName = PlayerPrefs.GetString("ThirdScoreName");
+
+        if(bestScore < score)
+        {
+            thirdScore = secondScore;   thirdScoreName = secondScoreName;
+            secondScore = bestScore;    secondScoreName = bestScoreName;
+            bestScore = score;  bestScoreName = name;
+        }else if(secondScore < score)
+        {
+            thirdScore = secondScore; thirdScoreName = secondScoreName;
+            secondScore = score; secondScoreName = name;
+        }else if(thirdScore < score)
+        {
+            thirdScore = score; thirdScoreName = name;
+        }
+
+        PlayerPrefs.SetInt("BestScore", bestScore); PlayerPrefs.SetString("BestScoreName", bestScoreName);
+        PlayerPrefs.SetInt("SecondScore", secondScore); PlayerPrefs.SetString("SecondScoreName", secondScoreName);
+        PlayerPrefs.SetInt("ThirdScore", thirdScore); PlayerPrefs.SetString("ThirdScoreName", thirdScoreName);
+
+    }
+
+    private void DisplayRanking(int playerScore)
+    {
+        rankingPanel.SetActive(true);
+
+        GameObject bestScoreText = rankingPanel.transform.Find("BestScoreText").gameObject;
+        GameObject secondScoreText = rankingPanel.transform.Find("SecondScoreText").gameObject;
+        GameObject thirdScoreText = rankingPanel.transform.Find("ThirdScoreText").gameObject;
+        GameObject playerScoreText = rankingPanel.transform.Find("PlayerScoreText").gameObject;
+        GameObject goTitlebutton = rankingPanel.transform.Find("GoTitleButton").gameObject;
+        GameObject continueButton = rankingPanel.transform.Find("ContinueButton").gameObject;
+        GameObject tweetButton = rankingPanel.transform.Find("TweetButton").gameObject;
+
+        bestScoreText.GetComponent<Text>().text = "第1位:  " + PlayerPrefs.GetString("BestScoreName") + "  (" + PlayerPrefs.GetInt("BestScore").ToString() + ")";
+        secondScoreText.GetComponent<Text>().text = "第2位:  " + PlayerPrefs.GetString("SecondScoreName") + "  (" + PlayerPrefs.GetInt("SecondScore").ToString() + ")";
+        thirdScoreText.GetComponent<Text>().text = "第3位:  " + PlayerPrefs.GetString("ThirdScoreName") + "  (" + PlayerPrefs.GetInt("BestScore").ToString() + ")";
+        playerScoreText.GetComponent<Text>().text = "あなた( " + playerScore.ToString() + " )";
+
+        StartCoroutine(DelayMethod(1f, () =>
+        {
+            bestScoreText.SetActive(true);
+            secondScoreText.SetActive(true);
+            thirdScoreText.SetActive(true);
+        }));
+        StartCoroutine(DelayMethod(2f, () =>
+        {
+            playerScoreText.SetActive(true);
+        }));
+        StartCoroutine(DelayMethod(4f, () =>
+        {
+            goTitlebutton.SetActive(true);
+            continueButton.SetActive(true);
+            tweetButton.SetActive(true);
         }));
     }
 
