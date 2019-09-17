@@ -16,7 +16,12 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(EnemyStatus es)
     {
-        SingleMissionStaticData.playerScore += es.scoreValue;
+        SingleMissionStaticData.playerScore += es.GetScoreValue();
+        scoreLabel.text = "Score: " + score;
+    }
+    public void AddScore(int scoreValue)
+    {
+        SingleMissionStaticData.playerScore += scoreValue;
         scoreLabel.text = "Score: " + score;
     }
     public  static int GetScore()

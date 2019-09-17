@@ -1064,8 +1064,43 @@ PrefabInstance:
       propertyPath: scoreLabel
       value: 
       objectReference: {fileID: 464504301}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: rankingPanel
+      value: 
+      objectReference: {fileID: 8109559103061727642}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
+--- !u!114 &1950565034 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1950565033}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950565035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d213e95ef7d58914cbae2896c15f2ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1950565035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1773228962724577049, guid: 83b71a82897553f4b95034f3aec5799e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1950565033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1950565036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950565035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6753b81899a8b834f99fea607815fc30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2068893002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1557,10 +1592,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlagUI
       objectReference: {fileID: 0}
-    - target: {fileID: 526121739, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
-      propertyPath: m_Name
-      value: ResultPanel
-      objectReference: {fileID: 0}
     - target: {fileID: 8109559103308285414, guid: 086d3d8353d32074e90d0531b95fca88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1666,10 +1697,14 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1671371602, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
-      propertyPath: m_Name
-      value: RankingPanel
-      objectReference: {fileID: 0}
+    - target: {fileID: 629807003, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1950565034}
+    - target: {fileID: 1483762945, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1950565034}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
 --- !u!1 &8109559103061727640 stripped
@@ -1681,6 +1716,12 @@ GameObject:
 --- !u!1 &8109559103061727641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8109559103156581467, guid: 086d3d8353d32074e90d0531b95fca88,
+    type: 3}
+  m_PrefabInstance: {fileID: 8109559103061727639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8109559103061727642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1671371602, guid: 086d3d8353d32074e90d0531b95fca88,
     type: 3}
   m_PrefabInstance: {fileID: 8109559103061727639}
   m_PrefabAsset: {fileID: 0}

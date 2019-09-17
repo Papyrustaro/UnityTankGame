@@ -12,5 +12,10 @@ public class EnemyStatus : MonoBehaviour
         sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
+    public int GetScoreValue()
+    {
+        return this.scoreValue;
+    }
+
 
 }

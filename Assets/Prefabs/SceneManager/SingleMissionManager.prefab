@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7268779118746861462}
   - component: {fileID: 955125673128310331}
+  - component: {fileID: 4408253879997006416}
   m_Layer: 0
   m_Name: SingleMissionManager
   m_TagString: Untagged
@@ -51,4 +52,17 @@ MonoBehaviour:
   missionFailFlagPanel: {fileID: 0}
   resultUIPanel: {fileID: 0}
   scoreLabel: {fileID: 0}
+  rankingPanel: {fileID: 0}
   allMissionNum: 3
+--- !u!114 &4408253879997006416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773228962724577049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6753b81899a8b834f99fea607815fc30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
