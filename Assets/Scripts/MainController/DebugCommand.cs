@@ -10,7 +10,6 @@ public class DebugCommand : MonoBehaviour
 
     private void Awake()
     {
-        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         //シングルミッション
         if (MainGameController.gameNumber == 1)
         {
@@ -20,6 +19,7 @@ public class DebugCommand : MonoBehaviour
 
     public void DestroyEnemy(GameObject enemy)
     {
+        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         //singlemission
         if (MainGameController.gameNumber == 1)
         {
@@ -33,5 +33,6 @@ public class DebugCommand : MonoBehaviour
     public void DeleteAllData()
     {
         PlayerPrefs.DeleteAll();
+        Debug.Log("全データを消去しました。");
     }
 }

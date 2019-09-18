@@ -288,7 +288,7 @@ public class SingleMissionManager : MonoBehaviour
 
         bestScoreText.GetComponent<Text>().text = "第1位:  " + PlayerPrefs.GetString("BestScoreName") + "  (" + PlayerPrefs.GetInt("BestScore").ToString() + ")";
         secondScoreText.GetComponent<Text>().text = "第2位:  " + PlayerPrefs.GetString("SecondScoreName") + "  (" + PlayerPrefs.GetInt("SecondScore").ToString() + ")";
-        thirdScoreText.GetComponent<Text>().text = "第3位:  " + PlayerPrefs.GetString("ThirdScoreName") + "  (" + PlayerPrefs.GetInt("BestScore").ToString() + ")";
+        thirdScoreText.GetComponent<Text>().text = "第3位:  " + PlayerPrefs.GetString("ThirdScoreName") + "  (" + PlayerPrefs.GetInt("ThirdScore").ToString() + ")";
         if (!isRankin)
         {
             playerScoreText.GetComponent<Text>().text = "あなた( " + playerScore.ToString() + " )";
