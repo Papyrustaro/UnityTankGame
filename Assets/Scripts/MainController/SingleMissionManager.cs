@@ -16,12 +16,16 @@ public class SingleMissionManager : MonoBehaviour
     public GameObject resultUIPanel;
     public GameObject scoreLabel;
     public GameObject rankingPanel;
+    public GameObject inputPlayerName;
     private Text missionNumberText;
     private Text enemyCounterText;
     private Text playerLifeText;
 
+    private InputManager im;
     public int allMissionNum = 3;
     private DebugCommand dc;
+    private int playerScore;
+    private bool isRankin;
 
 
     private void Awake()
@@ -30,6 +34,7 @@ public class SingleMissionManager : MonoBehaviour
         missionNumberText = missionTitlePanel.transform.Find("MissionNumberText").gameObject.GetComponent<Text>();
         enemyCounterText = missionTitlePanel.transform.Find("EnemyCounterText").gameObject.GetComponent<Text>();
         playerLifeText = missionTitlePanel.transform.Find("PlayerLifeText").gameObject.GetComponent<Text>();
+        im = GetComponent<InputManager>();
         dc = GetComponent<DebugCommand>();
         if (SingleMissionStaticData.loadNewStage)
         {
@@ -188,10 +193,9 @@ public class SingleMissionManager : MonoBehaviour
         lifeScoreText.GetComponent<Text>().text = "残機数: " + SingleMissionStaticData.playerLife * 100 + " (" + SingleMissionStaticData.playerLife + ")";
         timeScoreText.GetComponent<Text>().text = "かかった時間: " + timeScore + " (" + minute + "分" + second + "秒)";
 
-        int sumScore = SingleMissionStaticData.playerScore + (SingleMissionStaticData.playerLife * 100) + timeScore;
-        sumScoreValueText.GetComponent<Text>().text = sumScore.ToString();
+        playerScore = SingleMissionStaticData.playerScore + (SingleMissionStaticData.playerLife * 100) + timeScore;
+        sumScoreValueText.GetComponent<Text>().text = playerScore.ToString();
 
-        int playerHighScore = PlayerPrefs.GetInt("SingleMissionHighScore", 0);
 
         StartCoroutine(DelayMethod(2f, () =>
         {
@@ -221,7 +225,8 @@ public class SingleMissionManager : MonoBehaviour
         {
             sumScoreValueText.SetActive(true);
         }));
-        StartCoroutine(DelayMethod(11f, () =>
+
+            StartCoroutine(DelayMethod(11f, () =>
         {
             destroyScoreText.SetActive(false);
             lifeScoreText.SetActive(false);
@@ -229,18 +234,24 @@ public class SingleMissionManager : MonoBehaviour
             lineText.SetActive(false);
             sumScoreText.SetActive(false);
             sumScoreValueText.SetActive(false);
-        }));
-        StartCoroutine(DelayMethod(12f, () =>
-        {
-            DisplayRanking(sumScore, SaveHighScore(sumScore, "Papyrus"));
+
+            if (PlayerPrefs.GetInt("ThirdScore") < playerScore || !PlayerPrefs.HasKey("ThirdScore")) //rankinしたら
+            {
+                inputPlayerName.SetActive(true);
+            }
+            else
+            {
+                StartCoroutine(DelayMethod(1f, () =>
+                {
+                    SaveHighScore("あなた");
+                    DisplayRanking();
+                }));
+            }
         }));
     }
 
-    // ランクインしたらtrue, しなかったらfalse
-    public bool SaveHighScore(int score, string name)
+    public void SaveHighScore(string name)
     {
-
-        bool isUpdate = true;
         int bestScore = PlayerPrefs.GetInt("BestScore");
         int secondScore = PlayerPrefs.GetInt("SecondScore");
         int thirdScore = PlayerPrefs.GetInt("ThirdScore");
@@ -248,33 +259,33 @@ public class SingleMissionManager : MonoBehaviour
         string secondScoreName = PlayerPrefs.GetString("SecondScoreName");
         string thirdScoreName = PlayerPrefs.GetString("ThirdScoreName");
 
-        if(bestScore < score || !PlayerPrefs.HasKey("BestScore"))
+        this.isRankin = true;
+
+        if(bestScore < playerScore || !PlayerPrefs.HasKey("BestScore"))
         {
             thirdScore = secondScore;   thirdScoreName = secondScoreName;
             secondScore = bestScore;    secondScoreName = bestScoreName;
-            bestScore = score;  bestScoreName = name;
-        }else if(secondScore < score || !PlayerPrefs.HasKey("SecondScore"))
+            bestScore = playerScore;  bestScoreName = name;
+        }else if(secondScore < playerScore || !PlayerPrefs.HasKey("SecondScore"))
         {
             thirdScore = secondScore; thirdScoreName = secondScoreName;
-            secondScore = score; secondScoreName = name;
-        }else if(thirdScore < score || !PlayerPrefs.HasKey("ThirdScore"))
+            secondScore = playerScore; secondScoreName = name;
+        }else if(thirdScore < playerScore || !PlayerPrefs.HasKey("ThirdScore"))
         {
-            thirdScore = score; thirdScoreName = name;
+            thirdScore = playerScore; thirdScoreName = name;
         }
         else
         {
-            isUpdate = false;
+            this.isRankin = false;
         }
 
         PlayerPrefs.SetInt("BestScore", bestScore); PlayerPrefs.SetString("BestScoreName", bestScoreName);
         PlayerPrefs.SetInt("SecondScore", secondScore); PlayerPrefs.SetString("SecondScoreName", secondScoreName);
         PlayerPrefs.SetInt("ThirdScore", thirdScore); PlayerPrefs.SetString("ThirdScoreName", thirdScoreName);
 
-        return isUpdate;
-
     }
 
-    public void DisplayRanking(int playerScore, bool isRankin)
+    public void DisplayRanking()
     {
         rankingPanel.SetActive(true);
 
@@ -289,7 +300,7 @@ public class SingleMissionManager : MonoBehaviour
         bestScoreText.GetComponent<Text>().text = "第1位:  " + PlayerPrefs.GetString("BestScoreName") + "  (" + PlayerPrefs.GetInt("BestScore").ToString() + ")";
         secondScoreText.GetComponent<Text>().text = "第2位:  " + PlayerPrefs.GetString("SecondScoreName") + "  (" + PlayerPrefs.GetInt("SecondScore").ToString() + ")";
         thirdScoreText.GetComponent<Text>().text = "第3位:  " + PlayerPrefs.GetString("ThirdScoreName") + "  (" + PlayerPrefs.GetInt("ThirdScore").ToString() + ")";
-        if (!isRankin)
+        if (!this.isRankin)
         {
             playerScoreText.GetComponent<Text>().text = "あなた( " + playerScore.ToString() + " )";
         }
@@ -300,7 +311,7 @@ public class SingleMissionManager : MonoBehaviour
             secondScoreText.SetActive(true);
             thirdScoreText.SetActive(true);
         }));
-        if (!isRankin)
+        if (!this.isRankin)
         {
             StartCoroutine(DelayMethod(2f, () =>
             {
@@ -316,6 +327,17 @@ public class SingleMissionManager : MonoBehaviour
         }));
     }
 
+    //プレイヤーが名前入力をしたとき
+    public void InputPlayerName()
+    {
+        SaveHighScore(inputPlayerName.GetComponent<InputField>().text);
+        inputPlayerName.SetActive(false);
+        StartCoroutine(DelayMethod(1f, () =>
+        {
+            DisplayRanking();
+        }));
+    }
+
     public void OnGoTitleButtonClicked()
     {
         SceneManager.LoadScene("Title");
@@ -326,6 +348,10 @@ public class SingleMissionManager : MonoBehaviour
         SceneManager.LoadScene("PlayerSelectTank");
     }
 
+    public void DebugAAA()
+    {
+        Debug.Log("aaa");
+    }
     private IEnumerator DelayMethod(float waitTime, Action action)
     {
         yield return new WaitForSecondsRealtime(waitTime);

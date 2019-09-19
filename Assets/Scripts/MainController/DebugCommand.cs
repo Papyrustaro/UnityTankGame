@@ -17,6 +17,11 @@ public class DebugCommand : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        //Time.timeScale = 0f;
+    }
+
     public void DestroyEnemy(GameObject enemy)
     {
         sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();

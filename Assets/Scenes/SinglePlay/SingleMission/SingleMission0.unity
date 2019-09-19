@@ -306,6 +306,18 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1411194212, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 955125673128310331}
+    - target: {fileID: 1411194212, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InputPlayerName
+      objectReference: {fileID: 0}
+    - target: {fileID: 30642655, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
 --- !u!1 &173259140 stripped
@@ -323,6 +335,18 @@ GameObject:
 --- !u!1 &173259142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8109559103156581467, guid: 086d3d8353d32074e90d0531b95fca88,
+    type: 3}
+  m_PrefabInstance: {fileID: 173259139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &173259144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1411194210, guid: 086d3d8353d32074e90d0531b95fca88,
+    type: 3}
+  m_PrefabInstance: {fileID: 173259139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &173259145 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1671371602, guid: 086d3d8353d32074e90d0531b95fca88,
     type: 3}
   m_PrefabInstance: {fileID: 173259139}
   m_PrefabAsset: {fileID: 0}
@@ -622,16 +646,6 @@ PrefabInstance:
       propertyPath: m_Colors.m_PressedColor.b
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 932715976083663162, guid: dde1de7e9ba52e14b9d31b92bec04994,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 932715976083663162, guid: dde1de7e9ba52e14b9d31b92bec04994,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 5257763214049236793, guid: dde1de7e9ba52e14b9d31b92bec04994,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -653,6 +667,16 @@ PrefabInstance:
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4432689213253667042, guid: dde1de7e9ba52e14b9d31b92bec04994,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 932715976083663162, guid: dde1de7e9ba52e14b9d31b92bec04994,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 932715976083663162, guid: dde1de7e9ba52e14b9d31b92bec04994,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 50
@@ -1195,6 +1219,16 @@ PrefabInstance:
       propertyPath: scoreLabel
       value: 
       objectReference: {fileID: 464504301}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: rankingPanel
+      value: 
+      objectReference: {fileID: 173259145}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: inputPlayerName
+      value: 
+      objectReference: {fileID: 173259144}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
 --- !u!1001 &1572210958
@@ -1403,6 +1437,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ef0b9be3770c2a44a58d7d7233e7638, type: 3}
+--- !u!114 &955125673128310331 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1117542494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d213e95ef7d58914cbae2896c15f2ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3620098833985388357
 PrefabInstance:
   m_ObjectHideFlags: 0

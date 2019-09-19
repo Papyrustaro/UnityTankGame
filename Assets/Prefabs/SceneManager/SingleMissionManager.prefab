@@ -53,6 +53,7 @@ MonoBehaviour:
   resultUIPanel: {fileID: 0}
   scoreLabel: {fileID: 0}
   rankingPanel: {fileID: 0}
+  inputPlayerName: {fileID: 0}
   allMissionNum: 3
 --- !u!114 &4408253879997006416
 MonoBehaviour:

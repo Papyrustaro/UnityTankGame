@@ -605,6 +605,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 984884948}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &984884950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1411194210, guid: 086d3d8353d32074e90d0531b95fca88,
+    type: 3}
+  m_PrefabInstance: {fileID: 984884948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &984884951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1671371602, guid: 086d3d8353d32074e90d0531b95fca88,
+    type: 3}
+  m_PrefabInstance: {fileID: 984884948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &984884952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8109559103308285434, guid: 086d3d8353d32074e90d0531b95fca88,
+    type: 3}
+  m_PrefabInstance: {fileID: 984884948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1094135053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1394,6 +1412,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
         type: 3}
+      propertyPath: enemyPrefabSetStage.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
       propertyPath: enemyPrefabSetStage.Array.data[0]
       value: 
       objectReference: {fileID: 284406572}
@@ -1422,6 +1445,29 @@ PrefabInstance:
       propertyPath: scoreLabel
       value: 
       objectReference: {fileID: 464504301}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: enemyNumSetStage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: rankingPanel
+      value: 
+      objectReference: {fileID: 984884951}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: inputPlayerName
+      value: 
+      objectReference: {fileID: 984884950}
+    - target: {fileID: 1950565036, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
+      propertyPath: flagUI
+      value: 
+      objectReference: {fileID: 984884952}
+    - target: {fileID: 1950565036, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
+      propertyPath: inputFieldCanvas
+      value: 
+      objectReference: {fileID: 984884950}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
 --- !u!1001 &6928880832079464512
