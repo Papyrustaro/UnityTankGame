@@ -8,6 +8,7 @@ public class InitAllData : MonoBehaviour
     {
         Debug.Log("一時データを初期化しました");
 
+        Time.timeScale = 1f;
         SingleMissionStaticData.playerScore = 0;
         SingleMissionStaticData.playerLife = 3;
         SingleMissionStaticData.countTime = 0f;

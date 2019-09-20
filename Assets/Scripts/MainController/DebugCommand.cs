@@ -40,4 +40,9 @@ public class DebugCommand : MonoBehaviour
         PlayerPrefs.DeleteAll();
         Debug.Log("全データを消去しました。");
     }
+
+    public void DeleteTemporaryData()
+    {
+        InitAllData.InitData();
+    }
 }

@@ -9,7 +9,24 @@ public class DestroyRangeObject : MonoBehaviour
     private ScoreManager sm;
     public GameObject bombExplosionEffectPrefab;
     private GameObject bombEffect;
-    // Start is called before the first frame update
+
+    private SingleMissionManager smm;
+    private SingleSurvivalManager ssm;
+
+    private void Awake()
+    {
+        if (MainGameController.gameNumber == 1)
+        {
+            smm = GameObject.Find("SingleMissionManager").GetComponent<SingleMissionManager>();
+        }
+        else if (MainGameController.gameNumber == 2)
+        {
+            ssm = GameObject.Find("SingleSurvivalManager").GetComponent<SingleSurvivalManager>();
+        }
+        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+    }
+
+
     void Start()
     {
         bombEffect = (GameObject)Instantiate(bombExplosionEffectPrefab, this.transform.position, Quaternion.identity);
@@ -19,28 +36,32 @@ public class DestroyRangeObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.transform.root.gameObject.CompareTag("Enemy"))
         {
-            es = GameObject.Find(other.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>();
-            sm.AddScore(es);
-            Destroy(other.gameObject);
-        }
-        if (other.gameObject.CompareTag("Player"))
-        {
-            other.gameObject.SetActive(false);
-            this.gameObject.SetActive(false);
+            //singlemission
+            if (MainGameController.gameNumber == 1)
+            {
+                smm.EnemyDestroy(other.transform.root.gameObject.name);
+            }
 
-            //GameOverSceneへ
-            Invoke("GameOver", 0.5f);
+            es = GameObject.Find(other.transform.root.gameObject.name).GetComponent<EnemyStatus>();
+            sm.AddScore(es);
+            Destroy(other.transform.root.gameObject);
         }
-        if (other.CompareTag("DestroyableWall"))
+        if (other.transform.root.gameObject.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
+            //singlemission
+            if (MainGameController.gameNumber == 1)
+            {
+                smm.PlayerDestroy();
+            }
+            else if (MainGameController.gameNumber == 2)
+            {
+                ssm.PlayerDestroy();
+            }
+
+            other.transform.root.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
-    }
-    void GameOver()
-    {
-        SceneManager.LoadScene("GameOver");
     }
 }
