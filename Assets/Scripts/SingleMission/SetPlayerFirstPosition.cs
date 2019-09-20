@@ -12,7 +12,7 @@ public class SetPlayerFirstPosition : MonoBehaviour
             Instantiate(tankPrefab[SingleMissionStaticData.selectTankNumber], this.transform.position, this.transform.rotation);
         }else if(MainGameController.gameNumber == 2)
         {
-            Instantiate(tankPrefab[SurvivalManager.selectTankNumber], this.transform.position, this.transform.rotation);
+            Instantiate(tankPrefab[SingleSurvivalStaticData.selectTankNumber], this.transform.position, this.transform.rotation);
         }
     }
 }

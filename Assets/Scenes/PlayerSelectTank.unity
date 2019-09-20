@@ -984,29 +984,8 @@ MonoBehaviour:
   - {fileID: 1257798273}
   - {fileID: 619826894}
   - {fileID: 1808199996}
-  selectTank:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   selectTankNum: 0
+  parameterCanvas: {fileID: 1923398071}
 --- !u!1 &87874984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1220,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5916424612161452053, guid: eef65ddd5ebbbc64ca071e7d068ca6c6,
+        type: 3}
+      propertyPath: description
+      value: "\u30D0\u30E9\u30F3\u30B9\u306E\u3068\u308C\u305F\u6226\u8ECA"
+      objectReference: {fileID: 0}
     - target: {fileID: 1702775884, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1249,11 +1233,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5916424612161452053, guid: eef65ddd5ebbbc64ca071e7d068ca6c6,
-        type: 3}
-      propertyPath: description
-      value: "\u30D0\u30E9\u30F3\u30B9\u306E\u3068\u308C\u305F\u6226\u8ECA"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef65ddd5ebbbc64ca071e7d068ca6c6, type: 3}
@@ -2465,6 +2444,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 159743354921914278, guid: db9635b8176f2f549b1def2a5cc35ed5,
+        type: 3}
+      propertyPath: tankNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159743354921914278, guid: db9635b8176f2f549b1def2a5cc35ed5,
+        type: 3}
+      propertyPath: description
+      value: "\u6B8B\u6A5F\u30921\u3064\u5897\u3084\u305B\u308B(\u30DF\u30C3\u30B7\u30E7\u30F3\u306E\u307F)"
+      objectReference: {fileID: 0}
     - target: {fileID: 5777231474862668799, guid: db9635b8176f2f549b1def2a5cc35ed5,
         type: 3}
       propertyPath: m_Enabled
@@ -2474,11 +2463,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 159743354921914278, guid: db9635b8176f2f549b1def2a5cc35ed5,
-        type: 3}
-      propertyPath: tankNumber
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db9635b8176f2f549b1def2a5cc35ed5, type: 3}
@@ -4082,16 +4066,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4453531477406762694, guid: 13661318bf511054c91ded166dbd36db,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5308226980899799633, guid: 13661318bf511054c91ded166dbd36db,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8058421456748769951, guid: 13661318bf511054c91ded166dbd36db,
         type: 3}
       propertyPath: description
@@ -4101,6 +4075,16 @@ PrefabInstance:
         type: 3}
       propertyPath: tankNumber
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453531477406762694, guid: 13661318bf511054c91ded166dbd36db,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308226980899799633, guid: 13661318bf511054c91ded166dbd36db,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13661318bf511054c91ded166dbd36db, type: 3}
@@ -7221,16 +7205,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3222960815051818476, guid: 26cdc1e91d6f92f409c18955c35c2e97,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6403769927355744635, guid: 26cdc1e91d6f92f409c18955c35c2e97,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9124606343223079349, guid: 26cdc1e91d6f92f409c18955c35c2e97,
         type: 3}
       propertyPath: description
@@ -7240,6 +7214,16 @@ PrefabInstance:
         type: 3}
       propertyPath: tankNumber
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222960815051818476, guid: 26cdc1e91d6f92f409c18955c35c2e97,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403769927355744635, guid: 26cdc1e91d6f92f409c18955c35c2e97,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26cdc1e91d6f92f409c18955c35c2e97, type: 3}

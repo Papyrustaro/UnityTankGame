@@ -235,7 +235,7 @@ public class SingleMissionManager : MonoBehaviour
             sumScoreText.SetActive(false);
             sumScoreValueText.SetActive(false);
 
-            if (PlayerPrefs.GetInt("ThirdScore") < playerScore || !PlayerPrefs.HasKey("ThirdScore")) //rankinしたら
+            if (PlayerPrefs.GetInt("SingleMissionThirdScore") < playerScore || !PlayerPrefs.HasKey("SingleMissionThirdScore")) //rankinしたら
             {
                 inputPlayerName.SetActive(true);
             }
@@ -252,25 +252,25 @@ public class SingleMissionManager : MonoBehaviour
 
     public void SaveHighScore(string name)
     {
-        int bestScore = PlayerPrefs.GetInt("BestScore");
-        int secondScore = PlayerPrefs.GetInt("SecondScore");
-        int thirdScore = PlayerPrefs.GetInt("ThirdScore");
-        string bestScoreName = PlayerPrefs.GetString("BestScoreName");
-        string secondScoreName = PlayerPrefs.GetString("SecondScoreName");
-        string thirdScoreName = PlayerPrefs.GetString("ThirdScoreName");
+        int bestScore = PlayerPrefs.GetInt("SingleMissionBestScore");
+        int secondScore = PlayerPrefs.GetInt("SingleMissionSecondScore");
+        int thirdScore = PlayerPrefs.GetInt("SingleMissionThirdScore");
+        string bestScoreName = PlayerPrefs.GetString("SingleMissionBestScoreName");
+        string secondScoreName = PlayerPrefs.GetString("SingleMissionSecondScoreName");
+        string thirdScoreName = PlayerPrefs.GetString("SingleMissionThirdScoreName");
 
         this.isRankin = true;
 
-        if(bestScore < playerScore || !PlayerPrefs.HasKey("BestScore"))
+        if(bestScore < playerScore || !PlayerPrefs.HasKey("SingleMissionBestScore"))
         {
             thirdScore = secondScore;   thirdScoreName = secondScoreName;
             secondScore = bestScore;    secondScoreName = bestScoreName;
             bestScore = playerScore;  bestScoreName = name;
-        }else if(secondScore < playerScore || !PlayerPrefs.HasKey("SecondScore"))
+        }else if(secondScore < playerScore || !PlayerPrefs.HasKey("SingleMissionSecondScore"))
         {
             thirdScore = secondScore; thirdScoreName = secondScoreName;
             secondScore = playerScore; secondScoreName = name;
-        }else if(thirdScore < playerScore || !PlayerPrefs.HasKey("ThirdScore"))
+        }else if(thirdScore < playerScore || !PlayerPrefs.HasKey("SingleMissionThirdScore"))
         {
             thirdScore = playerScore; thirdScoreName = name;
         }
@@ -279,9 +279,9 @@ public class SingleMissionManager : MonoBehaviour
             this.isRankin = false;
         }
 
-        PlayerPrefs.SetInt("BestScore", bestScore); PlayerPrefs.SetString("BestScoreName", bestScoreName);
-        PlayerPrefs.SetInt("SecondScore", secondScore); PlayerPrefs.SetString("SecondScoreName", secondScoreName);
-        PlayerPrefs.SetInt("ThirdScore", thirdScore); PlayerPrefs.SetString("ThirdScoreName", thirdScoreName);
+        PlayerPrefs.SetInt("SingleMissionBestScore", bestScore); PlayerPrefs.SetString("SingleMissionBestScoreName", bestScoreName);
+        PlayerPrefs.SetInt("SingleMissionSecondScore", secondScore); PlayerPrefs.SetString("SingleMissionSecondScoreName", secondScoreName);
+        PlayerPrefs.SetInt("SingleMissionThirdScore", thirdScore); PlayerPrefs.SetString("SingleMissionThirdScoreName", thirdScoreName);
 
     }
 
@@ -297,9 +297,9 @@ public class SingleMissionManager : MonoBehaviour
         GameObject continueButton = rankingPanel.transform.Find("ContinueButton").gameObject;
         GameObject tweetButton = rankingPanel.transform.Find("TweetButton").gameObject;
 
-        bestScoreText.GetComponent<Text>().text = "第1位:  " + PlayerPrefs.GetString("BestScoreName") + "  (" + PlayerPrefs.GetInt("BestScore").ToString() + ")";
-        secondScoreText.GetComponent<Text>().text = "第2位:  " + PlayerPrefs.GetString("SecondScoreName") + "  (" + PlayerPrefs.GetInt("SecondScore").ToString() + ")";
-        thirdScoreText.GetComponent<Text>().text = "第3位:  " + PlayerPrefs.GetString("ThirdScoreName") + "  (" + PlayerPrefs.GetInt("ThirdScore").ToString() + ")";
+        bestScoreText.GetComponent<Text>().text = "第1位:  " + PlayerPrefs.GetString("SingleMissionBestScoreName") + "  (" + PlayerPrefs.GetInt("SingleMissionBestScore").ToString() + ")";
+        secondScoreText.GetComponent<Text>().text = "第2位:  " + PlayerPrefs.GetString("SingleMissionSecondScoreName") + "  (" + PlayerPrefs.GetInt("SingleMissionSecondScore").ToString() + ")";
+        thirdScoreText.GetComponent<Text>().text = "第3位:  " + PlayerPrefs.GetString("SingleMissionThirdScoreName") + "  (" + PlayerPrefs.GetInt("SingleMissionThirdScore").ToString() + ")";
         if (!this.isRankin)
         {
             playerScoreText.GetComponent<Text>().text = "あなた( " + playerScore.ToString() + " )";
@@ -321,8 +321,8 @@ public class SingleMissionManager : MonoBehaviour
         StartCoroutine(DelayMethod(4f, () =>
         {
             goTitlebutton.SetActive(true);
-            continueButton.SetActive(true);
-            tweetButton.SetActive(true);
+            //continueButton.SetActive(true);
+            //tweetButton.SetActive(true);
             goTitlebutton.GetComponent<Button>().Select();
         }));
     }
@@ -340,6 +340,7 @@ public class SingleMissionManager : MonoBehaviour
 
     public void OnGoTitleButtonClicked()
     {
+        InitAllData.InitData();
         SceneManager.LoadScene("Title");
     }
 

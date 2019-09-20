@@ -70,7 +70,7 @@ public class PlayerSelectButton : MonoBehaviour
         }
         else if(MainGameController.gameNumber == 2)
         {
-            SurvivalManager.selectTankNumber = ptp.GetTankNumber();
+            SingleSurvivalStaticData.selectTankNumber = ptp.GetTankNumber();
         }
         psui.SetSelectTankNum(ptp.GetTankNumber());
         psui.PressTankButton();

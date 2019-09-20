@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 using UnityEngine.UI;
+using System;
 using UnityEngine.SceneManagement;
 
-public class SurvivalManager : MonoBehaviour
+public class SingleSurvivalManager : MonoBehaviour
 {
     public GameObject resultUIPanel;
     public GameObject rankingPanel;
-    public GameObject inputPlayerNamePanel;
     public GameObject scoreLabel;
     public GameObject inputPlayerName;
 
@@ -50,12 +49,12 @@ public class SurvivalManager : MonoBehaviour
             scoreText.SetActive(true);
         }));
 
-        StartCoroutine(DelayMethod(11f, () =>
+        StartCoroutine(DelayMethod(5f, () =>
         {
-
+            resultUIPanel.SetActive(false);
             if (PlayerPrefs.GetInt("SingleSurvivalThirdScore") < playerScore || !PlayerPrefs.HasKey("SingleSurvivalThirdScore")) //rankinしたら
             {
-                inputPlayerNamePanel.SetActive(true);
+                inputPlayerName.SetActive(true);
             }
             else
             {
@@ -159,6 +158,7 @@ public class SurvivalManager : MonoBehaviour
 
     public void OnGoTitleButtonClicked()
     {
+        InitAllData.InitData();
         SceneManager.LoadScene("Title");
     }
 

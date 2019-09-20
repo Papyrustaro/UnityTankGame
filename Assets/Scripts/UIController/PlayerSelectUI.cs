@@ -8,6 +8,7 @@ public class PlayerSelectUI : MonoBehaviour
 {
     public Button[] buttons = new Button[21];
     public int selectTankNum;
+    public GameObject parameterCanvas;
 
     private GameObject tankButtonPanel;
     private GameObject selectTankText;
@@ -23,6 +24,11 @@ public class PlayerSelectUI : MonoBehaviour
 
         startButton.SetActive(false);
         cancelButton.SetActive(false);
+
+        if(MainGameController.gameNumber != 1)
+        {
+            parameterCanvas.transform.Find("ParameterPanel/Life").gameObject.SetActive(false);
+        }
     }
 
     // Start is called before the first frame update

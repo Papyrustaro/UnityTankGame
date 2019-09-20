@@ -15,12 +15,16 @@ public class BulletController : MonoBehaviour
 
     //シングルミッション
     private SingleMissionManager smm;
+    private SingleSurvivalManager ssm;
     private void Start()
     {
         //シングルミッション
         if(MainGameController.gameNumber == 1)
         {
             smm = GameObject.Find("SingleMissionManager").GetComponent<SingleMissionManager>();
+        }else if(MainGameController.gameNumber == 2)
+        {
+            ssm = GameObject.Find("SingleSurvivalManager").GetComponent<SingleSurvivalManager>();
         }
     }
     private void OnCollisionEnter(Collision col)
@@ -67,6 +71,9 @@ public class BulletController : MonoBehaviour
                 if(MainGameController.gameNumber == 1)
                 {
                     smm.PlayerDestroy();
+                }else if(MainGameController.gameNumber == 2)
+                {
+                    ssm.PlayerDestroy();
                 }
 
                 col.gameObject.SetActive(false);

@@ -16,12 +16,24 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(EnemyStatus es)
     {
-        SingleMissionStaticData.playerScore += es.GetScoreValue();
+        if(MainGameController.gameNumber == 1)
+        {
+            SingleMissionStaticData.playerScore += es.GetScoreValue();
+        }else if(MainGameController.gameNumber == 2)
+        {
+            SingleSurvivalStaticData.playerScore += es.GetScoreValue();
+        }
         scoreLabel.text = "Score: " + score;
     }
     public void AddScore(int scoreValue)
     {
-        SingleMissionStaticData.playerScore += scoreValue;
+        if(MainGameController.gameNumber == 1)
+        {
+            SingleMissionStaticData.playerScore += scoreValue;
+        }else if(MainGameController.gameNumber == 2)
+        {
+            SingleSurvivalStaticData.playerScore += scoreValue;
+        }
         scoreLabel.text = "Score: " + score;
     }
     public  static int GetScore()
