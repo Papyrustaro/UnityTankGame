@@ -62,7 +62,7 @@ public class SingleMissionManager : MonoBehaviour
     {
         SingleMissionStaticData.countTime += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.F1))
+        /*if (Input.GetKeyDown(KeyCode.F1))
         {
             for(int i = 0; i < enemyNumSetStage; i++)
             {
@@ -71,7 +71,7 @@ public class SingleMissionManager : MonoBehaviour
                     dc.DestroyEnemy(enemyPrefabSetStage[i]);
                 }
             }
-        }
+        }*/
     }
 
     public void DisplayMissionTitle()
@@ -165,6 +165,7 @@ public class SingleMissionManager : MonoBehaviour
         }
         else
         {
+            SingleMissionStaticData.playerLife = 0;
             StartCoroutine(DelayMethod(1f, () =>
             {
                 DisplayResult();
@@ -177,6 +178,8 @@ public class SingleMissionManager : MonoBehaviour
         resultUIPanel.SetActive(true);
         scoreLabel.SetActive(false);
 
+        bool isClear = (SingleMissionStaticData.playerLife > 0);
+
         GameObject titleText = resultUIPanel.transform.Find("TitleText").gameObject;
         GameObject destroyScoreText = resultUIPanel.transform.Find("DestroyScoreText").gameObject;
         GameObject lifeScoreText = resultUIPanel.transform.Find("LifeScoreText").gameObject;
@@ -185,12 +188,17 @@ public class SingleMissionManager : MonoBehaviour
         GameObject sumScoreValueText = resultUIPanel.transform.Find("SumScoreValueText").gameObject;
         GameObject lineText = resultUIPanel.transform.Find("Line").gameObject;
 
-        int timeScore = 600 - (int)SingleMissionStaticData.countTime;
+        int timeScore = (600 - (int)SingleMissionStaticData.countTime) * 10;
+        if (timeScore < 0) timeScore = 0;
+        if (!isClear)
+        {
+            timeScore = 0;
+        }
         int minute = (int)(SingleMissionStaticData.countTime / 60);
-        int second = (int)SingleMissionStaticData.countTime - minute;
+        int second = (int)SingleMissionStaticData.countTime - (minute * 60);
 
         destroyScoreText.GetComponent<Text>().text = "撃墜点: " + SingleMissionStaticData.playerScore.ToString();
-        lifeScoreText.GetComponent<Text>().text = "残機数: " + SingleMissionStaticData.playerLife * 100 + " (" + SingleMissionStaticData.playerLife + ")";
+        lifeScoreText.GetComponent<Text>().text = "残機数: " + SingleMissionStaticData.playerLife * 1000 + " (" + SingleMissionStaticData.playerLife + ")";
         timeScoreText.GetComponent<Text>().text = "かかった時間: " + timeScore + " (" + minute + "分" + second + "秒)";
 
         playerScore = SingleMissionStaticData.playerScore + (SingleMissionStaticData.playerLife * 100) + timeScore;

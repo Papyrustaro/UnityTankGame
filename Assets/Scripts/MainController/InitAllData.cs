@@ -16,5 +16,7 @@ public class InitAllData : MonoBehaviour
         SingleMissionStaticData.loadNewStage = true;
 
         SingleSurvivalStaticData.playerScore = 0;
+
+        MainGameController.gameNumber = 0;
     }
 }

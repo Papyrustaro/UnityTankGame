@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42542ef3f294c1c44a7c39d5d07484fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 3.2
 --- !u!54 &8528753778422798086
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -364,10 +364,8 @@ MonoBehaviour:
   haveSkillNum: 1
   skillInterval:
   - 5
-  skillIconPrefab:
-  - {fileID: 6773879878507196769, guid: 7ff78ddfb93423a459233a8260c58bca, type: 3}
   skillNumber: 02000000
-  specialBulletPrefab: {fileID: 8995141988321080169, guid: 58714508992df3f47936cdab371982cd,
+  specialBulletPrefab: {fileID: 3285181224535436941, guid: 27502894225ecd840be74a06874fa3fb,
     type: 3}
 --- !u!114 &5927648962977476035
 MonoBehaviour:

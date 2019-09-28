@@ -44,6 +44,7 @@ public class PauseManager : MonoBehaviour
     public void OnGoToMenuButtonClicked()
     {
         Time.timeScale = 1f;
+        InitAllData.InitData();
         SceneManager.LoadScene("Menu");
     }
 

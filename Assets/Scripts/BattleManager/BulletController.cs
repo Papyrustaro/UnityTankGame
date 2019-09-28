@@ -26,10 +26,11 @@ public class BulletController : MonoBehaviour
         {
             ssm = GameObject.Find("SingleSurvivalManager").GetComponent<SingleSurvivalManager>();
         }
+
+        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
     private void OnCollisionEnter(Collision col)
     {
-        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
 
         if (hit == false)
         {

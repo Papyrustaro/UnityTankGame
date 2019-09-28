@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ShotBullet : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ShotBullet : MonoBehaviour
     public int ableBeBulletNum;
     private int bulletNum = 0;
     private int gamePadNum;
+    private TankMovement tm;
 
     private PlayerTankParameter ptp;
     private void Awake()
@@ -16,6 +18,7 @@ public class ShotBullet : MonoBehaviour
         ptp = transform.parent.transform.parent.gameObject.GetComponent<PlayerTankParameter>();
         this.shotSpeedMagni = ptp.GetShotSpeedMagni();
         this.ableBeBulletNum = ptp.GetShotAbleBulletNum();
+        tm = this.transform.root.gameObject.GetComponent<TankMovement>();
     }
     private void Start()
     {
@@ -52,5 +55,16 @@ public class ShotBullet : MonoBehaviour
         BulletController bc = bullet.GetComponent<BulletController>();
         bc.SetShooter(this.gameObject);
         bulletRb.AddForce(transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
+        tm.SetAbleMove(false);
+        StartCoroutine(DelayMethod(0.2f, () =>
+        {
+            tm.SetAbleMove(true);
+        }));
+    }
+
+    private IEnumerator DelayMethod(float waitTime, Action action)
+    {
+        yield return new WaitForSeconds(waitTime);
+        action();
     }
 }

@@ -413,7 +413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &675054461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1460,6 +1460,11 @@ PrefabInstance:
       propertyPath: inputPlayerName
       value: 
       objectReference: {fileID: 984884950}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: allMissionNum
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1950565036, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
       propertyPath: flagUI
       value: 

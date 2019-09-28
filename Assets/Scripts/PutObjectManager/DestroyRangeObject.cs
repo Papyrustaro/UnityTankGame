@@ -62,6 +62,9 @@ public class DestroyRangeObject : MonoBehaviour
 
             other.transform.root.gameObject.SetActive(false);
             this.gameObject.SetActive(false);
+        }else if (other.gameObject.CompareTag("DestroyableWall"))
+        {
+            Destroy(other.gameObject);
         }
     }
 }

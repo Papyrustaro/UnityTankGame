@@ -6,23 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: 767c12d527054854d829bb3f064f34e0
-  - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: bc3082533f4cc354e9c1f9d61c32733d
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: f3d941a650ac8f845adcf969f55560f0
-  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 92c4d7a0b5aba8d4b835b59cbdd1cfc5
   - enabled: 1
-    path: Assets/Scenes/GameClear.unity
-    guid: 13402a7386393354b99f5d32b9165b96
-  - enabled: 1
-    path: Assets/Scenes/SingleSample.unity
-    guid: c3f52c8053c4cf448baf98c0ebe5a58b
+    path: Assets/Scenes/Menu.unity
+    guid: f3d941a650ac8f845adcf969f55560f0
   - enabled: 1
     path: Assets/Scenes/PlayerSelectTank.unity
     guid: 7e7ef5e696006e54482b8b0b89e1ee16
@@ -44,4 +32,58 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SinglePlay/SinglePlay.unity
     guid: 30632a54370e52f4e9e9f7368102b47e
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission19.unity
+    guid: 41f747087864b8b429a2c401379ebc2f
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission3.unity
+    guid: 5f1f2cc01958e8948a11a0dcbe5a0fd3
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission4.unity
+    guid: 9e4594e1d3a28054892894dee8a1168e
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission5.unity
+    guid: d1deb831d1fe82e42b45296e838a474c
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission6.unity
+    guid: 8514308cea3688e459e00df16da595a6
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission7.unity
+    guid: 6aa93f9cb0d052046bf3d1049905b277
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission8.unity
+    guid: a1a077ff143edb845b208e330b25154e
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission9.unity
+    guid: dd12bc39c6e49fb42b3dc8684ce05122
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission10.unity
+    guid: be782daa8fded7d4fba15b31ec328838
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission11.unity
+    guid: d4b3c7ec5989a7c49af60ffdba491295
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission12.unity
+    guid: 62333497c46ea124e83f67ea72a54376
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission13.unity
+    guid: f201e9295b664bd469f4ebcfd7042fb3
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission14.unity
+    guid: 5844b24eceaa4134ea569ce30027972c
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission15.unity
+    guid: 50c6c2392de844b4ca17b0d821964ed9
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission16.unity
+    guid: 70b63c63c6b66f047ba5f57a411b735f
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission17.unity
+    guid: ffb9925e9bdcdfa4d8af2bbc74a542bc
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay/SingleMission/SingleMission18.unity
+    guid: 525f637d0ef345f449f4b4a2a4c424c4
+  - enabled: 1
+    path: Assets/Scenes/DescriptionPlay.unity
+    guid: 0180be0c6378e55458c281d55e8d3054
   m_configObjects: {}

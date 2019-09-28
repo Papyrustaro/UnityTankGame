@@ -982,6 +982,11 @@ PrefabInstance:
       propertyPath: enemyNumSetStage
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: allMissionNum
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1950565036, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
       propertyPath: flagUI
       value: 
@@ -1495,6 +1500,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlagUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1411194210, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8109559103308285414, guid: 086d3d8353d32074e90d0531b95fca88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1608,10 +1617,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1950565034}
-    - target: {fileID: 1411194210, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1411194212, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

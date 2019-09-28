@@ -31,4 +31,9 @@ public class LoadScene : MonoBehaviour
         MainGameController.gameNumber = 2;
         SceneManager.LoadScene("PlayerSelectTank");
     }
+
+    public void LoadDescriptionPlay()
+    {
+        SceneManager.LoadScene("DescriptionPlay");
+    }
 }

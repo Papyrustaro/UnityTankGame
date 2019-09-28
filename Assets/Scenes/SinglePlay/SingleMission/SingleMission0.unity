@@ -1229,6 +1229,11 @@ PrefabInstance:
       propertyPath: inputPlayerName
       value: 
       objectReference: {fileID: 173259144}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: allMissionNum
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
 --- !u!1001 &1572210958
