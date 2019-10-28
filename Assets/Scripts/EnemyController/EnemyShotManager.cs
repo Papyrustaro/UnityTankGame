@@ -46,6 +46,7 @@ public class EnemyShotManager : MonoBehaviour
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             BulletController bc = bullet.GetComponent<BulletController>();
             bc.SetShooter(this.gameObject);
+            bc.SetShooterTank(this.gameObject);
             bulletRb.AddForce(enemyShotBullet.transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
             countTime = 0f;
             return true;
@@ -64,6 +65,7 @@ public class EnemyShotManager : MonoBehaviour
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             BulletController bc = bullet.GetComponent<BulletController>();
             bc.SetShooter(this.gameObject);
+            bc.SetShooterTank(this.gameObject);
             bulletRb.AddForce(enemyShotBullet.transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
             countTime = 0f;
             return true;

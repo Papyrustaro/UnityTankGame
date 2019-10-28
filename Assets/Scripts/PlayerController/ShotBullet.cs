@@ -54,6 +54,7 @@ public class ShotBullet : MonoBehaviour
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
         BulletController bc = bullet.GetComponent<BulletController>();
         bc.SetShooter(this.gameObject);
+        bc.SetShooterTank(this.transform.parent.transform.parent.gameObject);
         bulletRb.AddForce(transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
         tm.SetAbleMove(false);
         StartCoroutine(DelayMethod(0.2f, () =>

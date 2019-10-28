@@ -11,7 +11,10 @@ public class BulletController : MonoBehaviour
     private bool hit = false;
     private ScoreManager sm;
     private EnemyStatus es;
-    private GameObject shooter; //発射した戦車
+    private GameObject shotBullet;
+    private GameObject shooterTank; //発射した戦車
+    private bool shooterHitAble = false; //発射した戦車自身に当たるかどうか
+    private float countTime = 0f;
 
     //シングルミッション
     private SingleMissionManager smm;
@@ -28,6 +31,18 @@ public class BulletController : MonoBehaviour
         }
 
         sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+    }
+
+    private void Update()
+    {
+        if (!this.shooterHitAble)
+        {
+            countTime += Time.deltaTime;
+            if(countTime > 0.5f)
+            {
+                this.shooterHitAble = true;
+            }
+        }
     }
     private void OnCollisionEnter(Collision col)
     {
@@ -55,30 +70,45 @@ public class BulletController : MonoBehaviour
             }
             if (col.gameObject.CompareTag("Enemy"))
             {
-                //singlemission
-                if(MainGameController.gameNumber == 1)
+                if(!shooterHitAble && shooterTank.GetInstanceID() == col.gameObject.GetInstanceID())
                 {
-                    smm.EnemyDestroy(col.gameObject.name);
+                    Debug.Log("発射直後の自分の弾に当たろうとした");
                 }
+                else
+                {
+                    //singlemission
+                    if (MainGameController.gameNumber == 1)
+                    {
+                        smm.EnemyDestroy(col.gameObject.name);
+                    }
 
-                es = GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>();
-                sm.AddScore(es);
-                Destroy(col.gameObject);
-                DestroyBullet(this.gameObject);
+                    es = GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>();
+                    sm.AddScore(es);
+                    Destroy(col.gameObject);
+                    DestroyBullet(this.gameObject);
+                }
             }
             if (col.gameObject.CompareTag("Player"))
             {
-                //singlemission
-                if(MainGameController.gameNumber == 1)
+                if (!shooterHitAble && shooterTank.GetInstanceID() == col.gameObject.GetInstanceID())
                 {
-                    smm.PlayerDestroy();
-                }else if(MainGameController.gameNumber == 2)
-                {
-                    ssm.PlayerDestroy();
+                    Debug.Log("発射直後の自分の弾に当たろうとした");
                 }
+                else
+                {
+                    //singlemission
+                    if (MainGameController.gameNumber == 1)
+                    {
+                        smm.PlayerDestroy();
+                    }
+                    else if (MainGameController.gameNumber == 2)
+                    {
+                        ssm.PlayerDestroy();
+                    }
 
-                col.gameObject.SetActive(false);
-                this.gameObject.SetActive(false);
+                    col.gameObject.SetActive(false);
+                    this.gameObject.SetActive(false);
+                }
             }
         }
     }
@@ -91,11 +121,11 @@ public class BulletController : MonoBehaviour
         {
             if (bullet.name == "Bullet(Clone)")
             {
-                this.shooter.GetComponent<ShotBullet>().DestroyBullet();
+                this.shotBullet.GetComponent<ShotBullet>().DestroyBullet();
             }
             else if (bullet.CompareTag("EnemyBullet"))
             {
-                this.shooter.GetComponent<EnemyShotManager>().DestroyBullet();
+                this.shotBullet.GetComponent<EnemyShotManager>().DestroyBullet();
             }
         }
         catch (MissingReferenceException)
@@ -120,10 +150,14 @@ public class BulletController : MonoBehaviour
     }
     public void SetShooter(GameObject shooter)
     {
-        this.shooter = shooter;
+        this.shotBullet = shooter;
     }
     public GameObject GetShooter()
     {
-        return this.shooter;
+        return this.shotBullet;
+    }
+    public void SetShooterTank(GameObject shooterTank)
+    {
+        this.shooterTank = shooterTank;
     }
 }
