@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 1615661440413752108}
   - component: {fileID: 4339056562637390439}
   - component: {fileID: 1244529429946440056}
+  - component: {fileID: -4253232397551784209}
   m_Layer: 0
   m_Name: LaserEnemy2
   m_TagString: Enemy
@@ -349,6 +350,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletBounceNum: 2
   checkInterval: 0.25
+--- !u!114 &-4253232397551784209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223765342556169849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &223765343089159067
 GameObject:
   m_ObjectHideFlags: 0

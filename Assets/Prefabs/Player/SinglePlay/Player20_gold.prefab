@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2999800788110840738}
   - component: {fileID: 741815155800589800}
   - component: {fileID: 8915493641078235744}
+  - component: {fileID: -8854412410156948083}
   m_Layer: 0
   m_Name: Player20_gold
   m_TagString: Player
@@ -133,6 +134,18 @@ MonoBehaviour:
   lifeNum: 4
   description: "\u52D5\u3051\u306A\u3044\u3002\u653B\u6483\u7279\u5316"
   tankNumber: 20
+--- !u!114 &-8854412410156948083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3338418536416263983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3338418536794769458
 GameObject:
   m_ObjectHideFlags: 0

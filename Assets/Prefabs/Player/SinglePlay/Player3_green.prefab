@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3222960816473374839}
   - component: {fileID: 1103482862865241661}
   - component: {fileID: 9124606343223079349}
+  - component: {fileID: 4243722275342686145}
   m_Layer: 0
   m_Name: Player3_green
   m_TagString: Player
@@ -132,6 +133,18 @@ MonoBehaviour:
   lifeNum: 5
   description: "\u30B9\u30AD\u30EB\u767A\u52D5\u3067\u7279\u6B8A\u5F3E\u767A\u5C04"
   tankNumber: 3
+--- !u!114 &4243722275342686145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120817372555193594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3120817373286095847
 GameObject:
   m_ObjectHideFlags: 0

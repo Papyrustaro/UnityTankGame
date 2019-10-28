@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 5876440554618383078}
   - component: {fileID: 8922150922042635181}
   - component: {fileID: 6243045600811034802}
+  - component: {fileID: 3611210721133974224}
   m_Layer: 0
   m_Name: BombermanEnemy1
   m_TagString: Enemy
@@ -235,6 +236,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletBounceNum: 1
   checkInterval: 0.5
+--- !u!114 &3611210721133974224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4970933219735672755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4970933219952261844
 GameObject:
   m_ObjectHideFlags: 0

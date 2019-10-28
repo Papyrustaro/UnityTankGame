@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 3460650427384812069}
   - component: {fileID: 1898870098327718766}
   - component: {fileID: 3974492999831851121}
+  - component: {fileID: 7425471145309759978}
   m_Layer: 0
   m_Name: WarpEnemy2
   m_TagString: Enemy
@@ -464,6 +465,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletBounceNum: 2
   checkInterval: 0.25
+--- !u!114 &7425471145309759978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2699822059497828208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2699822059694342679
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 662741183645648077}
   - component: {fileID: 3087390718634676871}
   - component: {fileID: 6569022663724430607}
+  - component: {fileID: 7683423629640375008}
   m_Layer: 0
   m_Name: Player17_laser
   m_TagString: Player
@@ -132,6 +133,18 @@ MonoBehaviour:
   lifeNum: 4
   description: "\u30EC\u30FC\u30B6\u30FC\u767A\u5C04\u88C5\u7F6E\u3092\u8A2D\u7F6E\u3067\u304D\u308B"
   tankNumber: 17
+--- !u!114 &7683423629640375008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064987566507010112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1064987567118311261
 GameObject:
   m_ObjectHideFlags: 0

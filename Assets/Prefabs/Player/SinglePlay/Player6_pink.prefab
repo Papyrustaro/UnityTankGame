@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2669259486559581228}
   - component: {fileID: 495685423491703398}
   - component: {fileID: 8579429355133453806}
+  - component: {fileID: -1709580894599470967}
   m_Layer: 0
   m_Name: Player6_pink
   m_TagString: Player
@@ -131,6 +132,18 @@ MonoBehaviour:
   lifeNum: 5
   description: "\u79FB\u52D5\u901F\u5EA6\u304C\u9AD8\u3044"
   tankNumber: 6
+--- !u!114 &-1709580894599470967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2521455352308471969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2521455352668123068
 GameObject:
   m_ObjectHideFlags: 0

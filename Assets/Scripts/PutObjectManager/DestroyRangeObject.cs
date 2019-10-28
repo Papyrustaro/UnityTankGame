@@ -36,32 +36,40 @@ public class DestroyRangeObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.root.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            //singlemission
-            if (MainGameController.gameNumber == 1)
+            TankStatus ts = other.gameObject.GetComponent<TankStatus>();
+            if (ts.GetIsAlive())
             {
-                smm.EnemyDestroy(other.transform.root.gameObject.name);
+                //singlemission
+                if (MainGameController.gameNumber == 1)
+                {
+                    smm.EnemyDestroy(other.gameObject.name);
+                }
+                ts.SetIsAlive(false);
+                es = GameObject.Find(other.gameObject.name).GetComponent<EnemyStatus>();
+                sm.AddScore(es);
+                Destroy(other.gameObject);
             }
-
-            es = GameObject.Find(other.transform.root.gameObject.name).GetComponent<EnemyStatus>();
-            sm.AddScore(es);
-            Destroy(other.transform.root.gameObject);
         }
-        if (other.transform.root.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            //singlemission
-            if (MainGameController.gameNumber == 1)
+            TankStatus ts = other.gameObject.GetComponent<TankStatus>();
+            if (ts.GetIsAlive())
             {
-                smm.PlayerDestroy();
+                //singlemission
+                if (MainGameController.gameNumber == 1)
+                {
+                    smm.PlayerDestroy();
+                }
+                else if (MainGameController.gameNumber == 2)
+                {
+                    ssm.PlayerDestroy();
+                }
+                ts.SetIsAlive(false);
+                other.gameObject.SetActive(false);
+                this.gameObject.SetActive(false);
             }
-            else if (MainGameController.gameNumber == 2)
-            {
-                ssm.PlayerDestroy();
-            }
-
-            other.transform.root.gameObject.SetActive(false);
-            this.gameObject.SetActive(false);
         }else if (other.gameObject.CompareTag("DestroyableWall"))
         {
             Destroy(other.gameObject);

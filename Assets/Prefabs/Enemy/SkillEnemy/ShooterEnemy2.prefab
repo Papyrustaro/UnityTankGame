@@ -451,6 +451,7 @@ GameObject:
   - component: {fileID: 8418630374402677374}
   - component: {fileID: 6811814049306231605}
   - component: {fileID: 8357120503307540522}
+  - component: {fileID: 5155828941684642285}
   m_Layer: 0
   m_Name: ShooterEnemy2
   m_TagString: Enemy
@@ -578,6 +579,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletBounceNum: 2
   checkInterval: 0.25
+--- !u!114 &5155828941684642285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7036304155172349739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9123870498868648864
 GameObject:
   m_ObjectHideFlags: 0

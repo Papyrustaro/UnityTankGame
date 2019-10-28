@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4562675690688553130}
   - component: {fileID: 2070524730682341088}
   - component: {fileID: 7875315305210007912}
+  - component: {fileID: 7192213017805138287}
   m_Layer: 0
   m_Name: Player13_bomber
   m_TagString: Player
@@ -132,6 +133,18 @@ MonoBehaviour:
   lifeNum: 4
   description: "\u30DC\u30F3\u3007\u30FC\u30DE\u30F3"
   tankNumber: 13
+--- !u!114 &7192213017805138287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4081666752095587367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4081666752759397178
 GameObject:
   m_ObjectHideFlags: 0

@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 4190415420921591377}
   - component: {fileID: 1859215372107898907}
   - component: {fileID: 7510882990204503955}
+  - component: {fileID: -8812229937035672417}
   m_Layer: 0
   m_Name: Player15_switchgate
   m_TagString: Player
@@ -492,6 +493,18 @@ MonoBehaviour:
   lifeNum: 4
   description: "\u304B\u3079\u3092\u8A2D\u7F6E\u3067\u304D\u308B"
   tankNumber: 15
+--- !u!114 &-8812229937035672417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4454701645556259548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4454701644957186780
 PrefabInstance:
   m_ObjectHideFlags: 0

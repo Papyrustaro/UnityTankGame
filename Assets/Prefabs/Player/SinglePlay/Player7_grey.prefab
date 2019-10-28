@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 4850477062086276803}
   - component: {fileID: 6969955013412216969}
   - component: {fileID: 1246098409562392321}
+  - component: {fileID: -4234304660315049715}
   m_Layer: 0
   m_Name: Player7_grey
   m_TagString: Player
@@ -222,6 +223,18 @@ MonoBehaviour:
   lifeNum: 5
   description: "\u767A\u5C04\u901F\u5EA6\u304C\u306F\u3084\u3044"
   tankNumber: 7
+--- !u!114 &-4234304660315049715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4946434690068650574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4946434690432329980
 GameObject:
   m_ObjectHideFlags: 0

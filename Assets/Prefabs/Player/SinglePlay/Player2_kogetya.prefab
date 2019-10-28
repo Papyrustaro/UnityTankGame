@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 4453531476655670109}
   - component: {fileID: 2171866762933654807}
   - component: {fileID: 8058421456748769951}
+  - component: {fileID: 8966465283030287053}
   m_Layer: 0
   m_Name: Player2_kogetya
   m_TagString: Player
@@ -492,6 +493,18 @@ MonoBehaviour:
   lifeNum: 5
   description: "\u79FB\u52D5\u901F\u5EA6\u3092\u901F\u304F\u3059\u308B\u30B9\u30AD\u30EB\u3092\u6301\u3064"
   tankNumber: 2
+--- !u!114 &8966465283030287053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4195947877072515024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4195947876574678992
 PrefabInstance:
   m_ObjectHideFlags: 0

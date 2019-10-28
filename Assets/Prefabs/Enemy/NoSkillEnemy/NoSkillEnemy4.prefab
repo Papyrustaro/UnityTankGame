@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 3315533455787396122}
   - component: {fileID: 315167783369151825}
   - component: {fileID: 2967216251466927694}
+  - component: {fileID: 3539264360909703402}
   m_Layer: 0
   m_Name: NoSkillEnemy4
   m_TagString: Enemy
@@ -383,6 +384,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletBounceNum: 2
   checkInterval: 0.25
+--- !u!114 &3539264360909703402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4283529064525033807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4283529065057926317
 GameObject:
   m_ObjectHideFlags: 0

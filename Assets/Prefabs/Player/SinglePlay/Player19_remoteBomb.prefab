@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 5631551480608047150}
   - component: {fileID: 7912068234193507940}
   - component: {fileID: 2034526340338135532}
+  - component: {fileID: 1922449542866016859}
   m_Layer: 0
   m_Name: Player19_remoteBomb
   m_TagString: Player
@@ -223,6 +224,18 @@ MonoBehaviour:
   lifeNum: 4
   description: "\u9060\u9694\u64CD\u4F5C\u3067\u304D\u308B\u7206\u5F3E\u304C\u4F7F\u3048\u308B"
   tankNumber: 19
+--- !u!114 &1922449542866016859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5319407771120364707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5319407771403172885
 GameObject:
   m_ObjectHideFlags: 0

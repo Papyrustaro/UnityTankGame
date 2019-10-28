@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6831408779906618963}
   - component: {fileID: 9017350011316846617}
   - component: {fileID: 924740689384826769}
+  - component: {fileID: 4447737679410570110}
   m_Layer: 0
   m_Name: Player14_warp
   m_TagString: Player
@@ -132,6 +133,18 @@ MonoBehaviour:
   lifeNum: 4
   description: "\u30EF\u30FC\u30D7\u3092\u8A2D\u7F6E\u3067\u304D\u308B"
   tankNumber: 14
+--- !u!114 &4447737679410570110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6429755997831740126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6429755998459809219
 GameObject:
   m_ObjectHideFlags: 0

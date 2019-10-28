@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 5777231473457888868}
   - component: {fileID: 8342570258013333550}
   - component: {fileID: 159743354921914278}
+  - component: {fileID: 8714356989617389192}
   m_Layer: 0
   m_Name: Player1_usutya
   m_TagString: Player
@@ -400,6 +401,18 @@ MonoBehaviour:
   lifeNum: 6
   description: "\u6B8B\u6A5F\u30921\u3064\u5897\u3084\u305B\u308B"
   tankNumber: 1
+--- !u!114 &8714356989617389192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6330308996960539369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6330308997355808244
 GameObject:
   m_ObjectHideFlags: 0

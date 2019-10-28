@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 6241718051058584755}
   - component: {fileID: 8990203064531129848}
   - component: {fileID: 5886633618946641639}
+  - component: {fileID: -1999465573279301688}
   m_Layer: 0
   m_Name: RemoteBombEnemy2
   m_TagString: Enemy
@@ -485,6 +486,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletBounceNum: 2
   checkInterval: 0.25
+--- !u!114 &-1999465573279301688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4894862622262784486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f87d0d4b58fc74487c876e324cf96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4894862622346680924
 GameObject:
   m_ObjectHideFlags: 0
