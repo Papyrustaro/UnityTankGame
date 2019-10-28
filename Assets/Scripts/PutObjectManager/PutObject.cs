@@ -41,6 +41,11 @@ public class PutObject : MonoBehaviour
     {
         shotBullet = this.transform.Find("ShotBullet").gameObject;
     }
+
+    public void SetPutAbleLandMineNum(int n)
+    {
+        this.putAbleLandMineNum = n;
+    }
     public bool PutBatteryPrefab()
     {
         if (putBatteryNum < putAbleBatteryNum)

@@ -14,6 +14,22 @@ public class PlayerTankParameter : MonoBehaviour
     public string description;
     public int tankNumber;
 
+    private void Start()
+    {
+        try
+        {
+            PutObject po = this.transform.Find("Cannon").gameObject.GetComponent<PutObject>();
+            po.SetPutAbleLandMineNum(this.putAbleLandMineNum);
+        }catch(System.Exception e)
+        {
+            Debug.Log(e.Message);
+        }
+    }
+
+    public int GetPutAbleLandMineNum()
+    {
+        return this.putAbleLandMineNum;
+    }
     public float GetMoveSpeedMagni()
     {
         return this.moveSpeedMagni;

@@ -125,11 +125,11 @@ MonoBehaviour:
   moveSpeedMagni: 1.1
   shotSpeedMagni: 0.9
   shotAbleBulletNum: 5
-  putAbleLandMineNum: 5
+  putAbleLandMineNum: 10
   addScore: 0
   haveSkillNum: 0
   lifeNum: 5
-  description: "\u5730\u96F7\u30925\u3064\u307E\u3067\u7F6E\u3051\u308B"
+  description: "\u5730\u96F7\u309210\u500B\u307E\u3067\u7F6E\u3051\u308B"
   tankNumber: 4
 --- !u!1 &5034431062291485361
 GameObject:
