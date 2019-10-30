@@ -75,6 +75,15 @@ public class PutObject : MonoBehaviour
         {
             remoteBomb = (GameObject)Instantiate(remoteBombPrefab, new Vector3(shotBullet.transform.position.x, 0f, shotBullet.transform.position.z), Quaternion.identity);
             remoteBomb.GetComponent<RemoteController>().SetController(this.gameObject, shotBullet);
+            try
+            {
+                UseSkill us = this.transform.parent.transform.gameObject.GetComponent<UseSkill>();
+                us.SetSkillCountTime(9f);
+            }
+            catch
+            {
+
+            }
         }
         else
         {
@@ -116,6 +125,15 @@ public class PutObject : MonoBehaviour
             {
                 warp = (GameObject)Instantiate(warpPrefab, transform.position, Quaternion.identity);
                 warp.GetComponent<Warp>().SetPutter(this.GetComponent<PutObject>());
+                try
+                {
+                    UseSkill us = this.transform.parent.transform.gameObject.GetComponent<UseSkill>();
+                    us.SetSkillCountTime(2.5f);
+                }
+                catch
+                {
+
+                }
             }
             else
             {

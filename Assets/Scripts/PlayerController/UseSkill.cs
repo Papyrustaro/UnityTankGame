@@ -84,7 +84,7 @@ public class UseSkill : MonoBehaviour
         po = this.transform.Find("Cannon").gameObject.GetComponent<PutObject>();
         gamePadNum = GetComponent<GamePadManager>().GetGamePadNum();
         countTime[0] = 0f;
-        countTime[0] = 0f;
+        countTime[1] = 0f;
         SkillSet();
         SkillIconSet();
     }
@@ -97,8 +97,8 @@ public class UseSkill : MonoBehaviour
             countTime[0] += Time.deltaTime;
             if (Input.GetButtonDown(GamePadManager.padSkill1[gamePadNum]) && countTime[0] >= skillInterval[0])
             {
-                sFunc[skillNumber[0]]();
                 countTime[0] = 0f;
+                sFunc[skillNumber[0]]();
             }
         }
         if (haveSkillNum > 1)
@@ -106,8 +106,8 @@ public class UseSkill : MonoBehaviour
             countTime[1] += Time.deltaTime;
             if (Input.GetButtonDown(GamePadManager.padSkill2[gamePadNum]) && countTime[1] >= skillInterval[1])
             {
-                sFunc[skillNumber[1]]();
                 countTime[1] = 0f;
+                sFunc[skillNumber[1]]();
             }
         }
         if (Input.GetButtonDown(GamePadManager.padFire2[gamePadNum]))
@@ -170,6 +170,13 @@ public class UseSkill : MonoBehaviour
         po.PutSwitchGatePrefab();
     }
 
+
+    //PutObjectから参照しようとしたが、EnemyにはUseSkillクラスがないので今回はUseSkill側から
+    //warpとRemoteBombどちらも持っているプレイヤーがいない前提の実装
+    public void SetSkillCountTime(float newCountTime)
+    {
+        this.countTime[0] = newCountTime;
+    }
     private IEnumerator DelayMethod(float waitTime, Action action)
     {
         yield return new WaitForSeconds(waitTime);
