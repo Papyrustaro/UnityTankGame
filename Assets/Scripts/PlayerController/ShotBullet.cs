@@ -56,6 +56,7 @@ public class ShotBullet : MonoBehaviour
         bc.SetShooter(this.gameObject);
         bc.SetShooterTank(this.transform.parent.transform.parent.gameObject);
         bulletRb.AddForce(transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
+        SEManager.PlayShotBulletSound();
         tm.SetAbleMove(false);
         StartCoroutine(DelayMethod(0.2f, () =>
         {

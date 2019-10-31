@@ -84,6 +84,7 @@ public class BulletController : MonoBehaviour
 
                     es = GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>();
                     sm.AddScore(es);
+                    SEManager.PlayDestroyTankSound();
                     Destroy(col.gameObject);
                     DestroyBullet(this.gameObject);
                 }
@@ -105,7 +106,7 @@ public class BulletController : MonoBehaviour
                     {
                         ssm.PlayerDestroy();
                     }
-
+                    SEManager.PlayDestroyTankSound();
                     col.gameObject.SetActive(false);
                     this.gameObject.SetActive(false);
                 }

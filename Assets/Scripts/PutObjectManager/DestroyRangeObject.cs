@@ -49,6 +49,7 @@ public class DestroyRangeObject : MonoBehaviour
                 ts.SetIsAlive(false);
                 es = GameObject.Find(other.gameObject.name).GetComponent<EnemyStatus>();
                 sm.AddScore(es);
+                SEManager.PlayDestroyTankSound();
                 Destroy(other.gameObject);
             }
         }
@@ -67,6 +68,7 @@ public class DestroyRangeObject : MonoBehaviour
                     ssm.PlayerDestroy();
                 }
                 ts.SetIsAlive(false);
+                SEManager.PlayDestroyTankSound();
                 other.gameObject.SetActive(false);
                 this.gameObject.SetActive(false);
             }

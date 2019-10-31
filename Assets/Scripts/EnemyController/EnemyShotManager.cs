@@ -47,6 +47,7 @@ public class EnemyShotManager : MonoBehaviour
             BulletController bc = bullet.GetComponent<BulletController>();
             bc.SetShooter(this.gameObject);
             bc.SetShooterTank(this.gameObject);
+            SEManager.PlayShotBulletSound();
             bulletRb.AddForce(enemyShotBullet.transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
             countTime = 0f;
             return true;
@@ -66,6 +67,7 @@ public class EnemyShotManager : MonoBehaviour
             BulletController bc = bullet.GetComponent<BulletController>();
             bc.SetShooter(this.gameObject);
             bc.SetShooterTank(this.gameObject);
+            SEManager.PlayShotBulletSound();
             bulletRb.AddForce(enemyShotBullet.transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
             countTime = 0f;
             return true;

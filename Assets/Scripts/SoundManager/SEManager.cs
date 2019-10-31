@@ -4,36 +4,44 @@ using UnityEngine;
 
 public class SEManager : MonoBehaviour
 {
-    private AudioSource audioSource;
-    public AudioClip shotBulletSound;
-    public AudioClip destroyTankSound;
-    public AudioClip bounceBulletSound;
-    public AudioClip selectButtonSound;
-    public AudioClip submitSound;
+    private static AudioSource audioSource;
+    public static AudioClip shotBulletSound;
+    public static AudioClip destroyTankSound;
+    public static AudioClip bounceBulletSound;
+    public static AudioClip selectButtonSound;
+    public static AudioClip submitSound;
+
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlayShotBulletSound()
+    public static void PlaySound(AudioClip audioClip)
     {
-        audioSource.PlayOneShot(this.shotBulletSound);
+        audioSource.PlayOneShot(audioClip);
     }
-    public void PlayDestroyTankSound()
+
+    public static void PlayShotBulletSound()
     {
-        audioSource.PlayOneShot(this.destroyTankSound);
+        audioSource.PlayOneShot(shotBulletSound);
     }
-    public void PlayBounceBulletSound()
+
+    public static void PlayDestroyTankSound()
     {
-        audioSource.PlayOneShot(this.bounceBulletSound);
+        audioSource.PlayOneShot(destroyTankSound);
     }
-    public void PlaySelectButtonSound()
+    public static void PlayBounceBulletSound()
     {
-        audioSource.PlayOneShot(this.selectButtonSound);
+        audioSource.PlayOneShot(bounceBulletSound);
     }
-    public void PlaySubmitSound()
+    public static void PlaySelectButtonSound()
     {
-        audioSource.PlayOneShot(this.submitSound);
+        audioSource.PlayOneShot(selectButtonSound);
     }
+    public static void PlaySubmitSound()
+    {
+        audioSource.PlayOneShot(submitSound);
+    }
+
 }
