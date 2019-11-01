@@ -12,7 +12,6 @@ public class PlayerSelectTank : MonoBehaviour
     {
         playerSelectTank[0].Select();
     }
-
     public void SelectTankNum(int n)
     {
         MainGameController.SetPlayerSelectTankNumber(n);

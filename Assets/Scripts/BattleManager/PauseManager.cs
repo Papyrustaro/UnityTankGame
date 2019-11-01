@@ -8,17 +8,16 @@ using System;
 
 public class PauseManager : MonoBehaviour
 {
-    //[SerializeField]
-    public GameObject pauseUI;
     public Button resumeButton;
+    public GameObject pausePanel;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Ctrl"))
         {
-            pauseUI.SetActive(!pauseUI.activeSelf);
-            if (pauseUI.activeSelf)
+            this.pausePanel.SetActive(!this.pausePanel.activeSelf);
+            if (this.pausePanel.activeSelf)
             {
                 resumeButton.Select();
                 Time.timeScale = 0f;
@@ -30,7 +29,7 @@ public class PauseManager : MonoBehaviour
     }
     public void OnResumeButtonClicked()
     {
-        pauseUI.SetActive(false);
+        this.pausePanel.SetActive(false);
         StartCoroutine(DelayMethod(5, () =>
         {
             Time.timeScale = 1f;

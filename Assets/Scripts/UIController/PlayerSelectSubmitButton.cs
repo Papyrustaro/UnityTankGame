@@ -7,6 +7,7 @@ public class PlayerSelectSubmitButton : MonoBehaviour
 {
     public void OnPress()
     {
+        SEManager.PlaySubmitSound();
         //SingleMission
         if(MainGameController.gameNumber == 1)
         {

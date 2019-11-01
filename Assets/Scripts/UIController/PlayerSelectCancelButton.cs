@@ -22,6 +22,7 @@ public class PlayerSelectCancelButton : MonoBehaviour
     }
     public void OnPress()
     {
+        SEManager.PlaySubmitSound();
         psui.PressCancelButton();
     }
     public void SetSelectTankNum(int selectTankNum)

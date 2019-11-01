@@ -45,6 +45,7 @@ public class PlayerSelectButton : MonoBehaviour
     }
     public void OnSelect()
     {
+        SEManager.PlaySelectButtonSound();
         lifeNumText.text = lifeNum;
         moveSpeedText.text = moveSpeed;
         shotSpeedText.text = shotSpeed;
@@ -63,6 +64,7 @@ public class PlayerSelectButton : MonoBehaviour
 
     public void OnPress()
     {
+        SEManager.PlaySubmitSound();
         if(MainGameController.gameNumber == 1)
         {
             SingleMissionStaticData.selectTankNumber = ptp.GetTankNumber();

@@ -17,6 +17,7 @@ public class MenuSceneManager : MonoBehaviour
     }
     public void OnOnePlayButtonClicked()
     {
+        SEManager.PlaySubmitSound();
         SceneManager.LoadScene("PlayerSelectTank");
     }
 }
