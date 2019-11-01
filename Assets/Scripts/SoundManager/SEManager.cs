@@ -11,6 +11,15 @@ public class SEManager : MonoBehaviour
     public static AudioClip selectButtonSound;
     public static AudioClip submitSound;
 
+    public static AudioClip destroyBulletSound;
+    public static AudioClip shotLaserSound;
+    public static AudioClip bombSound;
+    public static AudioClip warpSound;
+    public static AudioClip putBombSound;
+    public static AudioClip putObjectSound0;
+    public static AudioClip putObjectSound1;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +51,34 @@ public class SEManager : MonoBehaviour
     public static void PlaySubmitSound()
     {
         audioSource.PlayOneShot(submitSound);
+    }
+    public static void PlayBombSound()
+    {
+        audioSource.PlayOneShot(bombSound);
+    }
+    public static void PlayWarpSound()
+    {
+        audioSource.PlayOneShot(warpSound);
+    }
+    public static void PlayShotLaserSound()
+    {
+        audioSource.PlayOneShot(shotLaserSound);
+    }
+    public static void PlayDestroyBulletSound()
+    {
+        audioSource.PlayOneShot(destroyBulletSound);
+    }
+    public static void PlayPutBombSound()
+    {
+        audioSource.PlayOneShot(putBombSound);
+    }
+    public static void PlayPutObjectSound0()
+    {
+        audioSource.PlayOneShot(putObjectSound0);
+    }
+    public static void PlayPutObjectSound1()
+    {
+        audioSource.PlayOneShot(putObjectSound1);
     }
 
 }

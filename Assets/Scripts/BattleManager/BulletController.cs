@@ -57,6 +57,10 @@ public class BulletController : MonoBehaviour
                 {
                     DestroyBullet(this.gameObject);
                 }
+                else
+                {
+                    SEManager.PlayBounceBulletSound();
+                }
             }
             if (col.gameObject.CompareTag("DestroyableObject"))
             {
@@ -133,6 +137,7 @@ public class BulletController : MonoBehaviour
         {
 
         }
+        SEManager.PlayDestroyBulletSound();
         Destroy(bullet);
     }
     private void OnCollisionExit(Collision col)

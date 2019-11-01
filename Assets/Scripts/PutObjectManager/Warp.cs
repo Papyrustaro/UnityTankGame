@@ -21,6 +21,7 @@ public class Warp : MonoBehaviour
         GameObject hitOb = other.gameObject.transform.root.gameObject;
         if (warpAble && (hitOb.CompareTag("Player")))
         {
+            SEManager.PlayWarpSound();
             SetUseNotAble();
             exitWarp.SetUseNotAble();
             hitOb.transform.position = pareWarpPrefab.transform.position;

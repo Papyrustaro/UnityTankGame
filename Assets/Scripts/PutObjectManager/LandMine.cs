@@ -42,6 +42,7 @@ public class LandMine : MonoBehaviour
         catch (MissingReferenceException)
         {
         }
+        SEManager.PlayBombSound();
         GameObject Explosion = (GameObject)Instantiate(explosionPrefab, this.transform.position, Quaternion.identity);
         this.gameObject.SetActive(false);
         Destroy(Explosion, 0.5f);

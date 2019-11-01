@@ -53,6 +53,7 @@ public class PutObject : MonoBehaviour
             GameObject battery = Instantiate(batteryPrefab, new Vector3(shotBullet.transform.position.x, 0f, shotBullet.transform.position.z), transform.rotation);
             battery.GetComponent<DestroyTimeAgo>().SetPutter(this.GetComponent<PutObject>());
             battery.GetComponent<DestroyByAttack>().SetPutter(this.GetComponent<PutObject>());
+            SEManager.PlayPutObjectSound0();
             putBatteryNum++;
             return true;
         }
@@ -64,6 +65,7 @@ public class PutObject : MonoBehaviour
         {            
             GameObject protectDome = Instantiate(protectDomePrefab, transform.position, Quaternion.identity);
             protectDome.GetComponent<DestroyTimeAgo>().SetPutter(this.GetComponent<PutObject>());
+            SEManager.PlayPutObjectSound1();
             putProtectDomeNum++;
             return true;
         }
@@ -75,6 +77,7 @@ public class PutObject : MonoBehaviour
         {
             remoteBomb = (GameObject)Instantiate(remoteBombPrefab, new Vector3(shotBullet.transform.position.x, 0f, shotBullet.transform.position.z), Quaternion.identity);
             remoteBomb.GetComponent<RemoteController>().SetController(this.gameObject, shotBullet);
+            SEManager.PlayPutBombSound();
             try
             {
                 UseSkill us = this.transform.parent.transform.gameObject.GetComponent<UseSkill>();
@@ -87,6 +90,7 @@ public class PutObject : MonoBehaviour
         }
         else
         {
+            SEManager.PlayBombSound();
             GameObject Explosion = (GameObject)Instantiate(remoteBombExplosionPrefab, remoteBomb.transform.position, Quaternion.identity);
             Destroy(remoteBomb);
             Destroy(Explosion, 0.5f);
@@ -98,6 +102,7 @@ public class PutObject : MonoBehaviour
     {
         if (putBomberManNum < putAbleBomberManNum)
         {
+            SEManager.PlayPutBombSound();
             GameObject bomberman = Instantiate(bombermanPrefab, transform.position, Quaternion.identity);
             bomberman.GetComponent<BomberMan>().SetPutter(this.GetComponent<PutObject>());
             putBomberManNum++;
@@ -109,6 +114,7 @@ public class PutObject : MonoBehaviour
     {
         if(putLaserNum < putAbleLaserNum)
         {
+            SEManager.PlayPutObjectSound0();
             GameObject laser = Instantiate(laserPrefab, shotBullet.transform.position, transform.rotation);
             laser.GetComponent<Laser>().SetPutter(this.GetComponent<PutObject>());
             putLaserNum++;
@@ -123,6 +129,7 @@ public class PutObject : MonoBehaviour
         {
             if (!putWarp)
             {
+                SEManager.PlayPutObjectSound1();
                 warp = (GameObject)Instantiate(warpPrefab, transform.position, Quaternion.identity);
                 warp.GetComponent<Warp>().SetPutter(this.GetComponent<PutObject>());
                 try
@@ -137,6 +144,7 @@ public class PutObject : MonoBehaviour
             }
             else
             {
+                SEManager.PlayPutObjectSound1();
                 GameObject exitwarp = (GameObject)Instantiate(exitWarpPrefab, transform.position, Quaternion.identity);
                 warp.GetComponent<Warp>().SetPareWarp(exitwarp);
                 exitwarp.GetComponent<Warp>().SetPareWarp(warp);
@@ -157,6 +165,7 @@ public class PutObject : MonoBehaviour
     {
         if (putSwitchGateNum < putAbleSwitchGateNum)
         {
+            SEManager.PlayPutObjectSound0();
             GameObject switchGate = Instantiate(switchGatePrefab, new Vector3(shotBullet.transform.position.x, 0f, shotBullet.transform.position.z), transform.rotation);
             switchGate.GetComponent<DestroyTimeAgo>().SetPutter(this.GetComponent<PutObject>());
             switchGate.GetComponent<DestroyByAttack>().SetPutter(this.GetComponent<PutObject>());
@@ -170,6 +179,7 @@ public class PutObject : MonoBehaviour
     {
         if(putLandMineNum < putAbleLandMineNum)
         {
+            SEManager.PlayPutBombSound();
             GameObject landMine = (GameObject)Instantiate(landMinePrefab, transform.position, Quaternion.identity);
             landMine.GetComponent<LandMine>().SetPutter(this.GetComponent<PutObject>());
             putLandMineNum++;

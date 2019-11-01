@@ -22,6 +22,7 @@ public class Laser : MonoBehaviour
 
     private void ShotLaser()
     {
+        SEManager.PlayShotLaserSound();
         laser.SetActive(true);
     }
     private void DestroyLaser()

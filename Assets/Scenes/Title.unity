@@ -545,6 +545,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9159668442153724261, guid: b00314d10e74237468f0d162c073370e,
+        type: 3}
+      propertyPath: shotLaserSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 83576e39f069d9149afe621af346061b, type: 3}
+    - target: {fileID: 9159668442153724261, guid: b00314d10e74237468f0d162c073370e,
+        type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ce6359c0c2ff4dc48a161756c2358d3f, type: 3}
+    - target: {fileID: 9159668442153724261, guid: b00314d10e74237468f0d162c073370e,
+        type: 3}
+      propertyPath: warpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 356cac60f8ca37449abce49a41a563b5, type: 3}
+    - target: {fileID: 9159668442153724261, guid: b00314d10e74237468f0d162c073370e,
+        type: 3}
+      propertyPath: destroyBulletSound
+      value: 
+      objectReference: {fileID: 8300000, guid: edd1569c4f9acb443b934dbb293c6c80, type: 3}
+    - target: {fileID: 9159668442153724261, guid: b00314d10e74237468f0d162c073370e,
+        type: 3}
+      propertyPath: putBombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c2fe430e0b248945963513ce5191371, type: 3}
+    - target: {fileID: 9159668442153724261, guid: b00314d10e74237468f0d162c073370e,
+        type: 3}
+      propertyPath: putObjectSound0
+      value: 
+      objectReference: {fileID: 8300000, guid: 4ed7ac370134c7346aebf9264fc034eb, type: 3}
+    - target: {fileID: 9159668442153724261, guid: b00314d10e74237468f0d162c073370e,
+        type: 3}
+      propertyPath: putObjectSound1
+      value: 
+      objectReference: {fileID: 8300000, guid: 74974d68ecb36954899b72b8ca95d1cf, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00314d10e74237468f0d162c073370e, type: 3}
 --- !u!1 &2091823405
