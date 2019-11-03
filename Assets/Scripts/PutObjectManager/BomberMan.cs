@@ -71,6 +71,7 @@ public class BomberMan : MonoBehaviour
     {
         if (!isBomb)
         {
+            SEManager.PlayBombSound();
             explosion[0] = (GameObject)Instantiate(explosionPrefab, transform.position + new Vector3((distancePX - distanceNX) / 2, 0f, 0f), Quaternion.identity);
             explosion[0].transform.localScale = new Vector3(distancePX + distanceNX, 2f, 2f);
         }

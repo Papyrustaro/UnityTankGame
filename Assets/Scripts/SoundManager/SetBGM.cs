@@ -5,9 +5,7 @@ using System;
 
 public class SetBGM : MonoBehaviour
 {
-    public int BGMNum;
-    public AudioClip menuBGM;
-    public AudioClip battleBGM;
+    public int BGMNum; //1:menu, 2:singleMission0, 3:singleMission1, 4:survival
 
     private void Awake()
     {
@@ -19,14 +17,23 @@ public class SetBGM : MonoBehaviour
                 switch (this.BGMNum)
                 {
                     case 1:
-                        audioSource.clip = menuBGM;
+                        audioSource.clip = BGMManager.menuBGM;
                         audioSource.Play();
                         break;
                     case 2:
-                        audioSource.clip = battleBGM;
+                        audioSource.clip = BGMManager.singleMissionBGM0;
+                        audioSource.Play();
+                        break;
+                    case 3:
+                        audioSource.clip = BGMManager.singleMissionBGM1;
+                        audioSource.Play();
+                        break;
+                    case 4:
+                        audioSource.clip = BGMManager.survivalBGM;
                         audioSource.Play();
                         break;
                     default:
+                        audioSource.Stop();
                         break;
                 }
                 BGMManager.BGMNum = BGMNum;

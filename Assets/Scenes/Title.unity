@@ -582,6 +582,28 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 74974d68ecb36954899b72b8ca95d1cf, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00314d10e74237468f0d162c073370e, type: 3}
+--- !u!1 &1813392774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195820950215890659, guid: b00314d10e74237468f0d162c073370e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1813392773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1813392775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813392774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19367a73a1c31924ba5bf816ca23b979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuBGM: {fileID: 8300000, guid: 2114d171d301b074ba79f930ff9f4484, type: 3}
+  singleMissionBGM0: {fileID: 8300000, guid: 12184c6694b6b9e4ab65f63b8979db6a, type: 3}
+  singleMissionBGM1: {fileID: 8300000, guid: d83eda2b8f6b89f4697a34bf450fcab9, type: 3}
+  survivalBGM: {fileID: 8300000, guid: e25fe75cbd13d5845ad92df537ec3c2a, type: 3}
 --- !u!1 &2091823405
 GameObject:
   m_ObjectHideFlags: 0

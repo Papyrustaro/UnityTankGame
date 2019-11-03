@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetSound : MonoBehaviour
+public class LoadSE : MonoBehaviour
 {
     public AudioClip shotBulletSound;
     public AudioClip destroyTankSound;

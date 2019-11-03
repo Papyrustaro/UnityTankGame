@@ -7,7 +7,12 @@ public class BGMManager : MonoBehaviour
     private bool dontDestroyEnabled = true;
     private AudioSource audioSource;
 
-    public static int BGMNum; //menu = 1, battle = 2
+    public static AudioClip menuBGM;
+    public static AudioClip singleMissionBGM0;
+    public static AudioClip singleMissionBGM1;
+    public static AudioClip survivalBGM;
+
+    public static int BGMNum; //menu:1, singleMission0:2, singleMission1:3, survival:4
 
     static BGMManager _instance = null;
 
