@@ -5,7 +5,7 @@ using UnityEngine;
 public class BGMManager : MonoBehaviour
 {
     private bool dontDestroyEnabled = true;
-    private AudioSource audioSource;
+    private static AudioSource audioSource;
 
     public static AudioClip menuBGM;
     public static AudioClip singleMissionBGM0;
@@ -50,4 +50,8 @@ public class BGMManager : MonoBehaviour
         audioSource.clip = audioClip;
     }
 
+    public static void SetVolume(float volume)
+    {
+        audioSource.volume = volume;
+    }
 }

@@ -18,5 +18,6 @@ public class InitAllData : MonoBehaviour
         SingleSurvivalStaticData.playerScore = 0;
 
         MainGameController.gameNumber = 0;
+        BGMManager.SetVolume(1f);
     }
 }

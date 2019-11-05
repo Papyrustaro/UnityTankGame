@@ -585,6 +585,16 @@ PrefabInstance:
       propertyPath: countDownSound
       value: 
       objectReference: {fileID: 8300000, guid: 879fc5edb7e741245987fc5f10489137, type: 3}
+    - target: {fileID: 9159668442153724261, guid: b00314d10e74237468f0d162c073370e,
+        type: 3}
+      propertyPath: resultSound0
+      value: 
+      objectReference: {fileID: 8300000, guid: 951278a9e873e4a42a253a3ed6b98fc8, type: 3}
+    - target: {fileID: 9159668442153724261, guid: b00314d10e74237468f0d162c073370e,
+        type: 3}
+      propertyPath: resultSound1
+      value: 
+      objectReference: {fileID: 8300000, guid: 951278a9e873e4a42a253a3ed6b98fc8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00314d10e74237468f0d162c073370e, type: 3}
 --- !u!1 &1813392774 stripped

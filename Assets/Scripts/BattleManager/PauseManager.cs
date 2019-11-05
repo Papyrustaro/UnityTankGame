@@ -19,16 +19,19 @@ public class PauseManager : MonoBehaviour
             this.pausePanel.SetActive(!this.pausePanel.activeSelf);
             if (this.pausePanel.activeSelf)
             {
+                BGMManager.SetVolume(0.5f);
                 resumeButton.Select();
                 Time.timeScale = 0f;
             }else
             {
+                BGMManager.SetVolume(1f);
                 Time.timeScale = 1f;
             }
         }
     }
     public void OnResumeButtonClicked()
     {
+        BGMManager.SetVolume(1f);
         this.pausePanel.SetActive(false);
         StartCoroutine(DelayMethod(5, () =>
         {

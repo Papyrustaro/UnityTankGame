@@ -17,6 +17,8 @@ public class LoadSE : MonoBehaviour
     public AudioClip putObjectSound0;
     public AudioClip putObjectSound1;
     public AudioClip countDownSound;
+    public AudioClip resultSound0;
+    public AudioClip resultSound1;
 
     private void Start()
     {
@@ -33,5 +35,7 @@ public class LoadSE : MonoBehaviour
         SEManager.putObjectSound0 = this.putObjectSound0;
         SEManager.putObjectSound1 = this.putObjectSound1;
         SEManager.countDownSound = this.countDownSound;
+        SEManager.resultSound0 = this.resultSound0;
+        SEManager.resultSound1 = this.resultSound1;
     }
 }

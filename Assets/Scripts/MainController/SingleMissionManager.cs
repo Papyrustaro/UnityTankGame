@@ -164,6 +164,7 @@ public class SingleMissionManager : MonoBehaviour
 
     public void DisplayResult()
     {
+        BGMManager.SetVolume(0.5f);
         resultUIPanel.SetActive(true);
         scoreLabel.SetActive(false);
 
@@ -201,14 +202,17 @@ public class SingleMissionManager : MonoBehaviour
         StartCoroutine(DelayMethod(3f, () =>
         {
             destroyScoreText.SetActive(true);
+            SEManager.PlaySound(SEManager.resultSound0);
         }));
         StartCoroutine(DelayMethod(4f, () =>
         {
             lifeScoreText.SetActive(true);
+            SEManager.PlaySound(SEManager.resultSound0);
         }));
         StartCoroutine(DelayMethod(5f, () =>
         {
             timeScoreText.SetActive(true);
+            SEManager.PlaySound(SEManager.resultSound0);
         }));
         StartCoroutine(DelayMethod(6f, () =>
         {
@@ -221,9 +225,14 @@ public class SingleMissionManager : MonoBehaviour
         StartCoroutine(DelayMethod(8f, () =>
         {
             sumScoreValueText.SetActive(true);
+            SEManager.PlaySound(SEManager.resultSound1);
+        }));
+        StartCoroutine(DelayMethod(8.1f, () =>
+        {
+            SEManager.PlaySound(SEManager.resultSound1);
         }));
 
-            StartCoroutine(DelayMethod(11f, () =>
+        StartCoroutine(DelayMethod(11f, () =>
         {
             destroyScoreText.SetActive(false);
             lifeScoreText.SetActive(false);

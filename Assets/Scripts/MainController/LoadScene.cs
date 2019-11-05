@@ -7,6 +7,7 @@ public class LoadScene : MonoBehaviour
 {
     public void LoadTitle()
     {
+        InitAllData.InitData();
         SceneManager.LoadScene("Title");
     }
     public void LoadMenu()
