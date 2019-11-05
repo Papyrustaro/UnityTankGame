@@ -7,8 +7,6 @@ public class GenerateEnemyRandom : MonoBehaviour
 {
     public int enemyPrefabKindNum;
     public GameObject[] enemyPrefab;
-    //public int minX, maxX, minZ, maxZ;
-    //public int notMinX, notMaxX, notMinZ, notMaxZ;
     private GameObject playerPrefab;
     public float generateTime;
     private float countTime = 0f;

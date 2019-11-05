@@ -19,22 +19,25 @@ public class ScoreManager : MonoBehaviour
         if(MainGameController.gameNumber == 1)
         {
             SingleMissionStaticData.playerScore += es.GetScoreValue();
+            scoreLabel.text = "Score: " + SingleMissionStaticData.playerScore;
         }else if(MainGameController.gameNumber == 2)
         {
             SingleSurvivalStaticData.playerScore += es.GetScoreValue();
+            scoreLabel.text = "Score: " + SingleSurvivalStaticData.playerScore;
         }
-        scoreLabel.text = "Score: " + score;
     }
     public void AddScore(int scoreValue)
     {
         if(MainGameController.gameNumber == 1)
         {
             SingleMissionStaticData.playerScore += scoreValue;
-        }else if(MainGameController.gameNumber == 2)
+            scoreLabel.text = "Score: " + SingleMissionStaticData.playerScore;
+        }
+        else if(MainGameController.gameNumber == 2)
         {
             SingleSurvivalStaticData.playerScore += scoreValue;
+            scoreLabel.text = "Score: " + SingleSurvivalStaticData.playerScore;
         }
-        scoreLabel.text = "Score: " + score;
     }
     public  static int GetScore()
     {
