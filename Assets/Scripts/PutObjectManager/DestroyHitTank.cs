@@ -39,6 +39,7 @@ public class DestroyHitTank : MonoBehaviour
                 es = GameObject.Find(other.gameObject.name).GetComponent<EnemyStatus>();
                 sm.AddScore(es);
                 SEManager.PlayDestroyTankSound();
+                EffectManager.ShowBombEffect(other.gameObject.transform.position);
                 Destroy(other.gameObject);
             }
         }
@@ -58,6 +59,7 @@ public class DestroyHitTank : MonoBehaviour
                 }
                 ts.SetIsAlive(false);
                 SEManager.PlayDestroyTankSound();
+                EffectManager.ShowBombEffect(other.gameObject.transform.position);
                 other.gameObject.SetActive(false);
                 this.gameObject.SetActive(false);
             }

@@ -74,45 +74,61 @@ public class BulletController : MonoBehaviour
             }
             if (col.gameObject.CompareTag("Enemy"))
             {
-                if(!shooterHitAble && shooterTank.GetInstanceID() == col.gameObject.GetInstanceID())
+                try
                 {
-                    Debug.Log("発射直後の自分の弾に当たろうとした");
-                }
-                else
-                {
-                    //singlemission
-                    if (MainGameController.gameNumber == 1)
+                    if (!shooterHitAble && shooterTank.GetInstanceID() == col.gameObject.GetInstanceID())
                     {
-                        smm.EnemyDestroy(col.gameObject.name);
+                        Debug.Log("発射直後の自分の弾に当たろうとした");
                     }
+                    else
+                    {
+                        //singlemission
+                        if (MainGameController.gameNumber == 1)
+                        {
+                            smm.EnemyDestroy(col.gameObject.name);
+                        }
 
-                    es = GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>();
-                    sm.AddScore(es);
-                    SEManager.PlayDestroyTankSound();
-                    Destroy(col.gameObject);
-                    DestroyBullet(this.gameObject);
+                        es = GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>();
+                        sm.AddScore(es);
+                        SEManager.PlayDestroyTankSound();
+                        EffectManager.ShowBombEffect(col.gameObject.transform.position);
+                        Destroy(col.gameObject);
+                        DestroyBullet(this.gameObject);
+                    }
+                }
+                catch(NullReferenceException e)
+                {
+                    Debug.Log(e);
                 }
             }
             if (col.gameObject.CompareTag("Player"))
             {
-                if (!shooterHitAble && shooterTank.GetInstanceID() == col.gameObject.GetInstanceID())
+                try
                 {
-                    Debug.Log("発射直後の自分の弾に当たろうとした");
+                    if (!shooterHitAble && shooterTank.GetInstanceID() == col.gameObject.GetInstanceID())
+                    {
+                        Debug.Log("発射直後の自分の弾に当たろうとした");
+                    }
+                    else
+                    {
+                        //singlemission
+                        if (MainGameController.gameNumber == 1)
+                        {
+                            smm.PlayerDestroy();
+                        }
+                        else if (MainGameController.gameNumber == 2)
+                        {
+                            ssm.PlayerDestroy();
+                        }
+                        SEManager.PlayDestroyTankSound();
+                        EffectManager.ShowBombEffect(col.gameObject.transform.position);
+                        col.gameObject.SetActive(false);
+                        this.gameObject.SetActive(false);
+                    }
                 }
-                else
+                catch(NullReferenceException e)
                 {
-                    //singlemission
-                    if (MainGameController.gameNumber == 1)
-                    {
-                        smm.PlayerDestroy();
-                    }
-                    else if (MainGameController.gameNumber == 2)
-                    {
-                        ssm.PlayerDestroy();
-                    }
-                    SEManager.PlayDestroyTankSound();
-                    col.gameObject.SetActive(false);
-                    this.gameObject.SetActive(false);
+                    Debug.Log(e);
                 }
             }
         }
