@@ -18,6 +18,7 @@ public class SEManager : MonoBehaviour
     public static AudioClip putBombSound;
     public static AudioClip putObjectSound0;
     public static AudioClip putObjectSound1;
+    public static AudioClip countDownSound;
 
 
     // Start is called before the first frame update

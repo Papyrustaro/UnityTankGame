@@ -52,7 +52,7 @@ public class SingleMissionManager : MonoBehaviour
                 Destroy(enemyPrefabSetStage[i]);
             }
         }
-        StartCoroutine(DelayMethod(5f, () =>
+        StartCoroutine(DelayMethod(6f, () =>
         {
             Time.timeScale = 1f;
         }));
@@ -61,17 +61,6 @@ public class SingleMissionManager : MonoBehaviour
     private void Update()
     {
         SingleMissionStaticData.countTime += Time.deltaTime;
-
-        /*if (Input.GetKeyDown(KeyCode.F1))
-        {
-            for(int i = 0; i < enemyNumSetStage; i++)
-            {
-                if (!SingleMissionStaticData.enemyIsDeath[i])
-                {
-                    dc.DestroyEnemy(enemyPrefabSetStage[i]);
-                }
-            }
-        }*/
     }
 
     public void DisplayMissionTitle()
@@ -80,7 +69,7 @@ public class SingleMissionManager : MonoBehaviour
         enemyCounterText.text = "敵戦車 あと" + SingleMissionStaticData.remainEnemyNum + "体";
         playerLifeText.text = "残機 " + SingleMissionStaticData.playerLife;
         missionTitlePanel.transform.parent.gameObject.SetActive(true);
-        StartCoroutine(DelayMethod(3f, () =>
+        StartCoroutine(DelayMethod(2f, () =>
         {
             missionTitlePanel.transform.parent.gameObject.SetActive(false);
         }));
@@ -355,11 +344,6 @@ public class SingleMissionManager : MonoBehaviour
     public void OnGoPlayerSelectTankButtonClicked()
     {
         SceneManager.LoadScene("PlayerSelectTank");
-    }
-
-    public void DebugAAA()
-    {
-        Debug.Log("aaa");
     }
     private IEnumerator DelayMethod(float waitTime, Action action)
     {

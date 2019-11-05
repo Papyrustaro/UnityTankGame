@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     {
         score = SingleMissionStaticData.playerScore;
         scoreLabel = GameObject.Find("ScoreLabel/ScoreLabel").GetComponent<Text>();
-        scoreLabel.text = "Score: " + score;
+        scoreLabel.text = "Score:\n  " + score;
     }
 
     public void AddScore(EnemyStatus es)
@@ -19,11 +19,11 @@ public class ScoreManager : MonoBehaviour
         if(MainGameController.gameNumber == 1)
         {
             SingleMissionStaticData.playerScore += es.GetScoreValue();
-            scoreLabel.text = "Score: " + SingleMissionStaticData.playerScore;
+            scoreLabel.text = "Score:\n  " + SingleMissionStaticData.playerScore;
         }else if(MainGameController.gameNumber == 2)
         {
             SingleSurvivalStaticData.playerScore += es.GetScoreValue();
-            scoreLabel.text = "Score: " + SingleSurvivalStaticData.playerScore;
+            scoreLabel.text = "Score:\n  " + SingleSurvivalStaticData.playerScore;
         }
     }
     public void AddScore(int scoreValue)
@@ -31,12 +31,12 @@ public class ScoreManager : MonoBehaviour
         if(MainGameController.gameNumber == 1)
         {
             SingleMissionStaticData.playerScore += scoreValue;
-            scoreLabel.text = "Score: " + SingleMissionStaticData.playerScore;
+            scoreLabel.text = "Score:\n  " + SingleMissionStaticData.playerScore;
         }
         else if(MainGameController.gameNumber == 2)
         {
             SingleSurvivalStaticData.playerScore += scoreValue;
-            scoreLabel.text = "Score: " + SingleSurvivalStaticData.playerScore;
+            scoreLabel.text = "Score:\n  " + SingleSurvivalStaticData.playerScore;
         }
     }
     public  static int GetScore()

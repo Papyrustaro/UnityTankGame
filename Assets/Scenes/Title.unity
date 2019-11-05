@@ -580,6 +580,11 @@ PrefabInstance:
       propertyPath: putObjectSound1
       value: 
       objectReference: {fileID: 8300000, guid: 74974d68ecb36954899b72b8ca95d1cf, type: 3}
+    - target: {fileID: 9159668442153724261, guid: b00314d10e74237468f0d162c073370e,
+        type: 3}
+      propertyPath: countDownSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 879fc5edb7e741245987fc5f10489137, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00314d10e74237468f0d162c073370e, type: 3}
 --- !u!1 &1813392774 stripped

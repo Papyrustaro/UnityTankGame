@@ -12,6 +12,6 @@ public class ResultManager : MonoBehaviour
     {
         resultScore = ScoreManager.GetScore();
         scoreLabel = GameObject.Find("ScoreLabel").GetComponent<Text>();
-        scoreLabel.text = "Score: " + resultScore;
+        scoreLabel.text = "Score:\n  " + resultScore;
     }
 }
