@@ -41,4 +41,25 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene("DescriptionPlay");
     }
+
+    public void LoadDescriptionEnemy()
+    {
+        SceneManager.LoadScene("DescriptionEnemy");
+    }
+    public void LoadDescriptionMission()
+    {
+        SceneManager.LoadScene("DescriptionMission");
+    }
+    public void LoadDescriptionSurvival()
+    {
+        SceneManager.LoadScene("DescriptionSurvival");
+    }
+    public void LoadDescriptionBasicRule()
+    {
+        SceneManager.LoadScene("DescriptionBasicRule");
+    }
+    public void LoadHowToPlayMenu()
+    {
+        SceneManager.LoadScene("HowToPlayMenu");
+    }
 }
