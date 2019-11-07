@@ -62,4 +62,8 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene("HowToPlayMenu");
     }
+    public void LoadRanking()
+    {
+        SceneManager.LoadScene("Ranking");
+    }
 }
