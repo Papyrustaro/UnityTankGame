@@ -6,6 +6,7 @@ public class BGMManager : MonoBehaviour
 {
     private bool dontDestroyEnabled = true;
     private static AudioSource audioSource;
+    public static float baseVolume = 1f;
 
     public static AudioClip menuBGM;
     public static AudioClip singleMissionBGM0;
@@ -52,6 +53,10 @@ public class BGMManager : MonoBehaviour
 
     public static void SetVolume(float volume)
     {
-        audioSource.volume = volume;
+        audioSource.volume = baseVolume * volume;
+    }
+    public static float GetVolume()
+    {
+        return audioSource.volume;
     }
 }
