@@ -22,6 +22,10 @@ public class DebugCommand : MonoBehaviour
         //Time.timeScale = 0f;
     }
 
+    public void OnPressSeceret()
+    {
+        Debug.Log("AAA");
+    }
     public void DestroyEnemy(GameObject enemy)
     {
         sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
