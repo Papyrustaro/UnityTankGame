@@ -147,6 +147,16 @@ public class BulletController : MonoBehaviour
             else if (bullet.CompareTag("EnemyBullet"))
             {
                 this.shotBullet.GetComponent<EnemyShotManager>().DestroyBullet();
+            }else if (bullet.name == "Bullet3(Clone)")
+            {
+                if(MainGameController.gameNumber == 1 && SingleMissionStaticData.selectTankNumber == 22)
+                {
+                    this.shotBullet.GetComponent<ShotBullet>().DestroyBullet();
+                }
+                else if(MainGameController.gameNumber == 2 && SingleSurvivalStaticData.selectTankNumber == 22)
+                {
+                    this.shotBullet.GetComponent<ShotBullet>().DestroyBullet();
+                }
             }
         }
         catch (MissingReferenceException)

@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerSelectUI : MonoBehaviour
 {
-    public Button[] buttons = new Button[21];
+    public int tankKindNum = 22;
+    public Button[] buttons = new Button[22];
     public int selectTankNum;
     public GameObject parameterCanvas;
 
@@ -39,7 +40,7 @@ public class PlayerSelectUI : MonoBehaviour
 
     public void selectButton(int n)
     {
-        if(0 <= n && n < 21)
+        if(0 <= n && n < tankKindNum)
         {
             buttons[n].Select();
         }

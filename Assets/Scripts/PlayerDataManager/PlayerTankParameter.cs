@@ -8,8 +8,6 @@ public class PlayerTankParameter : MonoBehaviour
     public float shotSpeedMagni = 1f;
     public int shotAbleBulletNum = 5;
     public int putAbleLandMineNum = 2;
-    public int addScore = 0;
-    public int haveSkillNum = 0;
     public int lifeNum = 5;
     public string description;
     public int tankNumber;
