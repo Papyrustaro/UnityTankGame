@@ -12,4 +12,8 @@ public class PlaySE : MonoBehaviour
     {
         SEManager.PlaySubmitSound();
     }
+    public void PlayCannotSound()
+    {
+        SEManager.PlayCannotSound();
+    }
 }

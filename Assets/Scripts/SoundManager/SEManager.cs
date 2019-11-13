@@ -21,6 +21,7 @@ public class SEManager : MonoBehaviour
     public static AudioClip countDownSound;
     public static AudioClip resultSound0;
     public static AudioClip resultSound1;
+    public static AudioClip cannotSound;
 
 
     // Start is called before the first frame update
@@ -83,5 +84,8 @@ public class SEManager : MonoBehaviour
     {
         audioSource.PlayOneShot(putObjectSound1);
     }
-
+    public static void PlayCannotSound()
+    {
+        audioSource.PlayOneShot(cannotSound);
+    }
 }

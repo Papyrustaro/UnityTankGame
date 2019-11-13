@@ -104,4 +104,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ranking.unity
     guid: 2066bb31809c4b1419cd985670821845
+  - enabled: 1
+    path: Assets/Scenes/Description/SearchSecretButton.unity
+    guid: 7703e5757fa0f1a45bb8a6d060b3f9c8
   m_configObjects: {}

@@ -66,4 +66,8 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene("Ranking");
     }
+    public void LoadSearchSecretButton()
+    {
+        SceneManager.LoadScene("SearchSecretButton");
+    }
 }

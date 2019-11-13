@@ -64,6 +64,15 @@ public class PlayerSelectButton : MonoBehaviour
 
     public void OnPress()
     {
+        if(ptp.GetTankNumber() >= 21)
+        {
+            //戦車がまだ解放されていなかったら選べない
+            if (PlayerPrefs.GetInt("UseableTank" + ptp.GetTankNumber(), 0) != 1)
+            {
+                SEManager.PlaySound(SEManager.cannotSound);
+                return;
+            }
+        }
         SEManager.PlaySubmitSound();
         if(MainGameController.gameNumber == 1)
         {

@@ -22,9 +22,9 @@ public class DebugCommand : MonoBehaviour
         //Time.timeScale = 0f;
     }
 
-    public void OnPressSeceret()
+    public void OnPressSecret()
     {
-        Debug.Log("AAA");
+        PlayerPrefs.SetInt("UseableTank21", 1);
     }
     public void DestroyEnemy(GameObject enemy)
     {

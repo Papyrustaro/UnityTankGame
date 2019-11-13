@@ -5,7 +5,7 @@ using UnityEngine;
 public class SetPlayerFirstPosition : MonoBehaviour
 {
 
-    public GameObject[] tankPrefab = new GameObject[26];
+    public GameObject[] tankPrefab = new GameObject[28];
     private void Awake()
     {
         if(MainGameController.gameNumber == 1)
