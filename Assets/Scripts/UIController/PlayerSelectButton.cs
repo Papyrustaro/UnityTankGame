@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerSelectButton : MonoBehaviour
 {
     public GameObject parameterPanel;
-    public GameObject selectTankObject;
+    public GameObject selectTankObject; //prefabではなく、hierarchyのplayertank内のobject
     private PlayerTankParameter ptp;
     private PlayerSelectUI psui;
 

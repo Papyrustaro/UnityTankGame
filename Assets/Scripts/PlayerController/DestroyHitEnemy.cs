@@ -29,19 +29,26 @@ public class DestroyHitEnemy : MonoBehaviour
 
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.transform.root.CompareTag("Enemy") && other.CompareTag("Body"))
-        {
-            //singlemission
-            if (MainGameController.gameNumber == 1)
-            {
-                smm.EnemyDestroy(other.transform.root.gameObject.name);
-            }
 
-            EnemyStatus es = other.transform.root.gameObject.GetComponent<EnemyStatus>();
-            sm.AddScore(es);
-            Destroy(other.transform.root.gameObject);
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            TankStatus ts = collision.gameObject.GetComponent<TankStatus>();
+            if (ts.GetIsAlive())
+            {
+                //singlemission
+                if (MainGameController.gameNumber == 1)
+                {
+                    smm.EnemyDestroy(collision.gameObject.name);
+                }
+                ts.SetIsAlive(false);
+                EnemyStatus es = GameObject.Find(collision.gameObject.name).GetComponent<EnemyStatus>();
+                sm.AddScore(es);
+                SEManager.PlayDestroyTankSound();
+                EffectManager.ShowBombEffect(collision.gameObject.transform.position);
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

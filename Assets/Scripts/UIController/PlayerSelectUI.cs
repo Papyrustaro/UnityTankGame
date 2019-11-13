@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerSelectUI : MonoBehaviour
 {
-    public int tankKindNum = 22;
-    public Button[] buttons = new Button[22];
+    public int tankKindNum = 26;
+    public Button[] buttons = new Button[26];
     public int selectTankNum;
     public GameObject parameterCanvas;
 

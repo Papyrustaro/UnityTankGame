@@ -24,7 +24,7 @@ public class DestroyHitTank : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        Debug.Log("other" + other.gameObject);
         if (other.gameObject.CompareTag("Enemy"))
         {
             TankStatus ts = other.gameObject.GetComponent<TankStatus>();
