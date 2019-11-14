@@ -19,6 +19,10 @@ public class SecretButtonManager : MonoBehaviour
             if(openKeyNumber == inputNumByButton)
             {
                 Debug.Log("secretON");
+                for(int i = 21; i < 28; i++)
+                {
+                    PlayerPrefs.SetInt("UseableTank" + i, 1);
+                }
                 //成功
             }
             else

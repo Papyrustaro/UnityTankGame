@@ -10,6 +10,8 @@ public class PlayerTankParameter : MonoBehaviour
     public int putAbleLandMineNum = 2;
     public int lifeNum = 5;
     public string description;
+    public string releaseCondition;
+    public string announce;
     public int tankNumber;
 
     private void Start()
@@ -51,5 +53,13 @@ public class PlayerTankParameter : MonoBehaviour
     public int GetTankNumber()
     {
         return this.tankNumber;
+    }
+    public string GetAnnounce()
+    {
+        return this.announce;
+    }
+    public string GetReleaseCondition()
+    {
+        return this.releaseCondition;
     }
 }

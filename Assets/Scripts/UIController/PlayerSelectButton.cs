@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PlayerSelectButton : MonoBehaviour
 {
@@ -15,12 +16,16 @@ public class PlayerSelectButton : MonoBehaviour
     private Text shotSpeedText;
     private Text bulletNumText;
     private Text descriptionText;
+    private Text announceText;
+    private Text releaseConditionText;
 
     private string lifeNum;
     private string moveSpeed;
     private string shotSpeed;
     private string bulletNum;
     private string description;
+    private string announce = "";
+    private string releaseCondition = "";
 
     private void Awake()
     {
@@ -31,6 +36,8 @@ public class PlayerSelectButton : MonoBehaviour
         shotSpeedText = parameterPanel.transform.Find("ShotSpeed").gameObject.GetComponent<Text>();
         bulletNumText = parameterPanel.transform.Find("BulletNum").gameObject.GetComponent<Text>();
         descriptionText = parameterPanel.transform.Find("Description").gameObject.GetComponent<Text>();
+        announceText = parameterPanel.transform.Find("Announce").gameObject.GetComponent<Text>();
+        releaseConditionText = parameterPanel.transform.Find("ReleaseCondition").gameObject.GetComponent<Text>();
 
         int moveS = (int)(ptp.GetMoveSpeedMagni() * 100);
         int shotS = (int)(ptp.GetShotSpeedMagni() * 100);
@@ -42,6 +49,13 @@ public class PlayerSelectButton : MonoBehaviour
         shotSpeed = "発射速度: " + shotS;
         bulletNum = "装弾数: " + ptp.GetShotAbleBulletNum();
         description = "特徴: " + ptp.GetDescription();
+        if(ptp.GetTankNumber() >= 21 && PlayerPrefs.GetInt("UseableTank" + ptp.GetTankNumber(), 0) == 0)
+        {
+            releaseCondition = ptp.GetReleaseCondition();
+        }else if(MainGameController.gameNumber == 2)
+        {
+            announce = ptp.GetAnnounce();
+        }
     }
     public void OnSelect()
     {
@@ -51,14 +65,22 @@ public class PlayerSelectButton : MonoBehaviour
         shotSpeedText.text = shotSpeed;
         bulletNumText.text = bulletNum;
         descriptionText.text = description;
+        announceText.text = announce;
+        releaseConditionText.text = releaseCondition;
         selectTankObject.SetActive(true);
     }
     public void OnDeselect()
     {
         if (!psui.IsSelectTank())
         {
-            selectTankObject.SetActive(false);
-            selectTankObject.transform.position = new Vector3(3f, 0f, 0f);
+            try
+            {
+                selectTankObject.SetActive(false);
+                selectTankObject.transform.position = new Vector3(3f, 0f, 0f);
+            }catch(Exception e)
+            {
+                Debug.Log(e);
+            }
         }
     }
 

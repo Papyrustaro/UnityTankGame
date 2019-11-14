@@ -70,4 +70,9 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene("SearchSecretButton");
     }
+    public void LoadSinglePlayFromPlayerSelect()
+    {
+        MainGameController.gameNumber = 0;
+        SceneManager.LoadScene("SinglePlay");
+    }
 }
