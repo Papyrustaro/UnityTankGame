@@ -600,10 +600,20 @@ PrefabInstance:
       propertyPath: cannotSound
       value: 
       objectReference: {fileID: 8300000, guid: f024a30b4aa7ab646ac365af26e7607e, type: 3}
+    - target: {fileID: 9159668442153724261, guid: b00314d10e74237468f0d162c073370e,
+        type: 3}
+      propertyPath: correctSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ca5f641eac83e5b48b125ef316731ed8, type: 3}
+    - target: {fileID: 9159668442153724261, guid: b00314d10e74237468f0d162c073370e,
+        type: 3}
+      propertyPath: incorrectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e054c569b3592041a01189a65b53dc9, type: 3}
     - target: {fileID: 6339353092328195918, guid: b00314d10e74237468f0d162c073370e,
         type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00314d10e74237468f0d162c073370e, type: 3}

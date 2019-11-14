@@ -20,6 +20,8 @@ public class LoadSE : MonoBehaviour
     public AudioClip resultSound0;
     public AudioClip resultSound1;
     public AudioClip cannotSound;
+    public AudioClip correctSound;
+    public AudioClip incorrectSound;
 
     private void Start()
     {
@@ -39,5 +41,7 @@ public class LoadSE : MonoBehaviour
         SEManager.resultSound0 = this.resultSound0;
         SEManager.resultSound1 = this.resultSound1;
         SEManager.cannotSound = this.cannotSound;
+        SEManager.correctSound = this.correctSound;
+        SEManager.incorrectSound = this.incorrectSound;
     }
 }

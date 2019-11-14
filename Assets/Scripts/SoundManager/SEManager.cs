@@ -22,6 +22,8 @@ public class SEManager : MonoBehaviour
     public static AudioClip resultSound0;
     public static AudioClip resultSound1;
     public static AudioClip cannotSound;
+    public static AudioClip correctSound;
+    public static AudioClip incorrectSound;
 
 
     // Start is called before the first frame update
