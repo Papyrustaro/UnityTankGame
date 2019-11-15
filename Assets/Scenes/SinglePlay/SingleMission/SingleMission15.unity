@@ -1055,6 +1055,11 @@ PrefabInstance:
       propertyPath: enemyPrefabSetStage.Array.data[3]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: releaseAnnounceText
+      value: 
+      objectReference: {fileID: 8109559103061727644}
     - target: {fileID: 1950565036, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
       propertyPath: flagUI
       value: 
@@ -1718,6 +1723,12 @@ GameObject:
 --- !u!1 &8109559103061727643 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8109559103308285434, guid: 086d3d8353d32074e90d0531b95fca88,
+    type: 3}
+  m_PrefabInstance: {fileID: 8109559103061727639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8109559103061727644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 26065831, guid: 086d3d8353d32074e90d0531b95fca88,
     type: 3}
   m_PrefabInstance: {fileID: 8109559103061727639}
   m_PrefabAsset: {fileID: 0}

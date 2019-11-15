@@ -396,10 +396,10 @@ MonoBehaviour:
   shotSpeedMagni: 1
   shotAbleBulletNum: 5
   putAbleLandMineNum: 2
-  addScore: 0
-  haveSkillNum: 0
   lifeNum: 6
   description: "\u6B8B\u6A5F\u30921\u3064\u5897\u3084\u305B\u308B"
+  releaseCondition: 
+  announce: "\u203B\u6700\u7D42\u30B9\u30B3\u30A2+200"
   tankNumber: 1
 --- !u!114 &8714356989617389192
 MonoBehaviour:

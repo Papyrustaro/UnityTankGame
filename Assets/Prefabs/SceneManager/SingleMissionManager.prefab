@@ -46,7 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabSetStage:
   - {fileID: 0}
-  enemyNumSetStage: 1
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyNumSetStage: 3
   missionTitlePanel: {fileID: 0}
   missionClearFlagPanel: {fileID: 0}
   missionFailFlagPanel: {fileID: 0}
@@ -54,7 +56,8 @@ MonoBehaviour:
   scoreLabel: {fileID: 0}
   rankingPanel: {fileID: 0}
   inputPlayerName: {fileID: 0}
-  allMissionNum: 3
+  releaseAnnounceText: {fileID: 0}
+  allMissionNum: 20
 --- !u!114 &4408253879997006416
 MonoBehaviour:
   m_ObjectHideFlags: 0

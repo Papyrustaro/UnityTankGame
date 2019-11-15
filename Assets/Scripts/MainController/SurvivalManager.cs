@@ -16,9 +16,15 @@ public class SurvivalManager : MonoBehaviour
     private bool isRankin;
     private int playerScore;
 
+    private void Awake()
+    {
+        Debug.Log("colled survivalmanager.cs");
+    }
+
     public void PlayerDestroy()
     {
         Time.timeScale = 0f;
+        UpdateScoreByTankEffect();
         StartCoroutine(DelayMethod(1f, () =>
         {
             DisplayResult();
@@ -165,6 +171,23 @@ public class SurvivalManager : MonoBehaviour
     public void OnGoPlayerSelectTankButtonClicked()
     {
         SceneManager.LoadScene("PlayerSelectTank");
+    }
+
+    public void UpdateScoreByTankEffect()
+    {
+        Debug.Log(SingleSurvivalStaticData.selectTankNumber);
+        Debug.Log(MainGameController.GetPlayerSelectTankNumber());
+        int tankNumber = SingleSurvivalStaticData.selectTankNumber;
+        if(tankNumber == 1)
+        {
+            this.playerScore += 200;
+        }else if(tankNumber == 26)
+        {
+            this.playerScore += 1000;
+        }else if(tankNumber >= 21)
+        {
+            this.playerScore -= 2000;
+        }
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)

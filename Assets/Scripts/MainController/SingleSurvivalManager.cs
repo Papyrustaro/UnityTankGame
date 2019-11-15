@@ -11,13 +11,17 @@ public class SingleSurvivalManager : MonoBehaviour
     public GameObject rankingPanel;
     public GameObject scoreLabel;
     public GameObject inputPlayerName;
+    public GameObject releaseAnnounceText;
 
     private bool isRankin;
     private int playerScore;
+    private bool releaseTankFlag;
 
     public void PlayerDestroy()
     {
         Time.timeScale = 0f;
+        UpdateScoreByTankEffect();
+        CountPlayNum();
         StartCoroutine(DelayMethod(1f, () =>
         {
             DisplayResult();
@@ -26,6 +30,7 @@ public class SingleSurvivalManager : MonoBehaviour
 
     public void DisplayResult()
     {
+        BGMManager.SetVolume(0.5f);
         resultUIPanel.SetActive(true);
         scoreLabel.SetActive(false);
 
@@ -34,6 +39,8 @@ public class SingleSurvivalManager : MonoBehaviour
         GameObject scoreText = resultUIPanel.transform.Find("ScoreText").gameObject;
 
         playerScore = SingleSurvivalStaticData.playerScore;
+        CheckReleaseScore(playerScore);
+
         scoreText.GetComponent<Text>().text = playerScore.ToString();
 
         StartCoroutine(DelayMethod(1f, () =>
@@ -65,6 +72,31 @@ public class SingleSurvivalManager : MonoBehaviour
                 }));
             }
         }));
+    }
+
+    public void CountPlayNum()
+    {
+        int playSurvivalCount = PlayerPrefs.GetInt("PlaySurvivalCount", 0) + 1;
+        PlayerPrefs.SetInt("PlaySurvivalCount", playSurvivalCount);
+        if(playSurvivalCount == 10)
+        {
+            PlayerPrefs.SetInt("UseableTank22", 1);
+            this.releaseTankFlag = true;
+        }
+        
+    }
+    public void CheckReleaseScore(int score)
+    {
+        if (score >= 500 && PlayerPrefs.GetInt("UseableTank24", 0) == 0)
+        {
+            this.releaseTankFlag = true;
+            PlayerPrefs.SetInt("UseableTank24", 1);
+        }
+        if (score >= 1000 && PlayerPrefs.GetInt("UseableTank26", 0) == 0)
+        {
+            this.releaseTankFlag = true;
+            PlayerPrefs.SetInt("UseableTank26", 1);
+        }
     }
 
     public void InputPlayerName()
@@ -153,6 +185,11 @@ public class SingleSurvivalManager : MonoBehaviour
             //continueButton.SetActive(true);
             //tweetButton.SetActive(true);
             goTitlebutton.GetComponent<Button>().Select();
+            if (this.releaseTankFlag)
+            {
+                releaseAnnounceText.SetActive(true);
+                SEManager.PlaySound(SEManager.correctSound);
+            }
         }));
     }
 
@@ -165,6 +202,23 @@ public class SingleSurvivalManager : MonoBehaviour
     public void OnGoPlayerSelectTankButtonClicked()
     {
         SceneManager.LoadScene("PlayerSelectTank");
+    }
+
+    public void UpdateScoreByTankEffect()
+    {
+        int tankNumber = SingleSurvivalStaticData.selectTankNumber;
+        if (tankNumber == 1)
+        {
+            SingleSurvivalStaticData.playerScore += 500;
+        }
+        else if (tankNumber == 26)
+        {
+            SingleSurvivalStaticData.playerScore += 1000;
+        }
+        else if (tankNumber >= 21)
+        {
+            SingleSurvivalStaticData.playerScore -= 2000;
+        }
     }
 
     private IEnumerator DelayMethod(float waitTime, Action action)

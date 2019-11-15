@@ -993,11 +993,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
         type: 3}
-      propertyPath: enemyPrefabSetStage.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
-        type: 3}
       propertyPath: enemyPrefabSetStage.Array.data[0]
       value: 
       objectReference: {fileID: 499253149}
@@ -1048,22 +1043,9 @@ PrefabInstance:
       objectReference: {fileID: 1411194210}
     - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
         type: 3}
-      propertyPath: enemyNumSetStage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
-        type: 3}
-      propertyPath: allMissionNum
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950565036, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
-      propertyPath: flagUI
+      propertyPath: releaseAnnounceText
       value: 
       objectReference: {fileID: 8109559103061727643}
-    - target: {fileID: 1950565036, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
-      propertyPath: inputFieldCanvas
-      value: 
-      objectReference: {fileID: 1411194210}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
 --- !u!114 &1950565034 stripped
@@ -1674,14 +1656,14 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1411194212, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
-      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1950565034}
     - target: {fileID: 1411194210, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1411194212, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1950565034}
     - target: {fileID: 629807003, guid: 086d3d8353d32074e90d0531b95fca88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1712,7 +1694,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8109559103061727643 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8109559103308285434, guid: 086d3d8353d32074e90d0531b95fca88,
+  m_CorrespondingSourceObject: {fileID: 26065831, guid: 086d3d8353d32074e90d0531b95fca88,
     type: 3}
   m_PrefabInstance: {fileID: 8109559103061727639}
   m_PrefabAsset: {fileID: 0}

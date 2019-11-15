@@ -1017,6 +1017,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ef0b9be3770c2a44a58d7d7233e7638, type: 3}
+--- !u!1 &3390542434401381372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3390542434401381372, guid: 787af1b14a5dae7468a052f6715619d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 9195431291020121111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3620098833985388357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1175,11 +1181,6 @@ PrefabInstance:
       objectReference: {fileID: 9195431291020121113}
     - target: {fileID: 8614814047512513403, guid: 8a3c2df693b7be546974ceb1513339bf,
         type: 3}
-      propertyPath: inputPlayerNamePanel
-      value: 
-      objectReference: {fileID: 9195431291020121112}
-    - target: {fileID: 8614814047512513403, guid: 8a3c2df693b7be546974ceb1513339bf,
-        type: 3}
       propertyPath: scoreLabel
       value: 
       objectReference: {fileID: 464504301}
@@ -1188,6 +1189,11 @@ PrefabInstance:
       propertyPath: inputPlayerName
       value: 
       objectReference: {fileID: 9195431291020121112}
+    - target: {fileID: 8614814047512513403, guid: 8a3c2df693b7be546974ceb1513339bf,
+        type: 3}
+      propertyPath: releaseAnnounceText
+      value: 
+      objectReference: {fileID: 3390542434401381372}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a3c2df693b7be546974ceb1513339bf, type: 3}
 --- !u!114 &3899702564269065375 stripped
@@ -1213,6 +1219,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SurvivalUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 847118620159769952, guid: 787af1b14a5dae7468a052f6715619d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390542434401381372, guid: 787af1b14a5dae7468a052f6715619d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 847118620159769980, guid: 787af1b14a5dae7468a052f6715619d7,
         type: 3}
@@ -1329,6 +1345,45 @@ PrefabInstance:
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3899702564269065375}
+    - target: {fileID: 8884301257504400328, guid: 787af1b14a5dae7468a052f6715619d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083700947, guid: 787af1b14a5dae7468a052f6715619d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884301256797214106, guid: 787af1b14a5dae7468a052f6715619d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594629440521503064, guid: 787af1b14a5dae7468a052f6715619d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594629440521503064, guid: 787af1b14a5dae7468a052f6715619d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -240
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884301256797213797, guid: 787af1b14a5dae7468a052f6715619d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307942496323468296, guid: 787af1b14a5dae7468a052f6715619d7,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307942496323468296, guid: 787af1b14a5dae7468a052f6715619d7,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 787af1b14a5dae7468a052f6715619d7, type: 3}
 --- !u!1 &9195431291020121112 stripped

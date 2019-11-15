@@ -45,6 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resultUIPanel: {fileID: 0}
   rankingPanel: {fileID: 0}
-  inputPlayerNamePanel: {fileID: 0}
   scoreLabel: {fileID: 0}
   inputPlayerName: {fileID: 0}
+  releaseAnnounceText: {fileID: 0}

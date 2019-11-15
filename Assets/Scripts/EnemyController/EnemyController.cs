@@ -86,8 +86,15 @@ public class EnemyController : MonoBehaviour
         for(int i = 0; i < 2; i++) //弾の左端と右端で2セット
         {
             Physics.Raycast(from, v, out hit, 100f);
-            if (!hit.transform.CompareTag("Stage") && !hit.transform.CompareTag("Wall"))
+            try
             {
+                if (!hit.transform.CompareTag("Stage") && !hit.transform.CompareTag("Wall"))
+                {
+                    return hit;
+                }
+            }catch(NullReferenceException e)
+            {
+                Debug.Log(e);
                 return hit;
             }
 

@@ -20,12 +20,14 @@ public class SingleMissionManager : MonoBehaviour
     private Text missionNumberText;
     private Text enemyCounterText;
     private Text playerLifeText;
+    public GameObject releaseAnnounceText;
 
     private InputManager im;
     public int allMissionNum = 3;
     private DebugCommand dc;
     private int playerScore;
     private bool isRankin;
+    private bool releaseTankFlag;
 
 
     private void Awake()
@@ -164,6 +166,7 @@ public class SingleMissionManager : MonoBehaviour
 
     public void DisplayResult()
     {
+        CountPlayNum();
         BGMManager.SetVolume(0.5f);
         resultUIPanel.SetActive(true);
         scoreLabel.SetActive(false);
@@ -192,6 +195,7 @@ public class SingleMissionManager : MonoBehaviour
         timeScoreText.GetComponent<Text>().text = "かかった時間: " + timeScore + " (" + minute + "分" + second + "秒)";
 
         playerScore = SingleMissionStaticData.playerScore + (SingleMissionStaticData.playerLife * 100) + timeScore;
+        CheckReleaseScore(playerScore);
         sumScoreValueText.GetComponent<Text>().text = playerScore.ToString();
 
 
@@ -330,6 +334,11 @@ public class SingleMissionManager : MonoBehaviour
             //continueButton.SetActive(true);
             //tweetButton.SetActive(true);
             goTitlebutton.GetComponent<Button>().Select();
+            if (this.releaseTankFlag)
+            {
+                releaseAnnounceText.SetActive(true);
+                SEManager.PlaySound(SEManager.correctSound);
+            }
         }));
     }
 
@@ -353,6 +362,29 @@ public class SingleMissionManager : MonoBehaviour
     public void OnGoPlayerSelectTankButtonClicked()
     {
         SceneManager.LoadScene("PlayerSelectTank");
+    }
+    public void CountPlayNum()
+    {
+        int playMissionCount = PlayerPrefs.GetInt("PlayMissionCount", 0) + 1;
+        PlayerPrefs.SetInt("PlayMissionCount", playMissionCount);
+        if (playMissionCount == 10)
+        {
+            PlayerPrefs.SetInt("UseableTank21", 1);
+            this.releaseTankFlag = true;
+        }
+    }
+    public void CheckReleaseScore(int score)
+    {
+        if (score >= 500 && PlayerPrefs.GetInt("UseableTank23", 0) == 0)
+        {
+            this.releaseTankFlag = true;
+            PlayerPrefs.SetInt("UseableTank23", 1);
+        }
+        if (score >= 1000 && PlayerPrefs.GetInt("UseableTank25", 0) == 0)
+        {
+            this.releaseTankFlag = true;
+            PlayerPrefs.SetInt("UseableTank25", 1);
+        }
     }
     private IEnumerator DelayMethod(float waitTime, Action action)
     {
