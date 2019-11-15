@@ -30,11 +30,7 @@ public class SecretButtonManager : MonoBehaviour
         {
             if(openKeyNumber == inputNumByButton)
             {
-                Debug.Log("secretON");
-                for(int i = 21; i < 28; i++)
-                {
-                    PlayerPrefs.SetInt("UseableTank" + i, 1);
-                }
+                PlayerPrefs.SetInt("UseableTank27", 1);
                 //成功
                 announceText.text = "戦車が解放されました";
                 SEManager.PlaySound(SEManager.correctSound);
