@@ -6,7 +6,11 @@ public class DebugData : MonoBehaviour
 {
     public void OnDebugPress()
     {
-        PlayerPrefs.SetInt("PlayMissionCount", 9);
-        PlayerPrefs.SetInt("PlaySurvivalCount", 9);
+        for(int i = 21; i <= 27; i++)
+        {
+            PlayerPrefs.SetInt("UseableTank" + i, 1);
+        }
+        //PlayerPrefs.SetInt("PlayMissionCount", 9);
+        //PlayerPrefs.SetInt("PlaySurvivalCount", 9);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyShotManager : MonoBehaviour
 {
@@ -61,15 +62,21 @@ public class EnemyShotManager : MonoBehaviour
         }
         else
         {
-            bulletNum++;
-            GameObject bullet = Instantiate(bulletPrefab, enemyShotBullet.transform.position, enemyShotBullet.transform.rotation) as GameObject;
-            Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-            BulletController bc = bullet.GetComponent<BulletController>();
-            bc.SetShooter(this.gameObject);
-            bc.SetShooterTank(this.gameObject);
-            SEManager.PlayShotBulletSound();
-            bulletRb.AddForce(enemyShotBullet.transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
-            countTime = 0f;
+            try
+            {
+                bulletNum++;
+                GameObject bullet = Instantiate(bulletPrefab, enemyShotBullet.transform.position, enemyShotBullet.transform.rotation) as GameObject;
+                Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+                BulletController bc = bullet.GetComponent<BulletController>();
+                bc.SetShooter(this.gameObject);
+                bc.SetShooterTank(this.gameObject);
+                SEManager.PlayShotBulletSound();
+                bulletRb.AddForce(enemyShotBullet.transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
+                countTime = 0f;
+            }catch(Exception e)
+            {
+                Debug.Log(e);
+            }
             return true;
         }
     }

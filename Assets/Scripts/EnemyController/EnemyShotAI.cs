@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyShotAI : MonoBehaviour
 {
@@ -52,12 +53,19 @@ public class EnemyShotAI : MonoBehaviour
 
         if(countTime > checkInterval)
         {
-            if (toPlayerNotWall)
+            try
             {
-                esm.Shot();
-            }else if (ec.GetRaycastCannon(bulletBounceNum).transform.root.CompareTag("Player"))
+                if (toPlayerNotWall)
+                {
+                    esm.Shot();
+                }
+                else if (ec.GetRaycastCannon(bulletBounceNum).transform.root.CompareTag("Player"))
+                {
+                    esm.Shot();
+                }
+            }catch(Exception e)
             {
-                esm.Shot();
+                Debug.Log(e);
             }
             countTime = 0f;
         }
