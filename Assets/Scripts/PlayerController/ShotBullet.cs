@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class ShotBullet : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ShotBullet : MonoBehaviour
     private int bulletNum = 0;
     private int gamePadNum;
     private TankMovement tm;
+    private Text bulletIcon;
 
     private PlayerTankParameter ptp;
     private void Awake()
@@ -24,6 +26,11 @@ public class ShotBullet : MonoBehaviour
     {
         bulletNum = 0;
         gamePadNum = transform.parent.transform.parent.gameObject.GetComponent<GamePadManager>().GetGamePadNum();
+        bulletIcon = GameObject.Find("BulletNumCanvas/BulletIcon").GetComponent<Text>();
+        for(int i = 0; i < ableBeBulletNum - bulletNum; i++)
+        {
+            bulletIcon.text += "〇";
+        }
     }
 
     void Update()
@@ -42,6 +49,11 @@ public class ShotBullet : MonoBehaviour
     public void DestroyBullet()
     {
         bulletNum--;
+        bulletIcon.text = "";
+        for (int i = 0; i < ableBeBulletNum - bulletNum; i++)
+        {
+            bulletIcon.text += "〇";
+        }
     }
 
     public void setShotSpeed(float magnification)
@@ -58,6 +70,12 @@ public class ShotBullet : MonoBehaviour
         bulletRb.AddForce(transform.forward * bc.getBulletSpeed() * shotSpeedMagni);
         SEManager.PlayShotBulletSound();
         tm.SetAbleMove(false);
+
+        bulletIcon.text = "";
+        for(int i = 0; i < ableBeBulletNum - bulletNum; i++)
+        {
+            bulletIcon.text += "〇";
+        }
         StartCoroutine(DelayMethod(0.2f, () =>
         {
             tm.SetAbleMove(true);

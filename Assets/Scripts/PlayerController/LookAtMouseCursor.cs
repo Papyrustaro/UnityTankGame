@@ -9,6 +9,7 @@ public class LookAtMouseCursor : MonoBehaviour
     private bool useController = false;
     private int gamePadNum;
     // Start is called before the first frame update
+
     void Start()
     {
         gamePadNum = this.transform.parent.gameObject.GetComponent<GamePadManager>().GetGamePadNum();
@@ -32,7 +33,7 @@ public class LookAtMouseCursor : MonoBehaviour
         {
             return;
         }
-        if (useController)
+        else if(useController)
         {
             var h = Input.GetAxis(GamePadManager.padCannonHorizontal[gamePadNum]);
             var v = Input.GetAxis(GamePadManager.padCannonVertical[gamePadNum]);
