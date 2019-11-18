@@ -12,6 +12,8 @@ public class RankingManager : MonoBehaviour
     public GameObject survivalBestScoreText;
     public GameObject survivalSecondScoreText;
     public GameObject survivalThirdScoreText;
+    public GameObject missionTitleText;
+    public GameObject survivalTitleText;
 
     
     private void Start()
@@ -22,5 +24,7 @@ public class RankingManager : MonoBehaviour
         survivalBestScoreText.GetComponent<Text>().text = PlayerPrefs.GetString("SingleSurvivalBestScoreName") + "(" + PlayerPrefs.GetInt("SingleSurvivalBestScore").ToString() + ")";
         survivalSecondScoreText.GetComponent<Text>().text = PlayerPrefs.GetString("SingleSurvivalSecondScoreName") + "(" + PlayerPrefs.GetInt("SingleSurvivalSecondScore").ToString() + ")";
         survivalThirdScoreText.GetComponent<Text>().text = PlayerPrefs.GetString("SingleSurvivalThirdScoreName") + "(" + PlayerPrefs.GetInt("SingleSurvivalThirdScore").ToString() + ")";
+        missionTitleText.GetComponent<Text>().text = "ミッション(" + PlayerPrefs.GetInt("PlayMissionCount", 0).ToString() + "回)";
+        survivalTitleText.GetComponent<Text>().text = "サバイバル(" + PlayerPrefs.GetInt("PlaySurvivalCount", 0).ToString() + "回)";
     }
 }

@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 55825176}
   - component: {fileID: 55825175}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MissionTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,8 +154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 120}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: -220, y: 120}
+  m_SizeDelta: {x: 340, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &55825175
 MonoBehaviour:
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 93254729}
   - component: {fileID: 93254728}
   m_Layer: 5
-  m_Name: Text (3)
+  m_Name: First
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,6 +410,8 @@ MonoBehaviour:
   survivalBestScoreText: {fileID: 870358541}
   survivalSecondScoreText: {fileID: 255802225}
   survivalThirdScoreText: {fileID: 953509993}
+  missionTitleText: {fileID: 55825173}
+  survivalTitleText: {fileID: 1555647428}
 --- !u!114 &164131758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1220,7 +1222,7 @@ GameObject:
   - component: {fileID: 1128229580}
   - component: {fileID: 1128229579}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: Second
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1378,7 +1380,7 @@ GameObject:
   - component: {fileID: 1555647431}
   - component: {fileID: 1555647430}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: SurvivalTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1400,8 +1402,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 120}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: 220, y: 120}
+  m_SizeDelta: {x: 340, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1555647430
 MonoBehaviour:
@@ -1457,7 +1459,7 @@ GameObject:
   - component: {fileID: 1667948873}
   - component: {fileID: 1667948872}
   m_Layer: 5
-  m_Name: Text (4)
+  m_Name: Third
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
