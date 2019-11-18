@@ -1514,6 +1514,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 847118620159769981, guid: 787af1b14a5dae7468a052f6715619d7,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 787af1b14a5dae7468a052f6715619d7, type: 3}
 --- !u!1 &9195431291020121112 stripped

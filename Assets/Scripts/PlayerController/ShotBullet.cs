@@ -12,7 +12,7 @@ public class ShotBullet : MonoBehaviour
     private int bulletNum = 0;
     private int gamePadNum;
     private TankMovement tm;
-    private Text bulletIcon;
+    private Text bulletText;
 
     private PlayerTankParameter ptp;
     private void Awake()
@@ -26,11 +26,8 @@ public class ShotBullet : MonoBehaviour
     {
         bulletNum = 0;
         gamePadNum = transform.parent.transform.parent.gameObject.GetComponent<GamePadManager>().GetGamePadNum();
-        bulletIcon = GameObject.Find("BulletNumCanvas/BulletIcon").GetComponent<Text>();
-        for(int i = 0; i < ableBeBulletNum - bulletNum; i++)
-        {
-            bulletIcon.text += "〇";
-        }
+        bulletText = GameObject.Find("BulletNumCanvas/BulletText").GetComponent<Text>();
+        bulletText.text = (ableBeBulletNum - bulletNum).ToString();
     }
 
     void Update()
@@ -49,11 +46,7 @@ public class ShotBullet : MonoBehaviour
     public void DestroyBullet()
     {
         bulletNum--;
-        bulletIcon.text = "";
-        for (int i = 0; i < ableBeBulletNum - bulletNum; i++)
-        {
-            bulletIcon.text += "〇";
-        }
+        bulletText.text = (ableBeBulletNum - bulletNum).ToString();
     }
 
     public void setShotSpeed(float magnification)
@@ -71,11 +64,7 @@ public class ShotBullet : MonoBehaviour
         SEManager.PlayShotBulletSound();
         tm.SetAbleMove(false);
 
-        bulletIcon.text = "";
-        for(int i = 0; i < ableBeBulletNum - bulletNum; i++)
-        {
-            bulletIcon.text += "〇";
-        }
+        bulletText.text = (ableBeBulletNum - bulletNum).ToString();
         StartCoroutine(DelayMethod(0.2f, () =>
         {
             tm.SetAbleMove(true);
