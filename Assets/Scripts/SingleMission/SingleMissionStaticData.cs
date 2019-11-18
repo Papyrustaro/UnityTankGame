@@ -13,4 +13,5 @@ public class SingleMissionStaticData : MonoBehaviour
     public static int remainEnemyNum = 3;
     public static int missionNumber = 0;
     public static bool loadNewStage = true;
+    public static bool pauseAble = false;
 }

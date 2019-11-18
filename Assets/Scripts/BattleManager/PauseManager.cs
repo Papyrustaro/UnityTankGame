@@ -14,18 +14,22 @@ public class PauseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Ctrl"))
+        if ((MainGameController.gameNumber == 1 && SingleMissionStaticData.pauseAble) || (MainGameController.gameNumber == 2 && SingleSurvivalStaticData.pauseAble))
         {
-            this.pausePanel.SetActive(!this.pausePanel.activeSelf);
-            if (this.pausePanel.activeSelf)
+            if (Input.GetButtonDown("Ctrl"))
             {
-                BGMManager.SetVolume(0.5f);
-                resumeButton.Select();
-                Time.timeScale = 0f;
-            }else
-            {
-                BGMManager.SetVolume(1f);
-                Time.timeScale = 1f;
+                this.pausePanel.SetActive(!this.pausePanel.activeSelf);
+                if (this.pausePanel.activeSelf)
+                {
+                    BGMManager.SetVolume(0.5f);
+                    resumeButton.Select();
+                    Time.timeScale = 0f;
+                }
+                else
+                {
+                    BGMManager.SetVolume(1f);
+                    Time.timeScale = 1f;
+                }
             }
         }
     }

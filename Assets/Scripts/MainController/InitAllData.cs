@@ -14,8 +14,10 @@ public class InitAllData : MonoBehaviour
         SingleMissionStaticData.countTime = 0f;
         SingleMissionStaticData.missionNumber = 0;
         SingleMissionStaticData.loadNewStage = true;
+        SingleMissionStaticData.pauseAble = false;
 
         SingleSurvivalStaticData.playerScore = 0;
+        SingleSurvivalStaticData.pauseAble = true;
 
         MainGameController.gameNumber = 0;
         BGMManager.SetVolume(1f);

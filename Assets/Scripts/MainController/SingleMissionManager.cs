@@ -17,6 +17,7 @@ public class SingleMissionManager : MonoBehaviour
     public GameObject scoreLabel;
     public GameObject rankingPanel;
     public GameObject inputPlayerName;
+    public GameObject bulletNumCanvas;
     private Text missionNumberText;
     private Text enemyCounterText;
     private Text playerLifeText;
@@ -32,6 +33,7 @@ public class SingleMissionManager : MonoBehaviour
 
     private void Awake()
     {
+        SingleMissionStaticData.pauseAble = false;
         Time.timeScale = 0f;
         missionNumberText = missionTitlePanel.transform.Find("MissionNumberText").gameObject.GetComponent<Text>();
         enemyCounterText = missionTitlePanel.transform.Find("EnemyCounterText").gameObject.GetComponent<Text>();
@@ -57,6 +59,7 @@ public class SingleMissionManager : MonoBehaviour
         StartCoroutine(DelayMethod(6f, () =>
         {
             Time.timeScale = 1f;
+            SingleMissionStaticData.pauseAble = true;
         }));
     }
 
@@ -109,6 +112,7 @@ public class SingleMissionManager : MonoBehaviour
     //ミッションクリアしたときの処理
     public void SetBeforeNewStage()
     {
+        SingleMissionStaticData.pauseAble = false;
         Time.timeScale = 0f;
         SingleMissionStaticData.missionNumber++;
         SingleMissionStaticData.loadNewStage = true;
@@ -141,6 +145,7 @@ public class SingleMissionManager : MonoBehaviour
     }
     public void PlayerDestroy()
     {
+        SingleMissionStaticData.pauseAble = false;
         Time.timeScale = 0f;
         SingleMissionStaticData.playerLife--;
         if(SingleMissionStaticData.playerLife > 0)
@@ -170,6 +175,7 @@ public class SingleMissionManager : MonoBehaviour
         BGMManager.SetVolume(0.5f);
         resultUIPanel.SetActive(true);
         scoreLabel.SetActive(false);
+        bulletNumCanvas.SetActive(false);
 
         bool isClear = (SingleMissionStaticData.playerLife > 0);
 

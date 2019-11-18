@@ -6,4 +6,5 @@ public class SingleSurvivalStaticData : MonoBehaviour
 {
     public static int selectTankNumber;
     public static int playerScore = 0;
+    public static bool pauseAble = true;
 }

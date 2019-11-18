@@ -896,6 +896,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89e59e5fcef15c4bbc077ff09e51a2f, type: 3}
+--- !u!1 &997343638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6542029040787439555, guid: d89e59e5fcef15c4bbc077ff09e51a2f,
+    type: 3}
+  m_PrefabInstance: {fileID: 997343637}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1702962125 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8701739839975398149, guid: dde1de7e9ba52e14b9d31b92bec04994,
@@ -1313,6 +1319,11 @@ PrefabInstance:
       propertyPath: releaseAnnounceText
       value: 
       objectReference: {fileID: 3390542434401381372}
+    - target: {fileID: 8614814047512513403, guid: 8a3c2df693b7be546974ceb1513339bf,
+        type: 3}
+      propertyPath: bulletNumPanel
+      value: 
+      objectReference: {fileID: 997343638}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a3c2df693b7be546974ceb1513339bf, type: 3}
 --- !u!114 &3899702564269065375 stripped

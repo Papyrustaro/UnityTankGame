@@ -1187,6 +1187,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89e59e5fcef15c4bbc077ff09e51a2f, type: 3}
+--- !u!1 &1672499527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6542029040787439555, guid: d89e59e5fcef15c4bbc077ff09e51a2f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1672499526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1675222286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1494,6 +1500,11 @@ PrefabInstance:
       propertyPath: releaseAnnounceText
       value: 
       objectReference: {fileID: 8109559103061727644}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: bulletNumCanvas
+      value: 
+      objectReference: {fileID: 1672499527}
     - target: {fileID: 1950565036, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
       propertyPath: flagUI
       value: 

@@ -1069,6 +1069,11 @@ PrefabInstance:
       propertyPath: enemyNumSetStage
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: bulletNumCanvas
+      value: 
+      objectReference: {fileID: 1296596073}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
 --- !u!1001 &1276026407
@@ -1279,6 +1284,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89e59e5fcef15c4bbc077ff09e51a2f, type: 3}
+--- !u!1 &1296596073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6542029040787439555, guid: d89e59e5fcef15c4bbc077ff09e51a2f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1296596072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1572210958
 PrefabInstance:
   m_ObjectHideFlags: 0

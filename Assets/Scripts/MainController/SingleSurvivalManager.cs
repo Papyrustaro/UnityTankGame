@@ -12,6 +12,7 @@ public class SingleSurvivalManager : MonoBehaviour
     public GameObject scoreLabel;
     public GameObject inputPlayerName;
     public GameObject releaseAnnounceText;
+    public GameObject bulletNumPanel;
 
     private bool isRankin;
     private int playerScore;
@@ -19,6 +20,7 @@ public class SingleSurvivalManager : MonoBehaviour
 
     public void PlayerDestroy()
     {
+        SingleSurvivalStaticData.pauseAble = false;
         Time.timeScale = 0f;
         UpdateScoreByTankEffect();
         CountPlayNum();
@@ -33,6 +35,7 @@ public class SingleSurvivalManager : MonoBehaviour
         BGMManager.SetVolume(0.5f);
         resultUIPanel.SetActive(true);
         scoreLabel.SetActive(false);
+        bulletNumPanel.SetActive(false);
 
         GameObject titleText = resultUIPanel.transform.Find("Title").gameObject;
         GameObject scoreAnnounceText = resultUIPanel.transform.Find("ScoreAnnounceText").gameObject;
