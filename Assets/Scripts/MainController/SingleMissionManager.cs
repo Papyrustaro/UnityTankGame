@@ -212,37 +212,26 @@ public class SingleMissionManager : MonoBehaviour
         StartCoroutine(DelayMethod(3f, () =>
         {
             destroyScoreText.SetActive(true);
+            lifeScoreText.SetActive(true);
+            timeScoreText.SetActive(true);
             SEManager.PlaySound(SEManager.resultSound0);
         }));
         StartCoroutine(DelayMethod(4f, () =>
         {
-            lifeScoreText.SetActive(true);
-            SEManager.PlaySound(SEManager.resultSound0);
-        }));
-        StartCoroutine(DelayMethod(5f, () =>
-        {
-            timeScoreText.SetActive(true);
-            SEManager.PlaySound(SEManager.resultSound0);
-        }));
-        StartCoroutine(DelayMethod(6f, () =>
-        {
             lineText.SetActive(true);
-        }));
-        StartCoroutine(DelayMethod(7f, () =>
-        {
             sumScoreText.SetActive(true);
         }));
-        StartCoroutine(DelayMethod(8f, () =>
+        StartCoroutine(DelayMethod(5f, () =>
         {
             sumScoreValueText.SetActive(true);
             SEManager.PlaySound(SEManager.resultSound1);
         }));
-        StartCoroutine(DelayMethod(8.1f, () =>
+        StartCoroutine(DelayMethod(5.1f, () =>
         {
             SEManager.PlaySound(SEManager.resultSound1);
         }));
 
-        StartCoroutine(DelayMethod(11f, () =>
+        StartCoroutine(DelayMethod(8f, () =>
         {
             destroyScoreText.SetActive(false);
             lifeScoreText.SetActive(false);
@@ -257,11 +246,8 @@ public class SingleMissionManager : MonoBehaviour
             }
             else
             {
-                StartCoroutine(DelayMethod(1f, () =>
-                {
-                    SaveHighScore("あなた");
-                    DisplayRanking();
-                }));
+                SaveHighScore("あなた");
+                DisplayRanking();
             }
         }));
     }
@@ -310,8 +296,8 @@ public class SingleMissionManager : MonoBehaviour
         GameObject thirdScoreText = rankingPanel.transform.Find("ThirdScoreText").gameObject;
         GameObject playerScoreText = rankingPanel.transform.Find("PlayerScoreText").gameObject;
         GameObject goTitlebutton = rankingPanel.transform.Find("GoTitleButton").gameObject;
-        GameObject continueButton = rankingPanel.transform.Find("ContinueButton").gameObject;
-        GameObject tweetButton = rankingPanel.transform.Find("TweetButton").gameObject;
+        //GameObject continueButton = rankingPanel.transform.Find("ContinueButton").gameObject;
+        //GameObject tweetButton = rankingPanel.transform.Find("TweetButton").gameObject;
 
         bestScoreText.GetComponent<Text>().text = "第1位:  " + PlayerPrefs.GetString("SingleMissionBestScoreName") + "  (" + PlayerPrefs.GetInt("SingleMissionBestScore").ToString() + ")";
         secondScoreText.GetComponent<Text>().text = "第2位:  " + PlayerPrefs.GetString("SingleMissionSecondScoreName") + "  (" + PlayerPrefs.GetInt("SingleMissionSecondScore").ToString() + ")";

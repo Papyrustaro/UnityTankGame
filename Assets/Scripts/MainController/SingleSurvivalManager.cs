@@ -49,17 +49,24 @@ public class SingleSurvivalManager : MonoBehaviour
         StartCoroutine(DelayMethod(1f, () =>
         {
             titleText.SetActive(true);
+            SEManager.PlaySound(SEManager.resultSound1);
         }));
         StartCoroutine(DelayMethod(2f, () =>
         {
             scoreAnnounceText.SetActive(true);
+            SEManager.PlaySound(SEManager.resultSound1);
         }));
         StartCoroutine(DelayMethod(3f, () =>
         {
             scoreText.SetActive(true);
+            SEManager.PlaySound(SEManager.resultSound1);
+        }));
+        StartCoroutine(DelayMethod(3.1f, () =>
+        {
+            SEManager.PlaySound(SEManager.resultSound1);
         }));
 
-        StartCoroutine(DelayMethod(5f, () =>
+        StartCoroutine(DelayMethod(6f, () =>
         {
             resultUIPanel.SetActive(false);
             if (PlayerPrefs.GetInt("SingleSurvivalThirdScore") < playerScore || !PlayerPrefs.HasKey("SingleSurvivalThirdScore")) //rankinしたら
@@ -68,11 +75,8 @@ public class SingleSurvivalManager : MonoBehaviour
             }
             else
             {
-                StartCoroutine(DelayMethod(1f, () =>
-                {
-                    SaveHighScore("あなた");
-                    DisplayRanking();
-                }));
+                SaveHighScore("あなた");
+                DisplayRanking();
             }
         }));
     }
