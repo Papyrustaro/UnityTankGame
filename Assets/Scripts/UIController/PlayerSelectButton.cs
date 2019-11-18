@@ -108,4 +108,9 @@ public class PlayerSelectButton : MonoBehaviour
         psui.SetSelectTankNum(ptp.GetTankNumber());
         psui.PressTankButton();
     }
+
+    public void OnHighLighted()
+    {
+        this.gameObject.GetComponent<Button>().Select();
+    }
 }

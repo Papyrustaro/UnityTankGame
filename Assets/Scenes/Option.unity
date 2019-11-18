@@ -535,6 +535,7 @@ GameObject:
   - component: {fileID: 484431954}
   - component: {fileID: 484431953}
   - component: {fileID: 484431952}
+  - component: {fileID: 484431956}
   m_Layer: 5
   m_Name: ChangeBGMVolumeButton
   m_TagString: Untagged
@@ -581,6 +582,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 164131759}
           m_MethodName: PlaySelectButtonSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 484431956}
+          m_MethodName: OnHighLighted
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -696,6 +714,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484431950}
   m_CullTransparentMesh: 0
+--- !u!114 &484431956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484431950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96ce23146e10548becde09c41cb959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519800540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1149,7 @@ GameObject:
   - component: {fileID: 1202755914}
   - component: {fileID: 1202755913}
   - component: {fileID: 1202755912}
+  - component: {fileID: 1202755916}
   m_Layer: 5
   m_Name: NoDeleteAllDataButton
   m_TagString: Untagged
@@ -1165,6 +1196,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 164131759}
           m_MethodName: PlaySelectButtonSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1202755916}
+          m_MethodName: OnHighLighted
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1280,6 +1328,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202755910}
   m_CullTransparentMesh: 0
+--- !u!114 &1202755916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202755910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96ce23146e10548becde09c41cb959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1283567174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,6 +1590,7 @@ GameObject:
   - component: {fileID: 1829065139}
   - component: {fileID: 1829065138}
   - component: {fileID: 1829065141}
+  - component: {fileID: 1829065142}
   m_Layer: 5
   m_Name: DeleteAllDataButton
   m_TagString: Untagged
@@ -1691,6 +1752,35 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1829065142}
+          m_MethodName: OnHighLighted
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &1829065142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829065136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96ce23146e10548becde09c41cb959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1916374222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,6 +1794,7 @@ GameObject:
   - component: {fileID: 1916374226}
   - component: {fileID: 1916374225}
   - component: {fileID: 1916374224}
+  - component: {fileID: 1916374228}
   m_Layer: 5
   m_Name: YesDeleteAllDataButton
   m_TagString: Untagged
@@ -1750,6 +1841,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 164131759}
           m_MethodName: PlaySelectButtonSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1916374228}
+          m_MethodName: OnHighLighted
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1865,6 +1973,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916374222}
   m_CullTransparentMesh: 0
+--- !u!114 &1916374228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916374222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96ce23146e10548becde09c41cb959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1978550534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,6 +2077,7 @@ GameObject:
   - component: {fileID: 2037562300}
   - component: {fileID: 2037562299}
   - component: {fileID: 2037562302}
+  - component: {fileID: 2037562303}
   m_Layer: 5
   m_Name: GoToMenuButton
   m_TagString: Untagged
@@ -2118,6 +2239,35 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2037562303}
+          m_MethodName: OnHighLighted
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &2037562303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037562297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96ce23146e10548becde09c41cb959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2056943398
 GameObject:
   m_ObjectHideFlags: 0

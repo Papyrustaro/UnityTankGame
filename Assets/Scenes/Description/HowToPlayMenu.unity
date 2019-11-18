@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 223349991}
   - component: {fileID: 223349990}
   - component: {fileID: 223349989}
+  - component: {fileID: 223349993}
   m_Layer: 5
   m_Name: DescriptionPlay
   m_TagString: Untagged
@@ -389,6 +390,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 164131759}
           m_MethodName: PlaySelectButtonSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 223349993}
+          m_MethodName: OnHighLighted
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -504,6 +522,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223349987}
   m_CullTransparentMesh: 0
+--- !u!114 &223349993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223349987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96ce23146e10548becde09c41cb959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &282273951
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,6 +945,7 @@ GameObject:
   - component: {fileID: 1085885800}
   - component: {fileID: 1085885799}
   - component: {fileID: 1085885798}
+  - component: {fileID: 1085885802}
   m_Layer: 5
   m_Name: DescriptionBasicRule
   m_TagString: Untagged
@@ -961,6 +992,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 164131759}
           m_MethodName: PlaySelectButtonSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1085885802}
+          m_MethodName: OnHighLighted
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1076,6 +1124,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085885796}
   m_CullTransparentMesh: 0
+--- !u!114 &1085885802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085885796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96ce23146e10548becde09c41cb959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1119228344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,6 +1319,7 @@ GameObject:
   - component: {fileID: 1606590492}
   - component: {fileID: 1606590491}
   - component: {fileID: 1606590490}
+  - component: {fileID: 1606590494}
   m_Layer: 5
   m_Name: DescriptionSurvival
   m_TagString: Untagged
@@ -1305,6 +1366,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 164131759}
           m_MethodName: PlaySelectButtonSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1606590494}
+          m_MethodName: OnHighLighted
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1420,6 +1498,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606590488}
   m_CullTransparentMesh: 0
+--- !u!114 &1606590494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606590488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96ce23146e10548becde09c41cb959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1626404056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,6 +1602,7 @@ GameObject:
   - component: {fileID: 1693901512}
   - component: {fileID: 1693901511}
   - component: {fileID: 1693901510}
+  - component: {fileID: 1693901514}
   m_Layer: 5
   m_Name: DescriptionEnemy
   m_TagString: Untagged
@@ -1558,6 +1649,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 164131759}
           m_MethodName: PlaySelectButtonSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1693901514}
+          m_MethodName: OnHighLighted
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1673,6 +1781,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693901508}
   m_CullTransparentMesh: 0
+--- !u!114 &1693901514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693901508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96ce23146e10548becde09c41cb959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1746175147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,6 +1964,7 @@ GameObject:
   - component: {fileID: 1953593370}
   - component: {fileID: 1953593369}
   - component: {fileID: 1953593368}
+  - component: {fileID: 1953593372}
   m_Layer: 5
   m_Name: DescriptionMission
   m_TagString: Untagged
@@ -1890,6 +2011,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 164131759}
           m_MethodName: PlaySelectButtonSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1953593372}
+          m_MethodName: OnHighLighted
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2005,6 +2143,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953593366}
   m_CullTransparentMesh: 0
+--- !u!114 &1953593372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953593366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96ce23146e10548becde09c41cb959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2037562297
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,6 +2168,7 @@ GameObject:
   - component: {fileID: 2037562300}
   - component: {fileID: 2037562299}
   - component: {fileID: 2037562302}
+  - component: {fileID: 2037562303}
   m_Layer: 5
   m_Name: GoToMenuButton
   m_TagString: Untagged
@@ -2179,6 +2330,35 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2037562303}
+          m_MethodName: OnHighLighted
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &2037562303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037562297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b96ce23146e10548becde09c41cb959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2056943398
 GameObject:
   m_ObjectHideFlags: 0
