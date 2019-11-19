@@ -75,4 +75,9 @@ public class LoadScene : MonoBehaviour
         MainGameController.gameNumber = 0;
         SceneManager.LoadScene("SinglePlay");
     }
+
+    public void LoadQuit()
+    {
+        SceneManager.LoadScene("Quit");
+    }
 }

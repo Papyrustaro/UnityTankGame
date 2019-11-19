@@ -107,4 +107,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Description/SearchSecretButton.unity
     guid: 7703e5757fa0f1a45bb8a6d060b3f9c8
+  - enabled: 1
+    path: Assets/Scenes/Quit.unity
+    guid: 7abd6be55c8bbc2448a9bba3e14d1d2a
   m_configObjects: {}

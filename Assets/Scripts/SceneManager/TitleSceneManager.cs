@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class TitleSceneManager : MonoBehaviour
 {
+    private void Awake()
+    {
+        InitAllData.InitData();
+    }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Fire1"))
