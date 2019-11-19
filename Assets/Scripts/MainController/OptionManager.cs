@@ -12,6 +12,7 @@ public class OptionManager : MonoBehaviour
     public GameObject announceDeleteAllDataText;
     public GameObject deleteAllDataButton;
 
+    public GameObject goTitleButton;
     public GameObject goMenuButton;
 
     public GameObject BGMVolumeButton;
@@ -67,9 +68,11 @@ public class OptionManager : MonoBehaviour
         deleteAllDataButton.SetActive(false);
         BGMVolumeButton.SetActive(false);
         goMenuButton.SetActive(false);
+        goTitleButton.SetActive(false);
         yesDeleteAllDataButton.SetActive(true);
         noDeleteAllDataButton.SetActive(true);
         confirmDeleteAllDataText.SetActive(true);
+        noDeleteAllDataButton.GetComponent<Button>().Select();
     }
     public void OnPressYesDeleteAllData()
     {
@@ -80,6 +83,7 @@ public class OptionManager : MonoBehaviour
         announceDeleteAllDataText.SetActive(true);
         BGMVolumeButton.SetActive(true);
         goMenuButton.SetActive(true);
+        goTitleButton.SetActive(true);
         deleteAllDataButton.SetActive(true);
         confirmDeleteAllDataText.SetActive(false);
 
@@ -94,6 +98,7 @@ public class OptionManager : MonoBehaviour
         noDeleteAllDataButton.SetActive(false);
         confirmDeleteAllDataText.SetActive(false);
         goMenuButton.SetActive(true);
+        goTitleButton.SetActive(true);
         BGMVolumeButton.SetActive(true);
         deleteAllDataButton.SetActive(true);
     }
