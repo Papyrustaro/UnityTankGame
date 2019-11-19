@@ -216,11 +216,11 @@ public class SingleSurvivalManager : MonoBehaviour
         int tankNumber = SingleSurvivalStaticData.selectTankNumber;
         if (tankNumber == 1)
         {
-            SingleSurvivalStaticData.playerScore += 500;
+            SingleSurvivalStaticData.playerScore += 200;
         }
         else if (tankNumber == 26)
         {
-            SingleSurvivalStaticData.playerScore += 1000;
+            SingleSurvivalStaticData.playerScore += 500;
         }
         else if (tankNumber >= 21)
         {
