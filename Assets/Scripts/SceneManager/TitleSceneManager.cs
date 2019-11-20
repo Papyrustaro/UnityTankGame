@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleSceneManager : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
         InitAllData.InitData();
     }
