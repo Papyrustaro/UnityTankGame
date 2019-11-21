@@ -37,13 +37,13 @@ public class DestroyHitEnemy : MonoBehaviour
             TankStatus ts = collision.gameObject.GetComponent<TankStatus>();
             if (ts.GetIsAlive())
             {
+                ts.SetIsAlive(false);
                 //singlemission
                 if (MainGameController.gameNumber == 1)
                 {
                     smm.EnemyDestroy(collision.gameObject.name);
                 }
-                ts.SetIsAlive(false);
-                EnemyStatus es = GameObject.Find(collision.gameObject.name).GetComponent<EnemyStatus>();
+                EnemyStatus es = collision.gameObject.GetComponent<EnemyStatus>();
                 sm.AddScore(es);
                 SEManager.PlayDestroyTankSound();
                 EffectManager.ShowBombEffect(collision.gameObject.transform.position);

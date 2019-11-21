@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeedMagni: 0.9
-  shotSpeedMagni: 0.9
+  shotSpeedMagni: 1
   shotAbleBulletNum: 4
   putAbleLandMineNum: 2
   lifeNum: 4

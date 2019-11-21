@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b800146ff88744ea518c10b050cf1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeedMagni: 0.95
+  moveSpeedMagni: 0.9
   shotSpeedMagni: 1.1
   shotAbleBulletNum: 5
   putAbleLandMineNum: 2

@@ -475,7 +475,7 @@ MonoBehaviour:
   skillInterval:
   - 6
   skillNumber: 02000000
-  specialBulletPrefab: {fileID: 8995141988321080169, guid: 58714508992df3f47936cdab371982cd,
+  specialBulletPrefab: {fileID: 3285181224535436941, guid: 27502894225ecd840be74a06874fa3fb,
     type: 3}
 --- !u!114 &2025057385278712001
 MonoBehaviour:

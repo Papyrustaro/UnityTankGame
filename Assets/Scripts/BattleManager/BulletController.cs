@@ -35,14 +35,33 @@ public class BulletController : MonoBehaviour
 
     private void Update()
     {
+        countTime += Time.deltaTime;
         if (!this.shooterHitAble)
         {
-            countTime += Time.deltaTime;
-            if(countTime > 0.5f)
+            if (countTime > 0.5f)
             {
                 this.shooterHitAble = true;
             }
+        }else if(countTime > 1f) //1秒ごとに発射戦車が生きてるか確認。いないなら10秒後消滅(壁に当たらない遅くなった弾を考慮)
+        {
+            try
+            {
+                if(shooterTank == null)
+                {
+                    StartCoroutine(DelayMethod(10f, () =>
+                    {
+                        SEManager.PlayDestroyBulletSound();
+                        Destroy(this.gameObject);
+                    }));
+                }
+            }catch(Exception)
+            {
+                SEManager.PlayDestroyBulletSound();
+                Destroy(this.gameObject);
+            }
+            countTime = 0f;
         }
+        
     }
     private void OnCollisionEnter(Collision col)
     {
@@ -88,7 +107,7 @@ public class BulletController : MonoBehaviour
                             smm.EnemyDestroy(col.gameObject.name);
                         }
 
-                        es = GameObject.Find(col.gameObject.transform.root.gameObject.name).GetComponent<EnemyStatus>();
+                        es = col.gameObject.GetComponent<EnemyStatus>();
                         sm.AddScore(es);
                         SEManager.PlayDestroyTankSound();
                         EffectManager.ShowBombEffect(col.gameObject.transform.position);
@@ -137,7 +156,20 @@ public class BulletController : MonoBehaviour
 
     public void DestroyBullet(GameObject bullet)
     {
-        //if (bullet.CompareTag("Bullet")) //プレイヤーの弾だったら
+        try
+        {
+            if (shooterTank == null)
+            {
+                SEManager.PlayDestroyBulletSound();
+                Destroy(this.gameObject);
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+            SEManager.PlayDestroyBulletSound();
+            Destroy(this.gameObject);
+        }
         try
         {
             if (bullet.name == "Bullet(Clone)")
@@ -161,10 +193,11 @@ public class BulletController : MonoBehaviour
         }
         catch (MissingReferenceException)
         {
-
+            SEManager.PlayDestroyBulletSound();
+            Destroy(this.gameObject);
         }
         SEManager.PlayDestroyBulletSound();
-        Destroy(bullet);
+        Destroy(this.gameObject);
     }
     private void OnCollisionExit(Collision col)
     {
@@ -191,5 +224,11 @@ public class BulletController : MonoBehaviour
     public void SetShooterTank(GameObject shooterTank)
     {
         this.shooterTank = shooterTank;
+    }
+
+    private IEnumerator DelayMethod(float waitTime, Action action)
+    {
+        yield return new WaitForSeconds(waitTime);
+        action();
     }
 }
