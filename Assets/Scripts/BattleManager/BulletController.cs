@@ -101,18 +101,7 @@ public class BulletController : MonoBehaviour
                     }
                     else
                     {
-                        //singlemission
-                        if (MainGameController.gameNumber == 1)
-                        {
-                            smm.EnemyDestroy(col.gameObject.name);
-                        }
-
-                        es = col.gameObject.GetComponent<EnemyStatus>();
-                        sm.AddScore(es);
-                        SEManager.PlayDestroyTankSound();
-                        EffectManager.ShowBombEffect(col.gameObject.transform.position);
-                        Destroy(col.gameObject);
-                        DestroyBullet(this.gameObject);
+                        this.DestroyEnemy(col.gameObject);
                     }
                 }
                 catch(NullReferenceException e)
@@ -130,19 +119,7 @@ public class BulletController : MonoBehaviour
                     }
                     else
                     {
-                        //singlemission
-                        if (MainGameController.gameNumber == 1)
-                        {
-                            smm.PlayerDestroy();
-                        }
-                        else if (MainGameController.gameNumber == 2)
-                        {
-                            ssm.PlayerDestroy();
-                        }
-                        SEManager.PlayDestroyTankSound();
-                        EffectManager.ShowBombEffect(col.gameObject.transform.position);
-                        col.gameObject.SetActive(false);
-                        this.gameObject.SetActive(false);
+                        this.PlayerDestroy(col.gameObject);
                     }
                 }
                 catch(NullReferenceException e)
@@ -226,6 +203,52 @@ public class BulletController : MonoBehaviour
         this.shooterTank = shooterTank;
     }
 
+    private bool DestroyEnemy(GameObject enemy)
+    {
+        TankStatus ts = enemy.GetComponent<TankStatus>();
+        if (ts.GetIsAlive())
+        {
+            ts.SetIsAlive(false);
+            //singlemission
+            if (MainGameController.gameNumber == 1)
+            {
+                smm.EnemyDestroy(enemy.name);
+            }
+
+            es = enemy.GetComponent<EnemyStatus>();
+            sm.AddScore(es);
+            SEManager.PlayDestroyTankSound();
+            EffectManager.ShowBombEffect(enemy.transform.position);
+            Destroy(enemy.gameObject);
+            DestroyBullet(this.gameObject);
+            return true;
+        }
+        return false;
+    }
+
+    private bool PlayerDestroy(GameObject player)
+    {
+        TankStatus ts = player.GetComponent<TankStatus>();
+        if (ts.GetIsAlive())
+        {
+            ts.SetIsAlive(false);
+            //singlemission
+            if (MainGameController.gameNumber == 1)
+            {
+                smm.PlayerDestroy();
+            }
+            else if (MainGameController.gameNumber == 2)
+            {
+                ssm.PlayerDestroy();
+            }
+            SEManager.PlayDestroyTankSound();
+            EffectManager.ShowBombEffect(player.transform.position);
+            player.SetActive(false);
+            this.gameObject.SetActive(false);
+            return true;
+        }
+        return false;
+    }
     private IEnumerator DelayMethod(float waitTime, Action action)
     {
         yield return new WaitForSeconds(waitTime);
