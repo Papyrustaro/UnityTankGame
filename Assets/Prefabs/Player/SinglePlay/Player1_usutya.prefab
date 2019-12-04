@@ -506,7 +506,7 @@ MonoBehaviour:
   shotAbleBulletNum: 5
   putAbleLandMineNum: 2
   lifeNum: 6
-  description: "\u6B8B\u6A5F\u30921\u3064\u5897\u3084\u305B\u308B"
+  description: "\u6B8B\u6A5F\u304C6\u3064"
   releaseCondition: 
   announce: "\u203B\u6700\u7D42\u30B9\u30B3\u30A2+200"
   tankNumber: 1
@@ -625,17 +625,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShotBullet
       objectReference: {fileID: 0}
-    - target: {fileID: 8327608762561236353, guid: 9b4ca3531e98fd94c85ebdde47f8cab5,
-        type: 3}
-      propertyPath: normalBulletPrefab
-      value: 
-      objectReference: {fileID: 1034549752577939294, guid: e4e28790f9dedb94da91b1610c492a10,
-        type: 3}
-    - target: {fileID: 8327608762561236353, guid: 9b4ca3531e98fd94c85ebdde47f8cab5,
-        type: 3}
-      propertyPath: ableBeBulletNum
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8327608762561236366, guid: 9b4ca3531e98fd94c85ebdde47f8cab5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -690,6 +679,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327608762561236353, guid: 9b4ca3531e98fd94c85ebdde47f8cab5,
+        type: 3}
+      propertyPath: normalBulletPrefab
+      value: 
+      objectReference: {fileID: 1034549752577939294, guid: e4e28790f9dedb94da91b1610c492a10,
+        type: 3}
+    - target: {fileID: 8327608762561236353, guid: 9b4ca3531e98fd94c85ebdde47f8cab5,
+        type: 3}
+      propertyPath: ableBeBulletNum
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b4ca3531e98fd94c85ebdde47f8cab5, type: 3}
