@@ -737,6 +737,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8700805121017460017, guid: c85bf529b8ba81e49b1d7b73c106bc0e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c85bf529b8ba81e49b1d7b73c106bc0e, type: 3}
 --- !u!1 &673730861 stripped
@@ -1143,6 +1148,26 @@ PrefabInstance:
       propertyPath: bulletNumCanvas
       value: 
       objectReference: {fileID: 1296596073}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: enemyPrefabSetStage.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: enemyPrefabSetStage.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: enemyPrefabSetStage.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 955125673128310331, guid: 83b71a82897553f4b95034f3aec5799e,
+        type: 3}
+      propertyPath: enemyPrefabSetStage.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b71a82897553f4b95034f3aec5799e, type: 3}
 --- !u!1001 &1276026407

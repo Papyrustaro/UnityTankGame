@@ -18,7 +18,7 @@ public class SurvivalManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("colled survivalmanager.cs");
+        //Debug.Log("colled survivalmanager.cs");
     }
 
     public void PlayerDestroy()
@@ -175,8 +175,8 @@ public class SurvivalManager : MonoBehaviour
 
     public void UpdateScoreByTankEffect()
     {
-        Debug.Log(SingleSurvivalStaticData.selectTankNumber);
-        Debug.Log(MainGameController.GetPlayerSelectTankNumber());
+        //Debug.Log(SingleSurvivalStaticData.selectTankNumber);
+        //Debug.Log(MainGameController.GetPlayerSelectTankNumber());
         int tankNumber = SingleSurvivalStaticData.selectTankNumber;
         if(tankNumber == 1)
         {

@@ -24,7 +24,7 @@ public class SecretButtonManager : MonoBehaviour
     public void InputValue(int n)
     {
         inputNumByButton += n * digit;
-        Debug.Log("inputValue:" + inputNumByButton);
+        //Debug.Log("inputValue:" + inputNumByButton);
         digit /= 10;
         if(digit == 0)
         {

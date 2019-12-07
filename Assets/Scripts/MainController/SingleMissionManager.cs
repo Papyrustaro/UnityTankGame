@@ -24,7 +24,7 @@ public class SingleMissionManager : MonoBehaviour
     public GameObject releaseAnnounceText;
 
     private InputManager im;
-    public int allMissionNum = 3;
+    public int allMissionNum = 20;
     private DebugCommand dc;
     private int playerScore;
     private bool isRankin;
@@ -49,6 +49,10 @@ public class SingleMissionManager : MonoBehaviour
 
     private void Start()
     {
+        //Debug.Log(this.enemyNumSetStage);
+        //Debug.Log(SingleMissionStaticData.enemyNumSetStage);
+        //Debug.Log(SingleMissionStaticData.enemyIsDeath.Length);
+        //IOManager.WriteFile("enemyIsDeath.Length: " + SingleMissionStaticData.enemyIsDeath.Length.ToString());
         for(int i = 0; i < enemyNumSetStage; i++)
         {
             if (SingleMissionStaticData.enemyIsDeath[i])
@@ -90,21 +94,26 @@ public class SingleMissionManager : MonoBehaviour
 
     public void EnemyDestroy(string enemyName)
     {
-        SingleMissionStaticData.remainEnemyNum--;
-        if (SingleMissionStaticData.remainEnemyNum <= 0)
-        {
-            SetBeforeNewStage();
-        }
+        //IOManager.WriteFile("ssm.enemyNumSetStage: " + enemyNumSetStage.ToString());
+        //IOManager.WriteFile("smsd.remainEnemyNum: " + SingleMissionStaticData.remainEnemyNum.ToString());
+        //IOManager.WriteFile("enemyName: " + enemyName);
         for (int i = 0; i < enemyNumSetStage; i++)
         {
+            //IOManager.WriteFile("ssm内にて、");
             try{
                 if (enemyPrefabSetStage[i].name == enemyName)
                 {
                     SingleMissionStaticData.enemyIsDeath[i] = true;
+                    SingleMissionStaticData.remainEnemyNum--;
+                    if (SingleMissionStaticData.remainEnemyNum <= 0)
+                    {
+                        SetBeforeNewStage();
+                    }
                     break;
                 }
-            }catch (MissingReferenceException)
+            }catch (Exception)
             {
+                //IOManager.WriteFile(e.ToString());
             }
         }
     }
@@ -139,6 +148,8 @@ public class SingleMissionManager : MonoBehaviour
     //次のミッションに移動したときの処理
     public void SetAfterNewStage()
     {
+        //Debug.Log("aa");
+        SingleMissionStaticData.enemyNumSetStage = this.enemyNumSetStage;
         SingleMissionStaticData.enemyIsDeath = new bool[enemyNumSetStage];
         SingleMissionStaticData.remainEnemyNum = enemyNumSetStage;
         SingleMissionStaticData.loadNewStage = false;

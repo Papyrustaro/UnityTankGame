@@ -11,9 +11,9 @@ public class PlayerSelectSubmitButton : MonoBehaviour
         //SingleMission
         if(MainGameController.gameNumber == 1)
         {
-            SingleMissionStaticData.enemyIsDeath = new bool[1];
+            /*SingleMissionStaticData.enemyIsDeath = new bool[1];
             SingleMissionStaticData.remainEnemyNum = 1;
-            SingleMissionStaticData.loadNewStage = false;
+            SingleMissionStaticData.loadNewStage = false;*/
             SceneManager.LoadScene("SingleMission0");
         }else if(MainGameController.gameNumber == 2) //survival
         {

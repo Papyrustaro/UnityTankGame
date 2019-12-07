@@ -37,6 +37,6 @@ public class InputManager : MonoBehaviour
         // フォーカス
         inputField.ActivateInputField();
         inputField.Select();
-        Debug.Log("aaa");
+        //Debug.Log("aaa");
     }
 }

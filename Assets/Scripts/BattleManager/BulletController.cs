@@ -93,6 +93,7 @@ public class BulletController : MonoBehaviour
             }
             if (col.gameObject.CompareTag("Enemy"))
             {
+                //Debug.Log(col.gameObject);
                 try
                 {
                     if (!shooterHitAble && shooterTank.GetInstanceID() == col.gameObject.GetInstanceID())
@@ -205,7 +206,9 @@ public class BulletController : MonoBehaviour
 
     private bool DestroyEnemy(GameObject enemy)
     {
+        //IOManager.WriteFile("DestroyEnemy()が呼ばれた");
         TankStatus ts = enemy.GetComponent<TankStatus>();
+        //IOManager.WriteFile(enemy.name + ": " + ts.GetIsAlive());
         if (ts.GetIsAlive())
         {
             ts.SetIsAlive(false);
