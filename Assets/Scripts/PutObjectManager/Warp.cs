@@ -11,9 +11,38 @@ public class Warp : MonoBehaviour
     private Warp exitWarp;
     private PutObject po;
 
+    private float countTime;
+
     private void Awake()
     {
         mr = GetComponent<MeshRenderer>();
+        countTime = 0f;
+    }
+
+    private void Update()
+    {
+        countTime += Time.deltaTime;
+        if(countTime > 2f)
+        {
+            countTime = 0f;
+            try
+            {
+                if(po == null)
+                {
+                    StartCoroutine(DelayMethod(3f, () =>
+                    {
+                        DestroyWarp();
+                    }));
+                }
+            }
+            catch (Exception)
+            {
+                StartCoroutine(DelayMethod(3f, () =>
+                {
+                    DestroyWarp();
+                }));
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,7 +79,7 @@ public class Warp : MonoBehaviour
         {
             po.DestroyWarp();
         }
-        catch (MissingReferenceException)
+        catch (Exception)
         {
         }
         Destroy(pareWarpPrefab);

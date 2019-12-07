@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class RemoteController : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class RemoteController : MonoBehaviour
             Vector3 v = new Vector3(shotBullet.transform.position.x - controllObject.transform.position.x,
             0f, shotBullet.transform.position.z - controllObject.transform.position.z);
             rb.AddForce(v * forcePower);
-        }catch(MissingReferenceException)
+        }catch(Exception)
         {
             Destroy(this.gameObject);
         }
@@ -31,12 +32,26 @@ public class RemoteController : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("SpecialBullet"))
         {
-            collision.gameObject.GetComponent<BulletController>().DestroyBullet(collision.gameObject);
-            this.controllObject.GetComponent<PutObject>().PutRemoteBombPrefab();
+            try
+            {
+                collision.gameObject.GetComponent<BulletController>().DestroyBullet(collision.gameObject);
+                this.controllObject.GetComponent<PutObject>().PutRemoteBombPrefab();
+            }
+            catch (Exception)
+            {
+                Destroy(this.gameObject);
+            }
         }
         if (collision.gameObject.CompareTag("AttackFlag"))
         {
-            this.controllObject.GetComponent<PutObject>().PutRemoteBombPrefab();
+            try
+            {
+                this.controllObject.GetComponent<PutObject>().PutRemoteBombPrefab();
+            }
+            catch (Exception)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
     public void SetController(GameObject controllObject, GameObject shotBullet)
