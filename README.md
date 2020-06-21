@@ -10,3 +10,7 @@
 [自作ゲーム「UNDERETANK」制作記](https://papyrustaro.hatenablog.jp/entry/2019/11/22/232901)
 
 [UnityでTankGameを作る](https://papyrustaro.hatenablog.jp/entry/2019/06/15/160828)
+
+※2020/06/21追記  
+以下のサイトでまとめました  
+[notion/papyrustaro/UnderTank](https://www.notion.so/papyrustaro/UnderTank-fd86410318d64065993c51265ef15fef)
